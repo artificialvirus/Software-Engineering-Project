@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	{% for movie in movies %}
+		<article class="media content-section">
+		  <div class="media-body">
+		    <div class="article-metadata">
+		      <a class="mr-2" href="#">Now showing!</a>
+		    </div>
+		    <h2><a class="article-title" href="{{ url_for('movie', movie_id=movie.id )}}">{{ movie.title }}</a></h2>
+		    <p class="article-content">{{ movie.description }}</p>
+		  </div>
+		</article>
+	{% endfor %}
+{% endblock content %}

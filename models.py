@@ -7,7 +7,7 @@ from database import login
 from sqlalchemy.orm import relationship
 from flask_login import UserMixin
 
-#Database elements
+#Boiking System Database elements
 
 #Many to many relationship
 

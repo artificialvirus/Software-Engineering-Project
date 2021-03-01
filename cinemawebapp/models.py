@@ -2,8 +2,8 @@ from flask import current_app, url_for
 from datetime import datetime
 from time import time
 import jwt
-from database import db
-from database import login
+from cinemawebapp import db
+from cinemawebapp import login
 from sqlalchemy.orm import relationship
 from flask_login import UserMixin
 

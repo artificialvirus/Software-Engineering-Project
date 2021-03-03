@@ -6,11 +6,11 @@ from cinemawebapp import db
 from cinemawebapp import login
 from sqlalchemy.orm import relationship
 from flask_login import UserMixin
+from werkzeug.security import generate_password_hash, check_password_hash
 
-#Boiking System Database elements
+#Booking System Database elements
 
 #Many to many relationship
-
 
 #UserMixin uses appropriate model for user database
 
@@ -23,21 +23,72 @@ movie_screening = db.Table('movie_screening', db.Model.metadata, db.Column('movi
 
 class Admin(UserMixin, db.Model):
     __tablename__ = 'admin'
-    admin_id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     admin_username = db.Column(db.String(150))
     admin_email = db.Column(db.String(150))
-    admin_password = db.Column(db.String(150))
+    password = db.Column(db.String(150))
+
+    def set_password(self, password):
+        self.password = generate_password_hash(password)
+
+    def check_password(self, password):
+        return check_password_hash(self.password, password)
+
+    def get_reset_password_token(self, expires=600):
+        return jwt.encode(
+            {'reset_password': self.id, 'exp': time() + expires},
+            current_app.config['SECRET_KEY'],
+            algorithm='HS256')
+
+    @staticmethod
+    def verify_reset_password_token(token):
+        try:
+            id = jwt.decode(token, current_app.config['SECRET_KEY'],
+                            algorithms=['HS256'])['reset_password']
+        except:
+            return
+        return Admin.query.get(id)
+
+@login.user_loader
+def load_user(id):
+    return Admin.query.get(int(id))
 
 
 class Member(UserMixin, db.Model):
     __tablename__ = 'member'
-    member_id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     member_username = db.Column(db.String(150))
     member_email = db.Column(db.String(150))
-    member_password = db.Column(db.String(150))
+    password = db.Column(db.String(150))
     member_phoneNumber = db.Column(db.Integer(50))
     member_age = db.Column(db.Integer(5))
     memb_bk = db.Relationship('Booking', backref='member', lazy='dynamic')
+
+    #Generate password hashes
+    def set_password(self, password):
+        self.password = generate_password_hash(password)
+
+    def check_password(self, password):
+        return check_password_hash(self.password, password)
+    #To reset password
+    def get_reset_password_token(self, expires=600):
+        return jwt.encode(
+            {'reset_password': self.id, 'exp': time() + expires},
+            current_app.config['SECRET_KEY'],
+            algorithm='HS256')
+
+    @staticmethod
+    def verify_reset_password_token(token):
+        try:
+            id = jwt.decode(token, current_app.config['SECRET_KEY'],
+                            algorithms=['HS256'])['reset_password']
+        except:
+            return
+        return Member.query.get(id)
+
+@login.user_loader
+def load_user(id):
+    return Member.query.get(int(id))
 
 
 class Guest(db.Model):
@@ -72,5 +123,20 @@ class Booking(db.Model):
     __tablename__ = 'booking'
     booking_id = db.Column(db.Integer, primary_key=True)
     ticket_code = db.Column(db.String(150))
+    booking_time = db.Column(db.DateTime, default=datetime.now())
     memberBooking_id = db.Column(db.Integer, db.ForeignKey('member.member_id'))
     guestBooking_id = db.Column(db.Integer, db.ForeignKey('guest.guest_id'))
+
+class Payment(db.Model):
+    __tablename__ = 'payment'
+    id = db.Column(db.Integer, primary_key = True)
+    payment_type = db.Column(db.String(150))
+    card_id = db.Column(db.Integer(100))
+    card_sec_code = db.Column(db.Integer(100))
+
+    #Used this to hide card security number which can make it more secure
+    def set_password(self, card_sec_code):
+        self.card_sec_code = generate_password_hash(card_sec_code)
+
+    def check_password(self, card_sec_code):
+        return check_password_hash(self.card_sec_code, card_sec_code)

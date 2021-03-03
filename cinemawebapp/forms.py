@@ -16,12 +16,12 @@ class SignUpForm(FlaskForm):
     register = SubmitField('Register')
 
     def validate_username(self, username):
-        user = User.query.filter_by(username=username.data).first()
+        user = Member.query.filter_by(username=username.data).first()
         if user is not None:
             raise ValidationError('This username already exists. Please choose a different username.')
 
     def validate_email(self, email):
-        user = User.query.filter_by(email=email.data).first()
+        user = Member.query.filter_by(email=email.data).first()
         if user is not None:
             raise ValidationError('This email address already exists. Please use a different email address')
 

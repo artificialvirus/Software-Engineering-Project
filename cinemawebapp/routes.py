@@ -50,14 +50,17 @@ def signup():
         return redirect(url_for('home'))
     form = SignUpForm()
     if form.validate_on_submit():
-        user = Member(username=form.username.data, email=form.email.data, phoneNumber=forn.user_phone.data, age=form.user_age.data)
+        user = Member(username=form.username.data, email=form.email.data, phoneNumber=form.user_phone.data, age=form.user_age.data)
         user.set_password(form.password.data)
 
         db.session.add(user)
         db.session.commit()
-        msg = Message('You have successfully created your account.', sender = 'yourId@gmail.com', recipients = [user.email])
-        msg.body = "Email from Cinema"
-        mail.send(msg)
+
+        #not added the mail feature yet
+        #msg = Message('You have successfully created your account.', sender = 'yourId@gmail.com', recipients = [user.email])
+        #msg.body = "Email from Cinema"
+        #mail.send(msg)
+
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('login'))
     return render_template('signup.html', title='Sign Up', form=form)

@@ -28,6 +28,7 @@ movies = [
 
 @app.route("/")
 @app.route("/home")
+@login_required
 def home():
     # movies = Post.query.all()
     return render_template('layout.html')

@@ -1,4 +1,3 @@
-
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -38,11 +37,11 @@ login = LoginManager()
 #login.login_view = ''
 login.init_app(app)
 
-from .models import Admin, Member, Guest, Movies, Screening, Payment
+from .models import Admin, Member, Guest, Movies, Screening
 
 @app.before_first_request
 def create_tables():
-    from .models import Admin, Member, Guest, Movies, Screening, Payment
+    from .models import Admin, Member, Guest, Movies, Screening
     db.create_all()
 
 from cinemawebapp import routes, models

@@ -21,3 +21,6 @@ movies = [
 def home():
 	# movies = Post.query.all()
 	return render_template('home.html', movies=movies)
+@app.route("/payment")	
+def payment():
+	return render_template('payment.html')

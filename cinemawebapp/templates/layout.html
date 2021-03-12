@@ -12,55 +12,82 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
 
 
-        <title>{% block title %}  {% endblock title %}</title>
+        <!-- <title>{% block title %}  {% endblock title %}</title> -->
+        {% if title %}
+	        <title>Cinema - {{ title }}</title>
+        {% else %}
+	        <title>Cinema</title>
+        {% endif %}
+
 </head>
 
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="{{url_for('home')}}">Cinema</a>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{url_for('popular')}}">Cinema</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
+
+            {% if title == "for you"%}
+              <li class="nav-item active"> <a class="nav-link" href="{{ url_for('foryou') }}">for you </a> </li>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('popular') }}"> popular </a></li>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('search') }}"> search </a></li>
+              <!-- <li class="nav-item"><a class="nav-link" href="{{ url_for('popular') }}"> about us </a></li> -->
+            {% elif title == "popular"%}
+              <li class="nav-item"> <a class="nav-link" href="{{ url_for('foryou') }}">for you </a> </li>
+              <li class="nav-item active"><a class="nav-link" href="{{ url_for('popular') }}"> popular </a></li>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('search') }}"> search </a></li>
+              <!-- <li class="nav-item"><a class="nav-link" href="{{ url_for('popular') }}"> about us </a></li> -->
+            {% elif title == "search"%}
+              <li class="nav-item"> <a class="nav-link" href="{{ url_for('foryou') }}">for you </a> </li>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('popular') }}"> popular </a></li>
+              <li class="nav-item active"><a class="nav-link" href="{{ url_for('search') }}"> search </a></li>
+              <!-- <li class="nav-item"><a class="nav-link" href="{{ url_for('popular') }}"> about us </a></li> -->
+            {% elif title == "about"%}
+              <li class="nav-item"> <a class="nav-link" href="{{ url_for('foryou') }}">for you </a> </li>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('popular') }}"> popular </a></li>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('search') }}"> search </a></li>
+              <!-- <li class="nav-item active"><a class="nav-link" href="{{ url_for('popular') }}"> about us </a></li> -->
+            
+            {% else %}
+              <li class="nav-item"> <a class="nav-link" href="{{ url_for('foryou') }}">for you </a> </li>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('popular') }}"> popular </a></li>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('search') }}"> search </a></li>
+              <!-- <li class="nav-item"><a class="nav-link" href="{{ url_for('popular') }}"> about us </a></li> -->
+            {% endif %}
+
+            <!-- <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{ url_for('popular') }}">popular</a>
             </li>
                     <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">View  Movies</a>
-            </li>
-            {% if current_user.is_anonymous %}
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('login') }}">Login</a>
-            </li>
-
-            {% else %}
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Buy Ticket
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                            <!-- We have not implemented this yet-->
-                <!--<li><a class="dropdown-item" href="{{ url_for('home') }}">View All Movies</a></li>-->
-
-                            <!-- We have not implemented this yet-->
-                <!--<li><a class="dropdown-item" href="{{ url_for('home') }}">View Popular Movies</a></li>-->
-                <li><hr class="dropdown-divider"></li>
-
-                            <!-- We have not implemented this yet-->
-               <!-- <li><a class="dropdown-item" href="{{ url_for('home') }}">Edit Profile</a></li>-->
-
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{ url_for('logout') }}">Logout</a>
-            </li>
-          </ul>
-          {% endif %}
+              <a class="nav-link active" aria-current="page" href="{{ url_for('foryou') }}">for you</a>
+            </li> -->
+          </div> <!-- navbar-collapse.// -->
+            <!-- Navbar RHS -->
+            <div class="navbar-nav">
+              {% if current_user.is_anonymous %}         
+                 <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
+                 <!-- <a class="nav-item nav-link" href="{{ url_for('popular') }}">Register</a> -->
+         
+              {% else %}
+                <a class="nav-item nav-link" href="{{ url_for('popular') }}">Account</a>
+                <a class="nav-item nav-link" href="{{ url_for('popular') }}">Logout</a>
+                
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Buy Ticket
+                  </a>         
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{{ url_for('logout') }}">Logout</a>
+                </li>
+                </ul>
+              {% endif %}
         </div>
       </div>
     </nav>

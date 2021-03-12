@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-	<head>
+    <head>
 
- 	<!-- Required meta tags -->
+     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,54 +11,69 @@
 
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
 
-	{% if title %}
-		<title>View Cinema - {{ title }}</title>
-	{% else %}
-		<title>View Cinema</title>
-	{% endif %}
+
+        <title>{% block title %}  {% endblock title %}</title>
 </head>
 
-<header>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  		<a class="navbar-brand" href="#">View Cinema</a>
-  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    		<span class="navbar-toggler-icon"></span>
-  		</button>
-
-	  	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-	    <ul class="navbar-nav mr-auto">
-	      <li class="nav-item active">
-	        <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only"></span></a>
-			<a class="nav-link" href="{{ url_for('admin') }}">Admin <span class="sr-only"></span> </a>
-	      </li>
-	    </ul>
-	  </div>
-	</nav>
-</header>
 
 <body>
-	
-	<main role="main" class="container">
-	  <div class="row">
-	    <div class="col-md-8">
-	    	{% with messages = get_flashed_messages(with_categories=true) %}
-				{% if messages %}
-					{% for category, message in messages %}
 
-						<div class="alert alert-{{ category }}">
-							{{ message }}
-						</div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{{url_for('home')}}">Cinema</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
+            </li>
+                    <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">View  Movies</a>
+            </li>
+            {% if current_user.is_anonymous %}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+            </li>
 
-					{% endfor %}
-				{% endif%}
-	    	{% endwith %}
-	      {% block content %}{% endblock %}
-	    </div>
-	  </div>
-	</main>
+            {% else %}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Buy Ticket
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-	 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+                            <!-- We have not implemented this yet-->
+                <!--<li><a class="dropdown-item" href="{{ url_for('movies') }}">View All Movies</a></li>-->
+
+                            <!-- We have not implemented this yet-->
+                <!--<li><a class="dropdown-item" href="{{ url_for('popular_movies') }}">View Popular Movies</a></li>-->
+                <li><hr class="dropdown-divider"></li>
+
+                            <!-- We have not implemented this yet-->
+               <!-- <li><a class="dropdown-item" href="{{ url_for('edit_user') }}">Edit Profile</a></li>-->
+
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{ url_for('logout') }}">Logout</a>
+            </li>
+          </ul>
+          {% endif %}
+        </div>
+      </div>
+    </nav>
+
+
+    <main role="main" class="container">
+      <div class="row">
+            {% block content %}{% endblock %}
+      </div>
+    </main>
+
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-   
+
 </body>
 </html>

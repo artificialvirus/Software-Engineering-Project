@@ -30,7 +30,7 @@ class LoginForm(FlaskForm):
     username = TextField('username', validators = [DataRequired()])
     email = StringField('Email', validators = [DataRequired(),Email()])
     password = PasswordField('password', validators = [DataRequired()])
-    #signin = SubmitField('Sign In')
+    signin = SubmitField('Sign In')
 
 class AdminLoginForm(FlaskForm):
     username = TextField('username', validators = [DataRequired()])

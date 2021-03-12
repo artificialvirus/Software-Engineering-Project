@@ -24,13 +24,63 @@ movies = [
     }
 
 ]
+new_release = [
+	{
+		'director': 'Michael Bay',
+		'title' : 'new film',
+		'description' : 'Boom'
+	},
+	{
+		'director': 'Guy Richie',
+		'title' : 'newer films',
+		'description' : 'A funny film'
+	}
 
-
-@app.route("/")
+]
 @app.route("/home")
 def home():
-    # movies = Post.query.all()
-    return render_template('layout.html')
+    redirect(url_for('popular'))
+
+# Home page
+@app.route("/")
+@app.route("/popular")
+def popular():
+	# movies = sql query all movies and available sort by n of tickets sold
+	# new_releases = sql squery 8 newest movies and available
+	return render_template('popular.html',title = 'popular' ,new=new_release,movies=movies)
+
+# For you page
+@app.route("/foryou")
+def foryou():
+	# based on genre?
+	return render_template('foryou.html',title = 'for you' , movies=movies)
+
+# Search page
+@app.route("/search")
+def search():
+	# movies = sql movies matching criteria
+	return render_template('search.html', title='search', movies = movies)
+
+#  Individual movie details page
+@app.route("/movie")
+# @app.route("/movie/<int:movie_id>")
+def movie():
+	# movie_id):
+	
+	# movie = sql clicked on movie
+	# movie = Movie.query.get_or_404(movie_id)
+	movie = [{
+		'director': 'Guy Richie',
+		'title' : 'newer films',
+		'description' : 'A funny film'
+	}]
+
+	return render_template('movie.html', title='movie name', movie = movie)
+
+# About cinema page - not yet implemented
+# @app.route("/about")
+# def about():
+# 	return render_template('about.html', title='about')
 
 
 @app.route("/")

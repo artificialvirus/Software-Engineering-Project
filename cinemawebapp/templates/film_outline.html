@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<style>
+	.split {
+	  height: 100%;
+	  position: fixed;
+	  z-index: 1;
+	  top: 0;
+	  overflow-x: hidden;
+	  padding-top: 10px;
+	}
+
+	.left {
+	  left: 0;
+	  width: 30%;
+	}
+
+	.right {
+	  right: 0;
+      width: 70%;
+	}
+
+	.centered {
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  text-align: center;
+	}
+
+	.centered img, h2 {
+	  width: 150%;
+	  height: 150%;
+	}
+</style>
+
+<div>
+	<div class="split left">
+	  <div class="centered">
+		<img src="https://app.exrey.tv/images/wall/unavailable.jpg" alt="Generic Film" ><
+		<br>
+		<center><h2>Film Title</h2></center>
+	  </div>
+	</div>
+
+	<div class="split right">
+	  <div class="centered">
+			{% block film_outline_content %}{% endblock %}
+	  </div>
+	</div>	
+</div>
+{% endblock content %}

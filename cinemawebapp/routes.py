@@ -94,3 +94,22 @@ def logout():
     app.logger.debug('Debug level logging')
     logout_user()
     return redirect(url_for('home'))
+
+@app.route("/seats", methods=['GET','POST'])
+def seats():
+    if request.method == 'POST':
+        print(request.form.getlist('seat_list'))
+    
+    grid_width = 30
+    grid_height = 10
+    
+    grid = []
+    for x in range(grid_width):
+        row = []
+        for y in range(grid_height):
+            row.append(str(x) + "," + str(y))
+        grid.append(row)
+        
+    
+    #movies = Post.query.all()
+    return render_template('seats.html', width = grid_width, height = grid_height, grid = grid)

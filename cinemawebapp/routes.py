@@ -91,3 +91,20 @@ def logout():
     app.logger.debug('Debug level logging')
     logout_user()
     return redirect(url_for('home'))
+
+
+@app.route('/add-movie', methods=['GET', 'POST'])
+@login_required
+def add_movie():
+
+
+    form = MoviesForm()
+    if form.validate_on_submit():
+        addMovie = Movies(movie_name=form.movie_name.data, movie_duration=form.movie_duration.data,
+                            movie_genre=form.movie_genre.data, movie_ageRate=form.movie_ageRate.data,
+                            movie_releaseDate=form.movie_releaseDate.data, movie_endDate=form.movie_endDate.data)
+                            
+        db.session.add(addMovie)
+        db.session.commit()
+
+    return render_template('addMovie.html', form=form)

@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1>Add Movie</h1>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.movie_name.label }}<br>
+        {{ form.movie_name(size=32) }}<br>
+        {% for error in form.movie_name.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        {{ form.movie_duration.label }}<br>
+        {{ form.movie_duration(size=32) }}<br>
+        {% for error in form.movie_duration.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        {{ form.movie_genre.label }}<br>
+        {{ form.movie_genre(size=32) }}<br>
+        {% for error in form.movie_genre.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
+      {{ form.movie_ageRate.label }}<br>
+      {{ form.movie_ageRate(size=32) }}<br>
+      {% for error in form.movie_ageRate.errors %}
+      <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+
+    <p>
+      {{ form.movie_releaseDate.label }}<br>
+      {{ form.movie_releaseDate(size=32) }}<br>
+      {% for error in form.movie_releaseDate.errors %}
+      <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+
+    <p>
+      {{ form.movie_endDate.label }}<br>
+      {{ form.movie_endDate(size=32) }}<br>
+      {% for error in form.movie_endDate.errors %}
+      <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+
+    <p><input type="submit" class="btn btn-outline-info" value="Submit" href="{{url_for('home')}}">  </p>
+
+</form>
+
+{% endblock %}

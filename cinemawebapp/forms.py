@@ -39,10 +39,12 @@ class AdminLoginForm(FlaskForm):
 
 class MoviesForm(FlaskForm):
     movie_name = TextField('Movie Name', validators = [DataRequired()])
+    movie_duration = TextField('Movie Duration', validators = [DataRequired()])
     movie_genre = TextField('Movie Genre', validators = [DataRequired()])
-    movie_age_rate = TextField('Movie Age Rate', validators = [DataRequired()])
-    movie_release_date = DateField('Release Date', format='%Y-%m-%d')
-    Movie_end_date = DateField('End Date', format='%Y-%m-%d')
+    movie_ageRate = TextField('Movie Age Rate', validators = [DataRequired()])
+    movie_releaseDate = DateField('Release Date', format='%Y/%m/%d')
+    movie_endDate = DateField('End Date', format='%Y/%m/%d')
+    submit = SubmitField('Submit')
 
     def validate_enddate_field(form, field):
         if field.data < form.startdate_field.data:

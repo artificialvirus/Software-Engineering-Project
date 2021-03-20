@@ -24,13 +24,64 @@ movies = [
     }
 
 ]
+new_release = [
+	{
+		'director': 'Michael Bay',
+		'title' : 'new film',
+		'description' : 'Boom'
+	},
+	{
+		'director': 'Guy Richie',
+		'title' : 'newer films',
+		'description' : 'A funny film'
+	}
 
-
-@app.route("/")
+]
 @app.route("/home")
+@login_required
 def home():
-    # movies = Post.query.all()
-    return render_template('layout.html')
+    redirect(url_for('popular'))
+
+# Home page
+@app.route("/")
+@app.route("/popular")
+def popular():
+	# movies = sql query all movies and available sort by n of tickets sold
+	# new_releases = sql squery 8 newest movies and available
+	return render_template('popular.html',title = 'popular' ,new=new_release,movies=movies)
+
+# For you page
+@app.route("/foryou")
+def foryou():
+	# based on genre?
+	return render_template('foryou.html',title = 'for you' , movies=movies)
+
+# Search page
+@app.route("/search")
+def search():
+	# movies = sql movies matching criteria
+	return render_template('search.html', title='search', movies = movies)
+
+#  Individual movie details page
+@app.route("/movie")
+# @app.route("/movie/<int:movie_id>")
+def movie():
+	# movie_id):
+	
+	# movie = sql clicked on movie
+	# movie = Movie.query.get_or_404(movie_id)
+	movie = [{
+		'director': 'Guy Richie',
+		'title' : 'newer films',
+		'description' : 'A funny film'
+	}]
+
+	return render_template('movie.html', title='movie name', movie = movie)
+
+# About cinema page - not yet implemented
+# @app.route("/about")
+# def about():
+# 	return render_template('about.html', title='about')
 
 
 @app.route("/")
@@ -50,14 +101,17 @@ def signup():
         return redirect(url_for('home'))
     form = SignUpForm()
     if form.validate_on_submit():
-        user = Member(username=form.username.data, email=form.email.data, phoneNumber=forn.user_phone.data, age=form.user_age.data)
+        user = Member(username=form.username.data, email=form.email.data, phoneNumber=form.user_phone.data, age=form.user_age.data)
         user.set_password(form.password.data)
 
         db.session.add(user)
         db.session.commit()
-        msg = Message('You have successfully created your account.', sender = 'yourId@gmail.com', recipients = [user.email])
-        msg.body = "Email from Cinema"
-        mail.send(msg)
+
+        #not added the mail feature yet
+        #msg = Message('You have successfully created your account.', sender = 'yourId@gmail.com', recipients = [user.email])
+        #msg.body = "Email from Cinema"
+        #mail.send(msg)
+
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('login'))
     return render_template('signup.html', title='Sign Up', form=form)
@@ -92,7 +146,6 @@ def logout():
     logout_user()
     return redirect(url_for('home'))
 
-
 @app.route('/add-movie', methods=['GET', 'POST'])
 @login_required
 def add_movie():
@@ -108,3 +161,23 @@ def add_movie():
         db.session.commit()
 
     return render_template('addMovie.html', form=form)
+
+@app.route("/seats", methods=['GET','POST'])
+def seats():
+    if request.method == 'POST':
+        print(request.form.getlist('seat_list'))
+    
+    grid_width = 30
+    grid_height = 10
+    
+    grid = []
+    for x in range(grid_width):
+        row = []
+        for y in range(grid_height):
+            row.append(str(x) + "," + str(y))
+        grid.append(row)
+        
+    
+    #movies = Post.query.all()
+    return render_template('seats.html', width = grid_width, height = grid_height, grid = grid)
+

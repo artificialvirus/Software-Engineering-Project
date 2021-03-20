@@ -51,9 +51,7 @@ class Admin(UserMixin, db.Model):
             return
         return Admin.query.get(id)
 
-@login.user_loader
-def load_user(id):
-    return Admin.query.get(int(id))
+
 
 
 class Member(UserMixin, db.Model):
@@ -104,9 +102,11 @@ class Movies(db.Model):
     __tablename__ = 'movie'
     movie_id = db.Column(db.Integer, primary_key=True)
     movie_name = db.Column(db.String(150))
+    movie_duration = db.Column(db.String(150))
     movie_genre = db.Column(db.String(150))
     movie_ageRate = db.Column(db.String(150))
     movie_releaseDate = db.Column(db.DateTime)
+    movie_endDate = db.Column(db.DateTime)
     movie_available = db.Column(db.Boolean)
     movie_sc = db.relationship('Screening', backref='movie', lazy='dynamic')
 

@@ -22,22 +22,6 @@
         </p>
 
         <p>
-            {{ form.user_phone.label }}<br>
-            {{ form.user_phone(size=64) }}<br>
-            {% for error in form.user_phone.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-        </p>
-
-        <p>
-            {{ form.user_age.label }}<br>
-            {{ form.user_age(size=64) }}<br>
-            {% for error in form.user_age.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-        </p>
-
-        <p>
             {{ form.password.label }}<br>
             {{ form.password(size=32) }}<br>
             {% for error in form.password.errors %}
@@ -54,6 +38,6 @@
         </p>
 
         <p>{{ form.register() }}</p>
-        
+
     </form>
 {% endblock %}

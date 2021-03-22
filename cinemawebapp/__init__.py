@@ -35,14 +35,14 @@ logging.basicConfig(filename= 'debug.log', level=logging.DEBUG, format=f'%(ascti
 
 login = LoginManager()
 #We need to make login page to use this
-#login.login_view = ''
+login.login_view = 'login'
 login.init_app(app)
 
-from .models import Admin, Member, Guest, Movies, Screening, Payment
+from .models import Admin, Member, User, Movie, Screen, Booking
 
 @app.before_first_request
 def create_tables():
-    from .models import Admin, Member, Guest, Movies, Screening, Payment
+    from .models import Admin, Member, User, Movie, Screen, Booking
     db.create_all()
 
 from cinemawebapp import routes, models

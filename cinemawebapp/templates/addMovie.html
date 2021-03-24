@@ -5,49 +5,49 @@
 <form action="" method="post">
     {{ form.hidden_tag() }}
     <p>
-        {{ form.movie_name.label }}<br>
-        {{ form.movie_name(size=32) }}<br>
-        {% for error in form.movie_name.errors %}
+        {{ form.name.label }}<br>
+        {{ form.name(size=32) }}<br>
+        {% for error in form.name.errors %}
         <span style="color: red;">[{{ error }}]</span>
         {% endfor %}
     </p>
 
     <p>
-        {{ form.movie_duration.label }}<br>
-        {{ form.movie_duration(size=32) }}<br>
-        {% for error in form.movie_duration.errors %}
+        {{ form.duration.label }}<br>
+        {{ form.duration(size=32) }}<br>
+        {% for error in form.duration.errors %}
         <span style="color: red;">[{{ error }}]</span>
         {% endfor %}
     </p>
 
     <p>
-        {{ form.movie_genre.label }}<br>
-        {{ form.movie_genre(size=32) }}<br>
-        {% for error in form.movie_genre.errors %}
+        {{ form.genre.label }}<br>
+        {{ form.genre(size=32) }}<br>
+        {% for error in form.genre.errors %}
         <span style="color: red;">[{{ error }}]</span>
         {% endfor %}
     </p>
 
     <p>
-      {{ form.movie_ageRate.label }}<br>
-      {{ form.movie_ageRate(size=32) }}<br>
-      {% for error in form.movie_ageRate.errors %}
+      {{ form.certificate.label }}<br>
+      {{ form.certificate(size=32) }}<br>
+      {% for error in form.certificate.errors %}
       <span style="color: red;">[{{ error }}]</span>
       {% endfor %}
     </p>
 
     <p>
-      {{ form.movie_releaseDate.label }}<br>
-      {{ form.movie_releaseDate(size=32) }}<br>
-      {% for error in form.movie_releaseDate.errors %}
+      {{ form.releaseDate.label }}<br>
+      {{ form.releaseDate(size=32) }}<br>
+      {% for error in form.releaseDate.errors %}
       <span style="color: red;">[{{ error }}]</span>
       {% endfor %}
     </p>
 
     <p>
-      {{ form.movie_endDate.label }}<br>
-      {{ form.movie_endDate(size=32) }}<br>
-      {% for error in form.movie_endDate.errors %}
+      {{ form.endDate.label }}<br>
+      {{ form.endDate(size=32) }}<br>
+      {% for error in form.endDate.errors %}
       <span style="color: red;">[{{ error }}]</span>
       {% endfor %}
     </p>

@@ -2,33 +2,34 @@ from flask_wtf import FlaskForm
 from flask import request
 from wtforms import TextField, SubmitField, TextAreaField, PasswordField, StringField, SelectMultipleField, IntegerField, DateField
 from wtforms.validators import DataRequired, Required, Email, EqualTo, ValidationError, Length
-from .models import Member, Guest, Admin, Movies, Screening, Booking
+from .models import Member, User, Admin, Movie, Screen, Booking
 
 
 class SignUpForm(FlaskForm):
 
     username = StringField('Username', validators = [DataRequired()])
     email = StringField('Email', validators = [DataRequired(),Email()])
-    user_phone = IntegerField('Phone Number', validators = [DataRequired()])
-    user_age = IntegerField('Age', validators = [DataRequired()])
     password = PasswordField('Password', validators = [DataRequired()])
     repeatPassword = PasswordField('repeat password', validators=[DataRequired(), EqualTo('password')])
     register = SubmitField('Register')
 
     def validate_username(self, username):
-        user = Member.query.filter_by(username=username.data).first()
+        user = User.query.filter_by(username=username.data).first()
         if user is not None:
             raise ValidationError('This username already exists. Please choose a different username.')
 
     def validate_email(self, email):
-        user = Member.query.filter_by(email=email.data).first()
+        user = User.query.filter_by(email=email.data).first()
         if user is not None:
             raise ValidationError('This email address already exists. Please use a different email address')
 
 
 class LoginForm(FlaskForm):
     username = StringField('username', validators = [DataRequired()])
+<<<<<<< HEAD
     email = StringField('Email', validators = [DataRequired(),Email()])
+=======
+>>>>>>> update_database
     password = PasswordField('password', validators = [DataRequired()])
     signin = SubmitField('Sign In')
 
@@ -38,12 +39,12 @@ class AdminLoginForm(FlaskForm):
     password = PasswordField('password', validators = [DataRequired()])
 
 class MoviesForm(FlaskForm):
-    movie_name = TextField('Movie Name', validators = [DataRequired()])
-    movie_duration = TextField('Movie Duration', validators = [DataRequired()])
-    movie_genre = TextField('Movie Genre', validators = [DataRequired()])
-    movie_ageRate = TextField('Movie Age Rate', validators = [DataRequired()])
-    movie_releaseDate = DateField('Release Date', format='%Y/%m/%d')
-    movie_endDate = DateField('End Date', format='%Y/%m/%d')
+    name = TextField('Movie Name', validators = [DataRequired()])
+    duration = TextField('Movie Duration', validators = [DataRequired()])
+    genre = TextField('Movie Genre', validators = [DataRequired()])
+    certificate = TextField('Certificate', validators = [DataRequired()])
+    releaseDate = DateField('Release Date', format='%Y/%m/%d')
+    endDate = DateField('End Date', format='%Y/%m/%d')
     submit = SubmitField('Submit')
 
     def validate_enddate_field(form, field):

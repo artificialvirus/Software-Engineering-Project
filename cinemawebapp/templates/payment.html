@@ -24,7 +24,6 @@
     display: none;
   }
   
-  /* Full-width input fields */
   .form-container input[type=text], .form-container input[type=password] {
     width: 100%;
     padding: 15px;
@@ -32,13 +31,13 @@
     border: none;
     background: #f1f1f1;
   }
-/* When the inputs get focus, do something */
+
 .form-container input[type=text]:focus, .form-container input[type=password]:focus {
   background-color: #ddd;
   outline: none;
 }
 
-/* Set a style for the submit/login button */
+
 .form-container .btn {
   background-color: #4CAF50;
   color: white;
@@ -48,12 +47,12 @@
   opacity: 0.8;
 }
 
-/* Add a red background color to the cancel button */
+
 .form-container .cancel {
   background-color: red;
 }
 
-/* Add some hover effects to buttons */
+
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
@@ -103,13 +102,13 @@
                 </div>
 
 
+                <form action="javascript:history.back()"onclick="message()">      
+                  <input type="submit" value="Cash"/>
+                </form>
 
-
-                <form action="javascript:history.back()">
-
-                        <input type="submit" value="Go back"/>
-                
-                    </form>
+                <form action="javascript:history.back()">      
+                  <input type="submit" value="Go back"/>
+                </form>
 
                 <script>
                 function openPaypal() {
@@ -125,6 +124,9 @@
 
                 function closeCredit() {
                   document.getElementById("credit").style.display = "none";
+                }
+                function message(){
+                  alert("Show booking number to front desk to pay and recive ticket(s)");
                 }
                 </script>
 

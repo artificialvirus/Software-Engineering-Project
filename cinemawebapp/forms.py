@@ -26,10 +26,7 @@ class SignUpForm(FlaskForm):
 
 class LoginForm(FlaskForm):
     username = StringField('username', validators = [DataRequired()])
-<<<<<<< HEAD
     email = StringField('Email', validators = [DataRequired(),Email()])
-=======
->>>>>>> update_database
     password = PasswordField('password', validators = [DataRequired()])
     signin = SubmitField('Sign In')
 

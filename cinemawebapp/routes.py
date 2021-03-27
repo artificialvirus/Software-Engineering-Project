@@ -1,4 +1,4 @@
-from flask import render_template, flash, request, redirect, url_for, session, json
+from flask import render_template, flash, request, redirect, url_for, session, json, make_response
 from cinemawebapp import app
 from cinemawebapp.models import Member, Admin, User, Movie, Screen, Booking
 from .forms import SignUpForm, LoginForm, ResetPasswordRequestForm, AdminLoginForm, MoviesForm, BookingForm, PaymentForm
@@ -67,7 +67,7 @@ def search():
 # @app.route("/movie/<int:movie_id>")
 def movie():
 	# movie_id):
-	
+
 	# movie = sql clicked on movie
 	# movie = Movie.query.get_or_404(movie_id)
 	movie = [{
@@ -148,33 +148,89 @@ def logout():
 @app.route('/add-movie', methods=['GET', 'POST'])
 @login_required
 def add_movie():
+    form = MoviesForm()
+    if form.validate_on_submit():
+    	addMovie = Movie(name=form.name.data, duration=form.duration.data,
+    	   genre=form.genre.data, certificate=form.certificate.data,
+           releaseDate=form.releaseDate.data, endDate=form.endDate.data)
 
-
-	form = MoviesForm()
-	if form.validate_on_submit():
-		addMovie = Movie(name=form.name.data, duration=form.duration.data,
-							genre=form.genre.data, certificate=form.certificate.data,
-							releaseDate=form.releaseDate.data, endDate=form.endDate.data)
-
-		db.session.add(addMovie)
-		db.session.commit()
+    	db.session.add(addMovie)
+    	db.session.commit()
     return render_template('addMovie.html', form=form)
 
 @app.route("/seats", methods=['GET','POST'])
 def seats():
     if request.method == 'POST':
         print(request.form.getlist('seat_list'))
-    
+
     grid_width = 30
     grid_height = 10
-    
+
     grid = []
     for x in range(grid_width):
         row = []
         for y in range(grid_height):
             row.append(str(x) + "," + str(y))
         grid.append(row)
-        
-    
+
+
     #movies = Post.query.all()
     return render_template('seats.html', width = grid_width, height = grid_height, grid = grid)
+
+@app.route("/ticket/<id>")
+def ticket(id):
+    booking = Booking.query.filter_by(id=id).first()
+    if not booking:
+        return None #TODO: return to some page
+
+    screening = Screen.query.filter_by(id=booking.screen_id).first()
+    if not screening:
+        return None #TODO: return to some page
+
+    movie = Movies.query.filter_by(id=screening.movie_id).first()
+    if not movie:
+        return None #TODO: return to some page
+
+    ticket_id=booking.id
+    movie_title = movie.name
+    screening_date = screening.time
+    movie_duration = movie.duration
+    screen_number = screening.screen_number
+    seat_number = booking.seat_number
+    ticket_code = booking.ticket_code
+
+    return render_template('ticket.html', title='Your Ticket',
+        movie_title=movie_title, screening_date=screening_date, movie_duration=movie_duration,
+        screen_number=screen_number, seat_number=seat_number, ticket_code=ticket_code)
+
+@app.route("/ticket/download/<ticket_code>")
+def ticket_download(ticket_code):
+    booking = Booking.query.filter_by(ticket_code=ticket_code).first()
+    if not booking:
+        return None #TODO: return to some page
+
+    screening = Screen.query.filter_by(id=booking.screen_id).first()
+    if not screening:
+        return None #TODO: return to some page
+
+    movie = Movies.query.filter_by(id=screening.movie_id).first()
+    if not movie:
+        return None #TODO: return to some page
+
+    ticket_id=booking.id
+    movie_title = movie.name
+    screening_date = screening.time
+    movie_duration = movie.duration
+    screen_number = screening.screen_number
+    seat_number = booking.seat_number
+    ticket_code = booking.ticket_code
+
+    rendered = render_template('ticket_raw.html', title='Your Ticket',
+        movie_title=movie_title, screening_date=screening_date, movie_duration=movie_duration,
+        screen_number=screen_number, seat_number=seat_number, ticket_code=ticket_code)
+    pdf = pdfkit.from_string(rendered, False)
+
+    response = make_response(pdf)
+    response.headers['Content-Type'] = 'application/pdf'
+    response.headers['Content-Disposition'] = 'inline; filename=ticket.pdf'
+    return response

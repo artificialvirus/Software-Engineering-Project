@@ -181,15 +181,15 @@ def seats():
 def ticket(id):
     booking = Booking.query.filter_by(id=id).first()
     if not booking:
-        return None #TODO: return to some page
+        return render_template('ticket_not_found.html', title='Invalid Ticket')
 
     screening = Screen.query.filter_by(id=booking.screen_id).first()
     if not screening:
-        return None #TODO: return to some page
+        return render_template('ticket_not_found.html', title='Invalid Ticket')
 
     movie = Movies.query.filter_by(id=screening.movie_id).first()
     if not movie:
-        return None #TODO: return to some page
+        return render_template('ticket_not_found.html', title='Invalid Ticket')
 
     ticket_id=booking.id
     movie_title = movie.name
@@ -207,15 +207,15 @@ def ticket(id):
 def ticket_download(ticket_code):
     booking = Booking.query.filter_by(ticket_code=ticket_code).first()
     if not booking:
-        return None #TODO: return to some page
+        return render_template('ticket_not_found.html', title='Invalid Ticket')
 
     screening = Screen.query.filter_by(id=booking.screen_id).first()
     if not screening:
-        return None #TODO: return to some page
+        return render_template('ticket_not_found.html', title='Invalid Ticket')
 
     movie = Movies.query.filter_by(id=screening.movie_id).first()
     if not movie:
-        return None #TODO: return to some page
+        return render_template('ticket_not_found.html', title='Invalid Ticket')
 
     ticket_id=booking.id
     movie_title = movie.name

@@ -3,59 +3,60 @@
 
 <style>
 	.Xbottom{
-		width:100%;
-		height:10%;
-		float:left;
+		width: 100%;
+		float: left;
 	}
 	.XtopLeft{
-		width:60%;
-		height:50%;
-		float:left;
+		width:30%;
+		height:40%;
+		float: left;
 	}
 	
 	.XtopRight{
-		width:40%;
-		height:50%;
-		float:left;
+		width:50%;
+		height:40%;
+		float: left;
 	}
-	
 	
 	.times {
 		overflow-x:auto;
-		font-size:25px
+		font-size:30px
 	}
 	
 	table th {
 		min-width: 150px
 	}
 	
-	tr, td, th {
+	.times tr, td, th {
 		padding: 2px;
-		border : 5px solid white;
-		background-color: rgba(0, 100, 255, 0.2);
+		border-left : 5px solid {{theme.primary_colours[0]}};
+		border-right : 5px solid {{theme.primary_colours[0]}};
+		background-color: {{theme.primary_colours[1]}};
+		color: white;
 		vertical-align: top; 
 	}
 	
 	.cont {
-		width:100%;
-		height:100%;
+		position: absolute;
+		height: 100%;
+		width: 66%;
 	}
 	
-	a {
-		color: black;
-		background-color: rgba(0, 100, 255, 0.4);
+	.time {
+		color: white;
+		background-color: {{theme.field_colours[1]}};
+		border: 5px solid {{theme.primary_colours[1]}};
+		padding: 7px;
 		text-decoration: none;
 	}
 	
-	a:hover {
-		color: black;
-		background-color: rgba(0, 50, 155, 0.4);
+	.time:hover {
+		background-color: {{theme.field_colours[0]}};
 		text-decoration: none;
 	}
 	
-	a:active {
-		color: blue;
-		background-color: rgba(0, 20, 100, 0.4);
+	.time:active {
+		background-color: rgba(0, 0, 0, 0);
 		text-decoration: none;
 	}
 	
@@ -73,11 +74,11 @@
 	<br>
 
 	<div class="XtopLeft">	
-		<h2>description</h2>
+		<h2>metadata</h2>
 	</div>
 
 	<div class="XtopRight">	
-		<h2>metadata</h2>
+		<h2>description</h2>
 	</div>
 	
 	<div class="Xbottom">
@@ -94,10 +95,12 @@
 				<tbody>			
 					<tr>
 					{%for movie_date in movie.movie_dates%} 
-						<td > {%for screening in movie_date.screenings%}
-						<a href="{{url_for('seats', screening_id=screening.id)}}">
+						<td><br> {%for screening in movie_date.screenings%}
+						<div>
+						<a class="time" href="{{url_for('seats', screening_id=screening.id)}}">
 						{{screening.time}}
 						</a>
+						</div>
 						<br>
 						{%endfor%} </td>
 					{%endfor%}
@@ -106,6 +109,7 @@
 			</table> 
 		</div>
 	</div>
+
 </div>
 
 {% endblock %}

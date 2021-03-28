@@ -24,20 +24,20 @@
         }
 		
 		input[type=checkbox] + label {
-            background: rgba(0, 100, 255, 0.8);
-            border: 5px solid rgba(255, 255, 255, 0.8);
+            background: {{theme.field_colours[2]}};
+            border: 5px solid {{theme.primary_colours[2]}};
 		} 
 		
 		input[type=checkbox]:hover + label {
-			background: rgba(0, 50, 127, 0.8);
+			background: {{theme.field_colours[1]}};
 		}
 		
 		input[type=checkbox]:checked + label {
-			background: rgba(0, 25, 63, 0.8);
+			background: {{theme.field_colours[0]}};
 		}
 		
 		input[type=checkbox]:active + label {
-			background: rgba(0, 5, 32, 0.8);
+			background: {{theme.field_colours[0]}};
 		}	
 		
     </style>

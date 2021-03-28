@@ -7,34 +7,61 @@ from werkzeug.urls import url_parse
 import logging
 from flask_mail import Mail, Message
 from flask_login import login_user, logout_user, login_required, current_user
-
 from cinemawebapp import db, models
+from datetime import datetime, timedelta
+ #for debugging
+import random
+from random import randrange
+
+class Theme: 
+    def __init__(self, primary_colours, field_colours, text_colours, font):
+        self.primary_colours = primary_colours
+        self.field_colours = field_colours
+        self.text_colours = text_colours
+        self.font = font
+        self.font_size = "15px"
+        
+class DarkTheme(Theme):
+    def __init__(self):
+        super().__init__(
+            ("#06061D", "#13144d", "#28294C"),
+            ("#630024", "#7a002b", "#8c0031"),
+            ("#8fb869", "#b6ed89", "#ffffff"),
+            "Calibri Body")
+        
+def get_user_theme(theme_str="default"):
+    return DarkTheme()
 
 # Sample movie data
 movies = [
-	{
-		'director': 'Michael Bay',
-		'title' : 'Explosions',
-		'description' : 'Boom'
-	},
-	{
-		'director': 'Guy Richie',
-		'title' : 'Hilarity',
-		'description' : 'A funny film'
-	}
+    {
+        'director': 'Michael Bay',
+        'title' : 'Explosions',
+        'description' : 'Boom',
+        'id' : "f3b05c50"
+    },
+    {
+        'director': 'Guy Richie',
+        'title' : 'Hilarity',
+        'description' : 'A funny film',
+        'id' : "2c917f21"
+    }
 
 ]
 new_release = [
 	{
 		'director': 'Michael Bay',
 		'title' : 'new film',
-		'description' : 'Boom'
+		'description' : 'Boom',
+                'id' : "925da9f"
 	},
 	{
 		'director': 'Guy Richie',
 		'title' : 'newer films',
-		'description' : 'A funny film'
+		'description' : 'A funny film',
+                'id' : "7faefe57"
 	}
+
 ]
 
 @app.route("/home")
@@ -57,26 +84,67 @@ def foryou():
 	return render_template('foryou.html',title = 'for you' , movies=movies)
 
 # Search page
-@app.route("/search")
+@app.route("/search", methods=['GET','POST'])
 def search():
-	# movies = sql movies matching criteria
-	return render_template('search.html', title='search', movies = movies)
+    class Forms:
+        pass
+    forms = Forms();
+    
+    if request.method == 'POST':
+        forms.search_title = request.form.getlist('search_title')[0]
+        forms.start_date = request.form.getlist('start_date')[0]
+        forms.start_time = request.form.getlist('start_time')[0]
+        forms.end_date = request.form.getlist('end_date')[0]
+        forms.end_time = request.form.getlist('end_time')[0]
+        forms.genres = request.form.getlist('genres')
+    else:
+        forms.search_title = ""
+        forms.start_date = datetime.today().strftime("%Y-%m-%d")
+        forms.start_time = datetime.now().strftime("%H:%M")
+        forms.end_date = (datetime.today() + timedelta(days=14)).strftime("%Y-%m-%d");
+        forms.end_time = forms.start_time
+        forms.genres = []
+
+    print(vars(forms))
+    
+    more_movies = [m for m in movies for i in range(15)]
+
+    # movies = sql movies matching criteria
+    return render_template('search.html', title='search', movies=more_movies, forms=forms)
 
 #  Individual movie details page
-@app.route("/movie")
-# @app.route("/movie/<int:movie_id>")
-def movie():
-	# movie_id):
+@app.route("/movie/<movie_id>")
+def movie(movie_id):   
+    #for debugging
+    random.seed(10)
 
-	# movie = sql clicked on movie
-	# movie = Movie.query.get_or_404(movie_id)
-	movie = [{
-		'director': 'Guy Richie',
-		'title' : 'newer films',
-		'description' : 'A funny film'
-	}]
+    class Movie:
+        pass
+    class MovieDate:
+        pass
+    class Screening:
+        pass
+    
+    movie = Movie()
+    movie.title = "Film Title"
+    movie.movie_dates = []
 
-	return render_template('movie.html', title='movie name', movie = movie)
+    for i in range(100):
+        if bool(random.getrandbits(1)):  
+            movie_date = MovieDate()
+            movie_date.date = (datetime.today() + timedelta(days=i)).strftime("%Y-%m-%d")
+            movie_date.screenings = []
+            for j in range(7, 22, 4):
+                if bool(random.getrandbits(1)):
+                    screening = Screening();
+                    screening.time = (datetime.now().replace(hour=j, minute=randrange(0, 60, 5))).strftime("%H:%M")
+                    screening.id = "a5849e62"
+                    movie_date.screenings.append(screening)
+            if len(movie_date.screenings) > 0:
+                movie.movie_dates.append(movie_date)
+	
+
+    return render_template('movie.html', movie=movie)
 
 # About cinema page - not yet implemented
 # @app.route("/about")
@@ -158,24 +226,25 @@ def add_movie():
     	db.session.commit()
     return render_template('addMovie.html', form=form)
 
-@app.route("/seats", methods=['GET','POST'])
-def seats():
+@app.route("/seats/<screening_id>", methods=['GET','POST'])
+def seats(screening_id):
     if request.method == 'POST':
         print(request.form.getlist('seat_list'))
-
+    
     grid_width = 30
     grid_height = 10
-
+    
     grid = []
     for x in range(grid_width):
         row = []
         for y in range(grid_height):
             row.append(str(x) + "," + str(y))
         grid.append(row)
-
-
+        
+    
+    user_theme = get_user_theme()
     #movies = Post.query.all()
-    return render_template('seats.html', width = grid_width, height = grid_height, grid = grid)
+    return render_template('seats.html', theme=user_theme, width=grid_width, height=grid_height, grid=grid)
 
 @app.route("/ticket/<id>")
 def ticket(id):

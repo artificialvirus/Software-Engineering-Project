@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-	<head>
+    <head>
 
- 	<!-- Required meta tags -->
+     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -18,63 +18,88 @@
         {% else %}
 	        <title>Cinema</title>
         {% endif %}
+
 </head>
 
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	  <div class="container-fluid">
-	    <a class="navbar-brand" href="{{url_for('home')}}">Cinema</a>
-	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	      <span class="navbar-toggler-icon"></span>
-	    </button>
-	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-	      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-	        <li class="nav-item">
-	          <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
-	        </li>
-			
-	        {% if current_user.is_anonymous %}
-	        <li class="nav-item">
-	          <a class="nav-link" href="{{ url_for('login') }}">Login</a>
-	        </li>
 
-	        {% else %}
-	        <li class="nav-item dropdown">
-	          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-	            Buy Ticket
-	          </a>
-	          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{url_for('popular')}}">Cinema</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-							<!-- We have not implemented this yet-->
-	            <li><a class="dropdown-item" href="{{ url_for('home') }}">View All Movies</a></li>
+            {% if title == "for you"%}
+              <li class="nav-item active"> <a class="nav-link" href="{{ url_for('foryou') }}">for you </a> </li>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('popular') }}"> popular </a></li>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('search') }}"> search </a></li>
+              <!-- <li class="nav-item"><a class="nav-link" href="{{ url_for('popular') }}"> about us </a></li> -->
+            {% elif title == "popular"%}
+              <li class="nav-item"> <a class="nav-link" href="{{ url_for('foryou') }}">for you </a> </li>
+              <li class="nav-item active"><a class="nav-link" href="{{ url_for('popular') }}"> popular </a></li>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('search') }}"> search </a></li>
+              <!-- <li class="nav-item"><a class="nav-link" href="{{ url_for('popular') }}"> about us </a></li> -->
+            {% elif title == "search"%}
+              <li class="nav-item"> <a class="nav-link" href="{{ url_for('foryou') }}">for you </a> </li>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('popular') }}"> popular </a></li>
+              <li class="nav-item active"><a class="nav-link" href="{{ url_for('search') }}"> search </a></li>
+              <!-- <li class="nav-item"><a class="nav-link" href="{{ url_for('popular') }}"> about us </a></li> -->
+            {% elif title == "about"%}
+              <li class="nav-item"> <a class="nav-link" href="{{ url_for('foryou') }}">for you </a> </li>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('popular') }}"> popular </a></li>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('search') }}"> search </a></li>
+              <!-- <li class="nav-item active"><a class="nav-link" href="{{ url_for('popular') }}"> about us </a></li> -->
+            
+            {% else %}
+              <li class="nav-item"> <a class="nav-link" href="{{ url_for('foryou') }}">for you </a> </li>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('popular') }}"> popular </a></li>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('search') }}"> search </a></li>
+              <!-- <li class="nav-item"><a class="nav-link" href="{{ url_for('popular') }}"> about us </a></li> -->
+            {% endif %}
 
-							<!-- We have not implemented this yet-->
-	            <li><a class="dropdown-item" href="{{ url_for('home') }}">View Popular Movies</a></li>
-	            <li><hr class="dropdown-divider"></li>
+            <!-- <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{ url_for('popular') }}">popular</a>
+            </li>
+                    <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{ url_for('foryou') }}">for you</a>
+            </li> -->
+          </div> <!-- navbar-collapse.// -->
+            <!-- Navbar RHS -->
+            <div class="navbar-nav">
+              {% if current_user.is_anonymous %}         
+                 <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
+                 <!-- <a class="nav-item nav-link" href="{{ url_for('popular') }}">Register</a> -->
+         
+              {% else %}
+                <a class="nav-item nav-link" href="{{ url_for('popular') }}">Account</a>
+                <a class="nav-item nav-link" href="{{ url_for('popular') }}">Logout</a>
+                
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Buy Ticket
+                  </a>         
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{{ url_for('logout') }}">Logout</a>
+                </li>
+                </ul>
+              {% endif %}
+        </div>
+      </div>
+    </nav>
 
-							<!-- We have not implemented this yet-->
-	            <li><a class="dropdown-item" href="{{ url_for('home') }}">Edit Profile</a></li>
 
-	          </ul>
-	        </li>
-	        <li class="nav-item">
-	          <a class="nav-link active" aria-current="page" href="{{ url_for('logout') }}">Logout</a>
-	        </li>
-	      </ul>
-	      {% endif %}
-	    </div>
-	  </div>
-	</nav>
+    <main role="main" class="container">
+      <div class="row">
+            {% block content %}{% endblock %}
+      </div>
+    </main>
 
-
-	<main role="main" class="container">
-	  <div class="row">
-			{% block content %}{% endblock %}
-	  </div>
-	</main>
-
-	 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
 
 </body>

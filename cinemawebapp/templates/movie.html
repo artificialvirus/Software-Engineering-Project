@@ -1,45 +1,111 @@
-{% extends "layout.html" %}
+{% extends "film_outline.html" %}
+{% block film_outline_content %}
 
-{% block content %}
-    <h2>Movie name</h2>
-    <h3>Poster</h3>
-    <h3>Description</h3>
-    <h3>Genres</h3>
-    <h3>Times//</h3>
+<style>
+	.Xbottom{
+		width:100%;
+		height:10%;
+		float:left;
+	}
+	.XtopLeft{
+		width:60%;
+		height:50%;
+		float:left;
+	}
+	
+	.XtopRight{
+		width:40%;
+		height:50%;
+		float:left;
+	}
+	
+	
+	.times {
+		overflow-x:auto;
+		font-size:25px
+	}
+	
+	table th {
+		min-width: 150px
+	}
+	
+	tr, td, th {
+		padding: 2px;
+		border : 5px solid white;
+		background-color: rgba(0, 100, 255, 0.2);
+		vertical-align: top; 
+	}
+	
+	.cont {
+		width:100%;
+		height:100%;
+	}
+	
+	a {
+		color: black;
+		background-color: rgba(0, 100, 255, 0.4);
+		text-decoration: none;
+	}
+	
+	a:hover {
+		color: black;
+		background-color: rgba(0, 50, 155, 0.4);
+		text-decoration: none;
+	}
+	
+	a:active {
+		color: blue;
+		background-color: rgba(0, 20, 100, 0.4);
+		text-decoration: none;
+	}
+	
+</style>
 
+<form id="time_form" action="" method="post" hidden> 
+<input id="selected_time" name="selected_time" type="submit" value=""/>
+</form>
 
-    <!-- Gallery item -->
-		<!-- <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-			<div class="bg-white rounded shadow-sm"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556294929/matthew-hamilton-351641-unsplash_zmvozs.jpg" alt="" class="img-fluid card-img-top">
-				<div class="p-4">
-					<h5> <a href="#" class="text-dark">{{movie.title}}</a></h5>
-					<p class="small text-muted mb-0">{{movie.description}}</p>
-					<div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-						<p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">Out now!</span></p>
-						<div class="badge badge-danger px-3 rounded-pill font-weight-normal">New</div>
-					</div>
-				</div>
-			</div>
-        </div> -->
-        
-        <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-            <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-              <div class="my-3 py-3">
-                <h2 class="display-5">{{movie.title}}</h2>
-                <p class="lead">{{movie.description}}</p>
-              </div>
-              <div class="bg-light box-shadow mx-auto" style="width: 100%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-            </div>
-            <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-              <div class="my-3 p-3">
-                <h2 class="display-5">Another headline</h2>
-                <p class="lead">And an even wittier subheading.</p>
-              </div>
-              <div class="bg-dark box-shadow mx-auto" style="width: 100%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-            </div>
-          </div>
-      
-          
+<div class="cont">
+	<br>
+	<div>
+	<h1><center>Film Title</center></h1>
+	</div>
+	<br>
 
+	<div class="XtopLeft">	
+		<h2>description</h2>
+	</div>
 
-{% endblock content %}
+	<div class="XtopRight">	
+		<h2>metadata</h2>
+	</div>
+	
+	<div class="Xbottom">
+		<center style="font-size:40px">Select a Screening</center><br>
+		<div class="times">
+			<table>
+				<thead>		
+					<tr>
+					{%for movie_date in movie.movie_dates%} 
+						<th>{{movie_date.date}}</th>
+					{%endfor%}
+					</tr>	
+				</thead>
+				<tbody>			
+					<tr>
+					{%for movie_date in movie.movie_dates%} 
+						<td > {%for screening in movie_date.screenings%}
+						<a href="{{url_for('seats', screening_id=screening.id)}}">
+						{{screening.time}}
+						</a>
+						<br>
+						{%endfor%} </td>
+					{%endfor%}
+					</tr>
+				</tbody>			
+			</table> 
+		</div>
+	</div>
+</div>
+
+{% endblock %}

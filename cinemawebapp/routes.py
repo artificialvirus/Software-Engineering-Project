@@ -168,11 +168,10 @@ def movie(movie_id):
 # def about():
 # 	return render_template('about.html', title='about')
 
-@app.route("/")
+
+#Admin page
 @app.route("/admin")
 def admin():
-
-	# sales = Booking.query.all()
 
 	return render_template('admin.html')
 

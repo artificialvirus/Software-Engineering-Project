@@ -18,6 +18,11 @@ user_member = db.Table('user_member', db.Model.metadata, db.Column('id', db.Inte
 
 movie_screen = db.Table('movie_screening', db.Model.metadata, db.Column('id', db.Integer, db.ForeignKey('movie.id')), db.Column('id', db.Integer, db.ForeignKey('screen.id')))
 
+movie_booking = db.Table('movie_booking', db.Model.metadata, db.Column('id', db.Integer, db.ForeignKey('member.id')), db.Column('id', db.Integer, db.ForeignKey('booking.id')))
+
+screen_booking = db.Table('screen_booking', db.Model.metadata, db.Column('id', db.Integer, db.ForeignKey('screen.id')), db.Column('id', db.Integer, db.ForeignKey('booking.id')))
+
+
 class Admin(UserMixin, db.Model):
     __tablename__ = 'admin'
     id = db.Column(db.Integer, primary_key=True)
@@ -68,7 +73,8 @@ class Member(db.Model):
     card_expiration_date = db.Column(db.DateTime)
     card_cvv = db.Column(db.String(4))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-
+    mem_bk = db.relationship('Booking', backref='member', lazy='dynamic')
+    
         #Used this to hide card cvv which can make it more secure
     def set_password(self, card_cvv):
         self.card_cvv = generate_password_hash(card_cvv)
@@ -110,7 +116,7 @@ class Screen(db.Model):
     screen_number = db.Column(db.Integer())
     screen_time = db.Column(db.DateTime)
     movie_id = db.Column(db.Integer, db.ForeignKey('movie.id'))
-
+    scrn_bk = db.relationship('Booking', backref='screen', lazy='dynamic')
 
 class Income(db.Model):
     __tablename__ = 'income'

@@ -1,5 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_admin import Admin
+from flask_admin.contrib.sqla import ModelView
 from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_mail import Mail, Message
@@ -37,6 +39,27 @@ login = LoginManager()
 #We need to make login page to use this
 login.login_view = 'login'
 login.init_app(app)
+
+from .models import  Member, User, Movie, Screen, Booking
+
+#class CinemaModelView(ModelView):
+
+#    def is_accessible(self):
+#        return session.get('user') == 'admin'
+
+#    def inaccessible_callback(self, name, **kwargs):
+#        if not self.is_accessible():
+#            return redirect(url_for('home', next=request.url))
+
+
+# Makes admin pages (database entries etc.)
+admin = Admin(app)
+admin.add_view(ModelView(User, db.session))
+admin.add_view(ModelView(Member, db.session))
+admin.add_view(ModelView(Movie, db.session))
+admin.add_view(ModelView(Screen, db.session))
+admin.add_view(ModelView(Booking, db.session))
+
 
 from .models import Admin, Member, User, Movie, Screen, Booking
 

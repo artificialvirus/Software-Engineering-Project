@@ -13,128 +13,136 @@
 
         <!-- <title>{% block title %}  {% endblock title %}</title> -->
         {% if title %}
-	        <title>Cinema - {{ title }}</title>
+            <title>Cinema - {{ title }}</title>
         {% else %}
-	        <title>Cinema</title>
+            <title>Cinema</title>
         {% endif %}
 
 </head>
 
 <style>
-	body {
-		margin: 0;
-		font-family: Arial, Helvetica, sans-serif;
-		background-color: {{theme.primary_colours[0]}};
-	}
-	
-	h1, h2, h3, h4, p, input, center, select, label {
-		color: {{theme.text_colours[2]}};
-	}
-	input, center, p, button, select {
-		font-size: 20px;
-	}
-	
-	button, input, select {
-		background-color: {{theme.primary_colours[2]}};
-		border-color: {{theme.primary_colours[0]}};
-	}
-	
-	button {
-		color: {{theme.text_colours[2]}};
-		background-color: {{theme.field_colours[2]}};
-	}
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: {{theme.primary_colours[0]}};
+    }
+    
+    h1, h2, h3, h4, p, input, center, select, label {
+        color: {{theme.text_colours[2]}};
+    }
+    input, center, p, button, select {
+        font-size: 20px;
+    }
+    
+    button, input, select {
+        background-color: {{theme.primary_colours[2]}};
+        border-color: {{theme.primary_colours[0]}};
+    }
+    
+    button {
+        color: {{theme.text_colours[2]}};
+        background-color: {{theme.field_colours[2]}};
+    }
 
-	.topnav {
-	  overflow: hidden;
-	  background-color: {{theme.primary_colours[2]}};
-	  padding-left: 20px;
-	  padding-right: 20px;
-	}
-	
-	.topnav p {
-	  float: left;
-	  text-align: center;
-	  padding: 8px 16px;
-	  font-size: 20px;
-	}
+    .topnav {
+      overflow: hidden;
+      background-color: {{theme.primary_colours[2]}};
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    
+    .topnav p {
+      float: left;
+      text-align: center;
+      padding: 8px 16px;
+      font-size: 20px;
+    }
 
-	.topnav > a {
-	  color: {{theme.text_colours[2]}};
-	  text-align: center;
-	  padding: 14px 16px;
-	  text-decoration: none;
-	  font-size: 20px;
-	}
-	
-	.topnav > a.left { float: left; }
-	.topnav > a.right { float: right; }
+    .topnav > a {
+      color: {{theme.text_colours[2]}};
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 20px;
+    }
+    
+    .topnav > a.left { float: left; }
+    .topnav > a.right { float: right; }
 
-	.topnav > a.active {
-		background-color: {{theme.field_colours[2]}};
-	}
-	
-	.topnav > a.logo {
-		font-weight: bold;
-	}
-	
-	.topnav > a:hover {
-		color: {{theme.text_colours[0]}};
-		background-color: {{theme.field_colours[0]}};
-	}
-	
-	.gallery {
-		border: 7px solid {{theme.primary_colours[0]}};
-		float: left;
-		width: 200px;
-		background-color: {{theme.primary_colours[1]}};
-		color: {{theme.text_colours[2]}};
-		padding: 0;
-	}
-	
-	.gallery > a {
-		text-decoration: none;
-		color: {{theme.text_colours[2]}};
-	}
+    .topnav > a.active {
+        background-color: {{theme.field_colours[2]}};
+    }
+    
+    .topnav > a.logo {
+        font-weight: bold;
+    }
+    
+    .topnav > a:hover {
+        color: {{theme.text_colours[0]}};
+        background-color: {{theme.field_colours[0]}};
+    }
+    
+    .gallery {
+        border: 7px solid {{theme.primary_colours[0]}};
+        float: left;
+        width: 200px;
+        background-color: {{theme.primary_colours[1]}};
+        color: {{theme.text_colours[2]}};
+        padding: 0;
+    }
+    
+    .gallery > a {
+        text-decoration: none;
+        color: {{theme.text_colours[2]}};
+    }
 
-	.gallery:hover {
-		border: 7px solid {{theme.primary_colours[2]}};
-		background-color: {{theme.primary_colours[2]}};
-	}
+    .gallery:hover {
+        border: 7px solid {{theme.primary_colours[2]}};
+        background-color: {{theme.primary_colours[2]}};
+    }
 
-	.gallery img {
-		width: 200px;
-		height: 300px;
-	}
+    .gallery img {
+        width: 200px;
+        height: 300px;
+    }
 
-	.gallery p {
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		overflow: hidden; 
-		text-align: center;
-	}
-	.gallery p.title {
-		font-size: 150%;
-		text-align: center;
+    .gallery p {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        text-align: center;
+    }
+    .gallery p.title {
+        font-size: 150%;
+        text-align: center;
 
-	}
+    }
 </style>
 
 
 <body>
 
-	<div class="topnav">
-		<a class="left logo" href="{{url_for('home')}}">Cinema</a>
-		<a class="left {{'active' if title == 'for you' else 'inactive'}}" href="{{url_for('foryou')}}">For You</a>
-		<a class="left {{'active' if title == 'popular' else 'inactive'}}" href="{{url_for('popular')}}">Popular</a>
-		<a class="left {{'active' if title == 'search' else 'inactive'}}" href="{{url_for('search')}}">Search</a>
-		<a class="right {{'active' if title == 'about us' else 'inactive'}}" href="404">About Us</a>
-		<a class="right {{'active' if title == 'login' else 'inactive'}}" href="{{url_for('login')}}">Login</a>
-	</div>
-
+    <div class="topnav">
+        <a class="left logo" href="{{url_for('home')}}">Cinema</a>
+        <a class="left {{'active' if title == 'for you' else 'inactive'}}" href="{{url_for('foryou')}}">For You</a>
+        <a class="left {{'active' if title == 'popular' else 'inactive'}}" href="{{url_for('popular')}}">Popular</a>
+        <a class="left {{'active' if title == 'search' else 'inactive'}}" href="{{url_for('search')}}">Search</a>
+        <a class="right {{'active' if title == 'about us' else 'inactive'}}" href="404">About Us</a>
+        {% if current_user.is_anonymous %}
+        <a class="right {{'active' if title == 'login' else 'inactive'}}" href="{{url_for('login')}}">Login</a>
+        
+        {% else %}
+        
+        <a class="right {{'active' if title == 'member' else 'inactive'}}" href="{{url_for('member')}}">Member</a>
+        <a class="right {{'active' if title == 'Booking' else 'inactive'}}" href="{{url_for('booking')}}">Buy Ticket</a>
+        <a class="right {{'active' if title == 'Logout' else 'inactive'}}" href="{{url_for('logout')}}">Logout</a>
+    </div>
+    {% endif %}
+    
     <main role="main" class="container">
-		<div class="row">
+        <div class="row">
             {% block content %}{% endblock %}
-		</div>
+        </div>
     </main>
 
      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>

@@ -13,7 +13,7 @@ from datetime import datetime, timedelta
 import random
 from random import randrange
 
-class Theme: 
+class Theme:
     def __init__(self, primary_colours, field_colours, text_colours, font):
         self.primary_colours = primary_colours
         self.field_colours = field_colours
@@ -64,41 +64,41 @@ movies = [
     }
 ]
 new_release = [
-	{
-		'director': 'Michael Bay',
-		'title' : 'new film',
-		'description' : 'Boom',
+    {
+        'director': 'Michael Bay',
+        'title' : 'new film',
+        'description' : 'Boom',
                 'id' : "925da9f",
                 'poster' : "https://freeclassicimages.com/images/99-Women-01-movie-poster.jpg"
-	},
-	{
-		'director': 'Guy Richie',
-		'title' : 'newer films',
-		'description' : 'A funny film',
+    },
+    {
+        'director': 'Guy Richie',
+        'title' : 'newer films',
+        'description' : 'A funny film',
                 'id' : "7faefe57",
                 'poster' : "https://freeclassicimages.com/images/99-Women-01-movie-poster.jpg"
-	}
+    }
 
 ]
 
 @app.route("/home")
 @login_required
 def home():
-    redirect(url_for('popular'))
+    return redirect(url_for('popular'))
 
 # Home page
 @app.route("/")
 @app.route("/popular")
 def popular():
-	# movies = sql query all movies and available sort by n of tickets sold
-	# new_releases = sql squery 8 newest movies and available
-	return render_template('popular.html', theme=get_user_theme(), title='popular' ,new=new_release,movies=movies)
+    # movies = sql query all movies and available sort by n of tickets sold
+    # new_releases = sql squery 8 newest movies and available
+    return render_template('popular.html', theme=get_user_theme(), title='popular' ,new=new_release,movies=movies)
 
 # For you page
 @app.route("/foryou")
 def foryou():
-	# based on genre?
-	return render_template('foryou.html', theme=get_user_theme(), title= 'for you' , movies=movies)
+    # based on genre?
+    return render_template('foryou.html', theme=get_user_theme(), title= 'for you' , movies=movies)
 
 # Search page
 @app.route("/search", methods=['GET','POST'])
@@ -131,7 +131,7 @@ def search():
 
 #  Individual movie details page
 @app.route("/movie/<movie_id>")
-def movie(movie_id):   
+def movie(movie_id):
     #for debugging
     random.seed(10)
 
@@ -147,7 +147,7 @@ def movie(movie_id):
     movie.movie_dates = []
 
     for i in range(100):
-        if bool(random.getrandbits(1)):  
+        if bool(random.getrandbits(1)):
             movie_date = MovieDate()
             movie_date.date = (datetime.today() + timedelta(days=i)).strftime("%m-%d")
             movie_date.screenings = []
@@ -159,14 +159,14 @@ def movie(movie_id):
                     movie_date.screenings.append(screening)
             if len(movie_date.screenings) > 0:
                 movie.movie_dates.append(movie_date)
-	
+    
 
     return render_template('movie.html', theme=get_user_theme(), movie=movie)
 
 # About cinema page - not yet implemented
 # @app.route("/about")
 # def about():
-# 	return render_template('about.html', title='about')
+#     return render_template('about.html', title='about')
 
 
 #Admin page
@@ -174,7 +174,7 @@ def movie(movie_id):
 @login_required
 def admin():
 
-	return render_template('admin.html')
+    return render_template('admin.html')
 
 
 @app.route('/signup', methods=['GET','POST'])
@@ -191,7 +191,7 @@ def signup():
         db.session.add(user)
         db.session.commit()
 
-		#not added the mail feature yet
+        #not added the mail feature yet
         #msg = Message('You have successfully created your account.', sender = 'yourId@gmail.com', recipients = [user.email])
         #msg.body = "Email from Cinema"
         #mail.send(msg)
@@ -277,7 +277,7 @@ def logout():
     
 @app.route('/member', methods=['GET', 'POST'])
 @login_required
-def mnember():
+def member():
 
     form = MemberForm()
 
@@ -290,7 +290,7 @@ def mnember():
         db.session.commit()
 
 
-    return render_template('member.html', form=form)
+    return render_template('member.html',theme=get_user_theme(),form=form)
     
     
 @app.route('/booking', methods=['GET', 'POST'])
@@ -305,7 +305,7 @@ def booking():
         db.session.add(booking)
         db.session.commit()
 
-    return render_template('booking.html', form=form)
+    return render_template('booking.html',theme=get_user_theme(),form=form)
 
     
 @app.route('/add-movie', methods=['GET', 'POST'])
@@ -313,12 +313,12 @@ def booking():
 def add_movie():
     form = MoviesForm()
     if form.validate_on_submit():
-    	addMovie = Movie(name=form.name.data, duration=form.duration.data,
-    	   genre=form.genre.data, certificate=form.certificate.data,
+        addMovie = Movie(name=form.name.data, duration=form.duration.data,
+           genre=form.genre.data, certificate=form.certificate.data,
            releaseDate=form.releaseDate.data, endDate=form.endDate.data)
 
-    	db.session.add(addMovie)
-    	db.session.commit()
+        db.session.add(addMovie)
+        db.session.commit()
     return render_template('addMovie.html', theme=get_user_theme(), form=form)
 
 @app.route("/seats/<screening_id>", methods=['GET','POST'])

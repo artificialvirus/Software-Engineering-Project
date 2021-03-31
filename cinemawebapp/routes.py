@@ -13,14 +13,14 @@ from datetime import datetime, timedelta
 import random
 from random import randrange
 
-class Theme: 
+class Theme:
     def __init__(self, primary_colours, field_colours, text_colours, font):
         self.primary_colours = primary_colours
         self.field_colours = field_colours
         self.text_colours = text_colours
         self.font = font
         self.font_size = "20px"
-        
+
 class DarkTheme(Theme):
     def __init__(self):
         super().__init__(
@@ -28,7 +28,7 @@ class DarkTheme(Theme):
             ("#380012", "#5c001f", "#8c0031"),
             ("#746da6", "#b7b2ff", "#ffffff"),
             "Calibri Body")
-        
+
 def get_user_theme(theme_str="default"):
     return DarkTheme()
 
@@ -106,7 +106,7 @@ def search():
     class Forms:
         pass
     forms = Forms();
-    
+
     if request.method == 'POST':
         forms.search_title = request.form.getlist('search_title')[0]
         forms.start_date = request.form.getlist('start_date')[0]
@@ -123,7 +123,7 @@ def search():
         forms.genres = []
 
     print(vars(forms))
-    
+
     more_movies = movies * 10;
 
     # movies = sql movies matching criteria
@@ -131,7 +131,7 @@ def search():
 
 #  Individual movie details page
 @app.route("/movie/<movie_id>")
-def movie(movie_id):   
+def movie(movie_id):
     #for debugging
     random.seed(10)
 
@@ -141,13 +141,13 @@ def movie(movie_id):
         pass
     class Screening:
         pass
-    
+
     movie = Movie()
     movie.title = "Film Title"
     movie.movie_dates = []
 
     for i in range(100):
-        if bool(random.getrandbits(1)):  
+        if bool(random.getrandbits(1)):
             movie_date = MovieDate()
             movie_date.date = (datetime.today() + timedelta(days=i)).strftime("%m-%d")
             movie_date.screenings = []
@@ -159,7 +159,7 @@ def movie(movie_id):
                     movie_date.screenings.append(screening)
             if len(movie_date.screenings) > 0:
                 movie.movie_dates.append(movie_date)
-	
+
 
     return render_template('movie.html', theme=get_user_theme(), movie=movie)
 
@@ -246,18 +246,18 @@ def add_movie():
 def seats(screening_id):
     if request.method == 'POST':
         print(request.form.getlist('seat_list'))
-    
+
     grid_width = 30
     grid_height = 10
-    
+
     grid = []
     for x in range(grid_width):
         row = []
         for y in range(grid_height):
             row.append(str(x) + "," + str(y))
         grid.append(row)
-        
-    
+
+
     #movies = Post.query.all()
     return render_template('seats.html', theme=get_user_theme(), width=grid_width, height=grid_height, grid=grid)
 
@@ -318,3 +318,36 @@ def ticket_download(ticket_code):
     response.headers['Content-Type'] = 'application/pdf'
     response.headers['Content-Disposition'] = 'inline; filename=ticket.pdf'
     return response
+
+@app.route("/ticket/email/<id>")
+@login_required
+def ticket_email(id):
+    booking = Booking.query.filter_by(id=id).first()
+    if not booking:
+        return render_template('ticket_not_found.html', theme=get_user_theme(), title='Invalid Ticket')
+
+    screening = Screen.query.filter_by(id=booking.screen_id).first()
+    if not screening:
+        return render_template('ticket_not_found.html', title='Invalid Ticket')
+
+    movie = Movies.query.filter_by(id=screening.movie_id).first()
+    if not movie:
+        return render_template('ticket_not_found.html', theme=get_user_theme(), title='Invalid Ticket')
+
+    ticket_id=booking.id
+    movie_title = movie.name
+    screening_date = screening.time
+    movie_duration = movie.duration
+    screen_number = screening.screen_number
+    seat_number = booking.seat_number
+    ticket_code = booking.ticket_code
+
+    user = User.query.filter_by(id=id).first()
+
+    message = Message(subject='Your Ticket', recipients=[user.email])
+    message.html = render_template('ticket_raw.html', title='Your Ticket',
+        movie_title=movie_title, screening_date=screening_date, movie_duration=movie_duration,
+        screen_number=screen_number, seat_number=seat_number, ticket_code=ticket_code)
+    mail.send(message)
+
+    redirect(url_for('popular'))

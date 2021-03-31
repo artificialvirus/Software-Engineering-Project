@@ -1,7 +1,7 @@
 from flask import render_template, flash, request, redirect, url_for, session, json, make_response
 from cinemawebapp import app
-from cinemawebapp.models import Member, Admin, User, Movie, Screen, Booking
-from .forms import SignUpForm, LoginForm, ResetPasswordRequestForm, AdminLoginForm, MoviesForm, BookingForm, PaymentForm
+from cinemawebapp.models import Member, Admins, User, Movie, Screen, Booking
+from .forms import SignUpForm, LoginForm, ResetPasswordRequestForm, AdminLoginForm, MoviesForm, BookingForm, MemberForm
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.urls import url_parse
 import logging
@@ -171,6 +171,7 @@ def movie(movie_id):
 
 #Admin page
 @app.route("/admin")
+@login_required
 def admin():
 
 	return render_template('admin.html')
@@ -221,6 +222,50 @@ def login():
     return render_template('login.html', theme=get_user_theme(), title='Sign In', form=form)
 
 
+@app.route('/admin-signup', methods=['GET','POST'])
+def adminsignup():
+    app.logger.info('Signup request route')
+    app.logger.debug('Debug level logging')
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
+    form = SignUpForm()
+    if form.validate_on_submit():
+        admin = Admins(username=form.username.data, email=form.email.data)
+        admin.set_password(form.password.data)
+
+        db.session.add(admin)
+        db.session.commit()
+
+        #msg = Message('You have successfully created your account.', sender = 'yourId@gmail.com', recipients = [user.email])
+        #msg.body = "Email from Cinema"
+        #mail.send(msg)
+
+        flash('Congratulations, you are now a registered Admin!')
+        return redirect(url_for('admin'))
+    return render_template('adminSignUp.html', title='Sign Up', form=form)
+    
+    
+@app.route('/admin-login', methods=['GET','POST'])
+def adminlogin():
+    app.logger.info('Login request route')
+    app.logger.debug('Debug level logging')
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
+    form = AdminLoginForm()
+    if form.validate_on_submit():
+        admin = Admins.query.filter_by(username=form.username.data).first()
+        if admin is None or not admin.check_password(form.password.data):
+            flash('Invalid username or password')
+            return redirect(url_for('adminlogin'))
+
+        login_user(admin, remember=True)
+        next_page = request.args.get('next')
+        if not next_page or url_parse(next_page).netloc != '':
+            next_page = url_for('admin')
+        return redirect(next_page)
+    return render_template('adminLogin.html', title='Sign In', form=form)
+
+
 @app.route('/logout')
 @login_required
 def logout():
@@ -228,7 +273,41 @@ def logout():
     app.logger.debug('Debug level logging')
     logout_user()
     return redirect(url_for('home'))
+    
+    
+@app.route('/member', methods=['GET', 'POST'])
+@login_required
+def mnember():
 
+    form = MemberForm()
+
+    if form.validate_on_submit():
+        payment = Member(phone=form.phone.data,date_of_birth=form.date_of_birth.data,
+        card_number=form.card_number.data,card_expiration_date=form.card_expiration_date.data,
+        card_cvv=form.card_cvv.data)
+
+        db.session.add(payment)
+        db.session.commit()
+
+
+    return render_template('member.html', form=form)
+    
+    
+@app.route('/booking', Methods=['GET', 'POST'])
+@login_required
+def booking():
+
+    form = BookingForm()
+
+    if form.validate_on_submit():
+        booking = Booking(seat_number=form.seatings.data)
+
+        db.session.add(booking)
+        db.session.commit()
+
+    return render_template('booking.html', form=form)
+
+    
 @app.route('/add-movie', methods=['GET', 'POST'])
 @login_required
 def add_movie():

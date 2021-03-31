@@ -40,32 +40,36 @@ login = LoginManager()
 login.login_view = 'login'
 login.init_app(app)
 
-from .models import  Member, User, Movie, Screen, Booking
+from .models import  Admins, Member, User, Movie, Screen, Booking
 
-#class CinemaModelView(ModelView):
+class CinemaModelView(ModelView):
 
-#    def is_accessible(self):
-#        return session.get('user') == 'admin'
+    def is_accessible(self):
+         if current_user.is_authenticated:
 
-#    def inaccessible_callback(self, name, **kwargs):
-#        if not self.is_accessible():
-#            return redirect(url_for('home', next=request.url))
+             id = current_user.get_id()
+             if id == '1':
+                 return True
+
+        #session.get('user') == 'Administrator'
+
+    def inaccessible_callback(self, name, **kwargs):
+        if not self.is_accessible():
+            return redirect(url_for('home', next=request.url))
 
 
 # Makes admin pages (database entries etc.)
 admin = Admin(app)
-admin.add_view(ModelView(User, db.session))
-admin.add_view(ModelView(Member, db.session))
-admin.add_view(ModelView(Movie, db.session))
-admin.add_view(ModelView(Screen, db.session))
-admin.add_view(ModelView(Booking, db.session))
+admin.add_view(CinemaModelView(User, db.session))
+admin.add_view(CinemaModelView(Member, db.session))
+admin.add_view(CinemaModelView(Movie, db.session))
+admin.add_view(CinemaModelView(Screen, db.session))
+admin.add_view(CinemaModelView(Booking, db.session))
 
-
-from .models import Admin, Member, User, Movie, Screen, Booking
 
 @app.before_first_request
 def create_tables():
-    from .models import Admin, Member, User, Movie, Screen, Booking
+    from .models import Admins, Member, User, Movie, Screen, Booking
     db.create_all()
 
 from cinemawebapp import routes, models

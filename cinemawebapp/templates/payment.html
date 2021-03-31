@@ -20,6 +20,13 @@
     width: 100%;
   }
   
+  .cash-button {
+    background-color: gray;
+    color: white;
+    padding: 16px 100px;
+    width: 100%;
+  }
+
   .form-popup {
     display: none;
   }
@@ -27,24 +34,23 @@
   .form-container input[type=text], .form-container input[type=password] {
     width: 100%;
     padding: 15px;
-    margin: 5px 0 22px 0;
+
     border: none;
-    background: #f1f1f1;
+    background: white;
   }
 
 .form-container input[type=text]:focus, .form-container input[type=password]:focus {
-  background-color: #ddd;
+  background-color: white;
   outline: none;
 }
 
 
 .form-container .btn {
-  background-color: #4CAF50;
+  background-color: green;
   color: white;
   padding: 16px 20px;
   width: 100%;
   margin-bottom:10px;
-  opacity: 0.8;
 }
 
 
@@ -56,6 +62,12 @@
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
+
+.h-layout{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
 </style>
 
     <article class="media content-section">
@@ -64,6 +76,9 @@
 
 
 
+            <div class="h-layout">
+
+              <div>
 
                 <button class="paypal-button" onclick="openPaypal()">Paypal</button><br><br>
 
@@ -102,14 +117,31 @@
                 </div>
 
 
-                <form action="javascript:history.back()"onclick="message()">      
-                  <input type="submit" value="Cash"/>
+                <form action="/home"onclick="message()">      
+                  <input type="submit" value="Cash"class="cash-button"/>
                 </form>
 
                 <form action="javascript:history.back()">      
                   <input type="submit" value="Go back"/>
                 </form>
 
+              </div>
+
+              <div>
+                
+                <p>tickets</p>
+                <p>VAT</p>
+                <p>Total</p>
+              </div>
+              <div>
+                <p>16.00</p>
+                <p>1.12</p>
+                <p>17.12</p>
+              </div>
+
+              
+
+            </div>
                 <script>
                 function openPaypal() {
                   document.getElementById("paypal").style.display = "block";

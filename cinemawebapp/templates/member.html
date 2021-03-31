@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1>Member Details</h1>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.phone.label }}<br>
+        {{ form.phone(size=32) }}<br>
+        {% for error in form.phone.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        {{ form.date_of_birth.label }}<br>
+        {{ form.date_of_birth(size=32) }}<br>
+        {% for error in form.date_of_birth.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        {{ form.card_type.label }}<br>
+        
+        {% for error in form.card_type.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
+      {{ form.card_number.label }}<br>
+      {{ form.card_number(size=32) }}<br>
+      {% for error in form.card_number.errors %}
+      <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+
+    <p>
+      {{ form.card_expiration_date.label }}<br>
+      {{ form.card_expiration_date(size=32) }}<br>
+      {% for error in form.card_expiration_date.errors %}
+      <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+
+    <p>
+      {{ form.card_cvv.label }}<br>
+      {{ form.card_cvv(size=32) }}<br>
+      {% for error in form.card_cvv.errors %}
+      <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+
+    <p><input type="Submit" class="btn btn-outline-info" value="Submit" href="{{url_for('home')}}">  </p>
+
+</form>
+
+{% endblock %}

@@ -2,7 +2,8 @@ from flask_wtf import FlaskForm
 from flask import request
 from wtforms import TextField, SubmitField, TextAreaField, PasswordField, StringField, SelectMultipleField, IntegerField, DateField
 from wtforms.validators import DataRequired, Required, Email, EqualTo, ValidationError, Length
-from .models import Member, User, Admin, Movie, Screen, Booking
+from .models import Member, User, Admins, Movie, Screen, Booking
+
 
 
 class SignUpForm(FlaskForm):
@@ -26,7 +27,6 @@ class SignUpForm(FlaskForm):
 
 class LoginForm(FlaskForm):
     username = StringField('username', validators = [DataRequired()])
-    email = StringField('Email', validators = [DataRequired(),Email()])
     password = PasswordField('password', validators = [DataRequired()])
     signin = SubmitField('Sign In')
 
@@ -34,6 +34,7 @@ class AdminLoginForm(FlaskForm):
     username = TextField('username', validators = [DataRequired()])
     email = StringField('Email', validators = [DataRequired(),Email()])
     password = PasswordField('password', validators = [DataRequired()])
+    signin = SubmitField('Sign In')
 
 class MoviesForm(FlaskForm):
     name = TextField('Movie Name', validators = [DataRequired()])
@@ -49,8 +50,10 @@ class MoviesForm(FlaskForm):
             raise ValidationError("End date must not be earlier than start date.")
 
 class BookingForm(FlaskForm):
+
+
     #movie_name = SelectMultipleField('Movie Name', choices=[('example movie')])
-    movie_name = TextField('Movie Name', validators = [DataRequired()])
+    movie_name = SelectMultipleField('Card Type', choices=[('movie1'), ('movie2')])
     #movie_date = SelectMultipleField('Movie Date', choices=[('example dates')])
     movie_date = DateField('Release Date', format='%Y-%m-%d')
     #screen_time = SelectMultipleField('Screen Time', choices=[('example times')])
@@ -59,10 +62,13 @@ class BookingForm(FlaskForm):
     #num_of_tickets = SelectMultipleField('Tickets', choices=[('1'), ('2'), ...])
     tickets = TextField('Tickets', validators = [DataRequired()])
 
-class PaymentForm(FlaskForm):
+class MemberForm(FlaskForm):
+    phone = TextField('Phone Number', validators = [DataRequired()])
+    date_of_birth = DateField('Date of Birth', validators=[DataRequired()])
     card_type = SelectMultipleField('Card Type', choices=[('MasterCard'), ('Visa')])
-    card_num = TextField('Card Number', validators=[DataRequired()])
-    card_sec_code = PasswordField('Security Number', validators=[DataRequired()])
+    card_number = TextField('Card Number', validators=[DataRequired()])
+    card_expiration_date = DateField('Expiration Date', validators=[DataRequired()])
+    card_cvv = PasswordField('Card CVV', validators=[DataRequired()])
 
 class ResetPasswordRequestForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])

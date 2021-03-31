@@ -347,7 +347,7 @@ def ticket_email(id):
     if not user:
         return render_template('ticket_not_found.html', theme=get_user_theme(), title='Invalid Ticket')
 
-    message = Message(subject='Your Ticket', recipients=['group39comp2913@gmail.com'])
+    message = Message(subject='Your Ticket', recipients=[user.email])
     message.html = render_template('ticket_raw.html', title='Your Ticket',
         movie_title=movie_title, screening_date=screening_date, movie_duration=movie_duration,
         screen_number=screen_number, seat_number=seat_number, ticket_code=ticket_code)

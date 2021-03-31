@@ -81,10 +81,9 @@ new_release = [
 
 ]
 
-@app.route("/home")
-@login_required
-def home():
-    return redirect(url_for('popular'))
+@app.route("/payment")	
+def payment():
+	return render_template('payment.html')
 
 # Home page
 @app.route("/")
@@ -397,3 +396,4 @@ def ticket_download(ticket_code):
     response.headers['Content-Type'] = 'application/pdf'
     response.headers['Content-Disposition'] = 'inline; filename=ticket.pdf'
     return response
+

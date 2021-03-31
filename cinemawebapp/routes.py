@@ -1,5 +1,5 @@
 from flask import render_template, flash, request, redirect, url_for, session, json, make_response
-from cinemawebapp import app
+from cinemawebapp import app, mail
 from cinemawebapp.models import Member, Admin, User, Movie, Screen, Booking
 from .forms import SignUpForm, LoginForm, ResetPasswordRequestForm, AdminLoginForm, MoviesForm, BookingForm, PaymentForm
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -275,7 +275,6 @@ def ticket(id):
     if not movie:
         return render_template('ticket_not_found.html', theme=get_user_theme(), title='Invalid Ticket')
 
-    ticket_id=booking.id
     movie_title = movie.name
     screening_date = screening.time
     movie_duration = movie.duration
@@ -301,7 +300,6 @@ def ticket_download(ticket_code):
     if not movie:
         return render_template('ticket_not_found.html', theme=get_user_theme(), title='Invalid Ticket')
 
-    ticket_id=booking.id
     movie_title = movie.name
     screening_date = screening.time
     movie_duration = movie.duration
@@ -320,7 +318,7 @@ def ticket_download(ticket_code):
     return response
 
 @app.route("/ticket/email/<id>")
-@login_required
+#@login_required
 def ticket_email(id):
     booking = Booking.query.filter_by(id=id).first()
     if not booking:
@@ -334,7 +332,6 @@ def ticket_email(id):
     if not movie:
         return render_template('ticket_not_found.html', theme=get_user_theme(), title='Invalid Ticket')
 
-    ticket_id=booking.id
     movie_title = movie.name
     screening_date = screening.time
     movie_duration = movie.duration
@@ -350,10 +347,10 @@ def ticket_email(id):
     if not user:
         return render_template('ticket_not_found.html', theme=get_user_theme(), title='Invalid Ticket')
 
-    message = Message(subject='Your Ticket', recipients=[user.email])
+    message = Message(subject='Your Ticket', recipients=['group39comp2913@gmail.com'])
     message.html = render_template('ticket_raw.html', title='Your Ticket',
         movie_title=movie_title, screening_date=screening_date, movie_duration=movie_duration,
         screen_number=screen_number, seat_number=seat_number, ticket_code=ticket_code)
     mail.send(message)
 
-    redirect(url_for('popular'))
+    return redirect(url_for('popular'))

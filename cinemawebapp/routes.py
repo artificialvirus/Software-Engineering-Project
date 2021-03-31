@@ -293,7 +293,7 @@ def mnember():
     return render_template('member.html', form=form)
     
     
-@app.route('/booking', Methods=['GET', 'POST'])
+@app.route('/booking', methods=['GET', 'POST'])
 @login_required
 def booking():
 

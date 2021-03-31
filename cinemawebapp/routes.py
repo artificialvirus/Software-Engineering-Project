@@ -342,7 +342,13 @@ def ticket_email(id):
     seat_number = booking.seat_number
     ticket_code = booking.ticket_code
 
-    user = User.query.filter_by(id=id).first()
+    member = Member.query.filter_by(id=booking.member_id).first()
+    if not member:
+        return render_template('ticket_not_found.html', theme=get_user_theme(), title='Invalid Ticket')
+
+    user = User.query.filter_by(id=member.user_id).first()
+    if not user:
+        return render_template('ticket_not_found.html', theme=get_user_theme(), title='Invalid Ticket')
 
     message = Message(subject='Your Ticket', recipients=[user.email])
     message.html = render_template('ticket_raw.html', title='Your Ticket',

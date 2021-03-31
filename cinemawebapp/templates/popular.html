@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+<div>
+	<div style="display: inline-block;">
+	<h2>New releases</h2>
+	{% for movie in new %}
+
+			<div class="gallery">
+				<a href="{{ url_for('movie', movie_id=movie.id)}}">
+					<img src="{{movie.poster}}" alt="Cinque Terre" width="600" height="400">
+					<p class="title">{{movie.title}}</p>
+					<p>Description</p>
+				</a>
+			</div>
+
+	{% endfor %}
+	</div>
+	<br><br>
+	
+	<div style="display: inline-block;">
+	<h2>Trending</h2>
+	{% for movie in movies %}
+	
+			<div class="gallery">
+				<a href="{{ url_for('movie', movie_id=movie.id)}}">
+					<img src="{{movie.poster}}" alt="Cinque Terre" width="600" height="400">
+					<p class="title">{{movie.title}}</p>
+					<p>Description</p>
+				</a>
+			</div>
+
+	{% endfor %}
+	<div>
+</div>
+{% endblock content %}

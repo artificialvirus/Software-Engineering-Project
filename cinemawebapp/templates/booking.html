@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1>Booking</h1>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.movie_name.label }}<br>
+    
+        {% for error in form.movie_name.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        {{ form.movie_date.label }}<br>
+        {{ form.movie_date(size=32) }}<br>
+        {% for error in form.movie_date.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        {{ form.screen_time.label }}<br>
+        {{ form.screen_time(size=32) }}<br>
+        {% for error in form.screen_time.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
+      {{ form.seatings.label }}<br>
+  
+      {% for error in form.seatings.errors %}
+      <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+
+    <p>
+      {{ form.tickets.label }}<br>
+      {{ form.tickets(size=32) }}<br>
+      {% for error in form.tickets.errors %}
+      <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+
+
+    <p><input type="Buy" class="btn btn-outline-info" value="Submit" href="{{url_for('home')}}">  </p>
+
+</form>
+
+{% endblock %}

@@ -1,6 +1,7 @@
-
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_admin import Admin
+from flask_admin.contrib.sqla import ModelView
 from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_mail import Mail, Message
@@ -11,9 +12,10 @@ from logging.handlers import SMTPHandler
 
 import os
 
-
+from flask_qrcode import QRcode
 
 app = Flask(__name__)
+qrcode = QRcode(app)
 
 app.config.from_pyfile("config.py")
 
@@ -35,14 +37,39 @@ logging.basicConfig(filename= 'debug.log', level=logging.DEBUG, format=f'%(ascti
 
 login = LoginManager()
 #We need to make login page to use this
-#login.login_view = ''
+login.login_view = 'login'
 login.init_app(app)
 
-from .models import Admin, Member, Guest, Movies, Screening, Payment
+from .models import  Admins, Member, User, Movie, Screen, Booking
+
+class CinemaModelView(ModelView):
+
+    def is_accessible(self):
+         if current_user.is_authenticated:
+
+             id = current_user.get_id()
+             if id == '1':
+                 return True
+
+        #session.get('user') == 'Administrator'
+
+    def inaccessible_callback(self, name, **kwargs):
+        if not self.is_accessible():
+            return redirect(url_for('home', next=request.url))
+
+
+# Makes admin pages (database entries etc.)
+admin = Admin(app)
+admin.add_view(CinemaModelView(User, db.session))
+admin.add_view(CinemaModelView(Member, db.session))
+admin.add_view(CinemaModelView(Movie, db.session))
+admin.add_view(CinemaModelView(Screen, db.session))
+admin.add_view(CinemaModelView(Booking, db.session))
+
 
 @app.before_first_request
 def create_tables():
-    from .models import Admin, Member, Guest, Movies, Screening, Payment
+    from .models import Admins, Member, User, Movie, Screen, Booking
     db.create_all()
 
 from cinemawebapp import routes, models

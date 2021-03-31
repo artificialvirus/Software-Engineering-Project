@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1>Add Movie</h1>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.name.label }}<br>
+        {{ form.name(size=32) }}<br>
+        {% for error in form.name.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        {{ form.duration.label }}<br>
+        {{ form.duration(size=32) }}<br>
+        {% for error in form.duration.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        {{ form.genre.label }}<br>
+        {{ form.genre(size=32) }}<br>
+        {% for error in form.genre.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
+      {{ form.certificate.label }}<br>
+      {{ form.certificate(size=32) }}<br>
+      {% for error in form.certificate.errors %}
+      <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+
+    <p>
+      {{ form.releaseDate.label }}<br>
+      {{ form.releaseDate(size=32) }}<br>
+      {% for error in form.releaseDate.errors %}
+      <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+
+    <p>
+      {{ form.endDate.label }}<br>
+      {{ form.endDate(size=32) }}<br>
+      {% for error in form.endDate.errors %}
+      <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+
+    <p><input type="submit" class="btn btn-outline-info" value="Submit" href="{{url_for('home')}}">  </p>
+
+</form>
+
+{% endblock %}

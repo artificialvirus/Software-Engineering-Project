@@ -136,9 +136,9 @@
         <a class="right {{'active' if title == 'member' else 'inactive'}}" href="{{url_for('member')}}">Member</a>
         <a class="right {{'active' if title == 'Booking' else 'inactive'}}" href="{{url_for('booking')}}">Buy Ticket</a>
         <a class="right {{'active' if title == 'Logout' else 'inactive'}}" href="{{url_for('logout')}}">Logout</a>
-    </div>
     {% endif %}
-    
+    </div>
+
     <main role="main" class="container">
         <div class="row">
             {% block content %}{% endblock %}

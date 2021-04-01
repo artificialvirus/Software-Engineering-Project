@@ -81,12 +81,16 @@ new_release = [
 
 ]
 
+# Home page
+@app.route("/")
+@app.route("/home")
+def home():
+    return redirect(url_for('popular'))
+
 @app.route("/payment")	
 def payment():
 	return render_template('payment.html')
-
-# Home page
-@app.route("/")
+    
 @app.route("/popular")
 def popular():
     # movies = sql query all movies and available sort by n of tickets sold

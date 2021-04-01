@@ -623,3 +623,45 @@
 2021-03-12 14:33:39,043 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 14:33:39] "[33mGET /scripts HTTP/1.1[0m" 404 -
 2021-03-12 14:33:42,982 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 14:33:42] "[37mGET /seats HTTP/1.1[0m" 200 -
 2021-03-12 14:33:47,062 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 14:33:47] "[37mPOST /seats HTTP/1.1[0m" 200 -
+2021-04-01 14:00:51,558 INFO werkzeug Thread-3 : 127.0.0.1 - - [01/Apr/2021 14:00:51] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-04-01 14:00:51,936 INFO werkzeug Thread-4 : 127.0.0.1 - - [01/Apr/2021 14:00:51] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-04-01 14:00:51,937 INFO werkzeug Thread-5 : 127.0.0.1 - - [01/Apr/2021 14:00:51] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-04-01 14:00:51,938 INFO werkzeug Thread-6 : 127.0.0.1 - - [01/Apr/2021 14:00:51] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-04-01 14:00:52,035 INFO werkzeug Thread-7 : 127.0.0.1 - - [01/Apr/2021 14:00:52] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-04-01 14:00:52,041 INFO werkzeug Thread-8 : 127.0.0.1 - - [01/Apr/2021 14:00:52] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-04-01 14:00:52,056 INFO werkzeug Thread-9 : 127.0.0.1 - - [01/Apr/2021 14:00:52] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-04-01 14:05:22,331 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\Student\\Desktop\\pybox\\software-engineering-project-comp2913\\cinemawebapp\\routes.py', reloading
+2021-04-01 14:05:22,402 INFO werkzeug MainThread :  * Restarting with stat
+2021-04-01 14:05:28,921 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\Student\\Desktop\\pybox\\software-engineering-project-comp2913\\cinemawebapp\\routes.py', reloading
+2021-04-01 14:05:28,992 INFO werkzeug MainThread :  * Restarting with stat
+2021-04-01 14:05:56,278 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\Student\\Desktop\\pybox\\software-engineering-project-comp2913\\cinemawebapp\\routes.py', reloading
+2021-04-01 14:05:56,355 INFO werkzeug MainThread :  * Restarting with stat
+2021-04-01 14:05:57,776 INFO werkzeug Thread-3 : 127.0.0.1 - - [01/Apr/2021 14:05:57] "[32mGET / HTTP/1.1[0m" 302 -
+2021-04-01 14:05:57,795 INFO werkzeug Thread-4 : 127.0.0.1 - - [01/Apr/2021 14:05:57] "[37mGET /popular HTTP/1.1[0m" 200 -
+2021-04-01 14:06:16,758 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\Student\\Desktop\\pybox\\software-engineering-project-comp2913\\cinemawebapp\\routes.py', reloading
+2021-04-01 14:06:16,818 INFO werkzeug MainThread :  * Restarting with stat
+2021-04-01 14:06:37,575 INFO werkzeug Thread-3 : 127.0.0.1 - - [01/Apr/2021 14:06:37] "[37mGET /popular HTTP/1.1[0m" 200 -
+2021-04-01 14:06:38,636 INFO werkzeug Thread-4 : 127.0.0.1 - - [01/Apr/2021 14:06:38] "[37mGET /search HTTP/1.1[0m" 200 -
+2021-04-01 14:06:39,380 INFO werkzeug Thread-5 : 127.0.0.1 - - [01/Apr/2021 14:06:39] "[37mGET /movie/f3b05c50 HTTP/1.1[0m" 200 -
+2021-04-01 14:06:41,915 INFO werkzeug Thread-6 : 127.0.0.1 - - [01/Apr/2021 14:06:41] "[37mGET /seats/a5849e62 HTTP/1.1[0m" 200 -
+2021-04-01 14:06:43,585 INFO werkzeug Thread-7 : 127.0.0.1 - - [01/Apr/2021 14:06:43] "[37mPOST /seats/a5849e62 HTTP/1.1[0m" 200 -
+2021-04-01 14:06:44,487 INFO werkzeug Thread-8 : 127.0.0.1 - - [01/Apr/2021 14:06:44] "[37mPOST /seats/a5849e62 HTTP/1.1[0m" 200 -
+2021-04-01 14:06:45,748 INFO werkzeug Thread-9 : 127.0.0.1 - - [01/Apr/2021 14:06:45] "[37mGET /seats/404 HTTP/1.1[0m" 200 -
+2021-04-01 14:06:46,822 INFO werkzeug Thread-10 : 127.0.0.1 - - [01/Apr/2021 14:06:46] "[37mGET /seats/404 HTTP/1.1[0m" 200 -
+2021-04-01 14:06:47,301 INFO cinemawebapp Thread-11 : Login request route
+2021-04-01 14:06:47,301 DEBUG cinemawebapp Thread-11 : Debug level logging
+2021-04-01 14:06:47,308 INFO werkzeug Thread-11 : 127.0.0.1 - - [01/Apr/2021 14:06:47] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-04-01 14:06:48,910 INFO werkzeug Thread-12 : 127.0.0.1 - - [01/Apr/2021 14:06:48] "[37mGET /search HTTP/1.1[0m" 200 -
+2021-04-01 14:06:49,357 INFO werkzeug Thread-13 : 127.0.0.1 - - [01/Apr/2021 14:06:49] "[37mGET /popular HTTP/1.1[0m" 200 -
+2021-04-01 14:06:49,716 INFO werkzeug Thread-14 : 127.0.0.1 - - [01/Apr/2021 14:06:49] "[37mGET /foryou HTTP/1.1[0m" 200 -
+2021-04-01 14:06:50,108 INFO werkzeug Thread-15 : 127.0.0.1 - - [01/Apr/2021 14:06:50] "[32mGET /home HTTP/1.1[0m" 302 -
+2021-04-01 14:06:50,113 INFO werkzeug Thread-16 : 127.0.0.1 - - [01/Apr/2021 14:06:50] "[37mGET /popular HTTP/1.1[0m" 200 -
+2021-04-01 14:06:52,370 INFO werkzeug Thread-17 : 127.0.0.1 - - [01/Apr/2021 14:06:52] "[32mGET /admin HTTP/1.1[0m" 308 -
+2021-04-01 14:06:52,434 INFO werkzeug Thread-18 : 127.0.0.1 - - [01/Apr/2021 14:06:52] "[35m[1mGET /admin/ HTTP/1.1[0m" 500 -
+2021-04-01 14:06:52,783 INFO werkzeug Thread-21 : 127.0.0.1 - - [01/Apr/2021 14:06:52] "[37mGET /admin/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-04-01 14:06:52,783 INFO werkzeug Thread-20 : 127.0.0.1 - - [01/Apr/2021 14:06:52] "[37mGET /admin/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-04-01 14:06:52,783 INFO werkzeug Thread-19 : 127.0.0.1 - - [01/Apr/2021 14:06:52] "[37mGET /admin/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-04-01 14:06:52,844 INFO werkzeug Thread-22 : 127.0.0.1 - - [01/Apr/2021 14:06:52] "[37mGET /admin/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-04-01 14:06:52,852 INFO werkzeug Thread-23 : 127.0.0.1 - - [01/Apr/2021 14:06:52] "[37mGET /admin/?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-04-01 14:06:52,863 INFO werkzeug Thread-24 : 127.0.0.1 - - [01/Apr/2021 14:06:52] "[37mGET /admin/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-04-01 14:07:08,051 INFO werkzeug Thread-25 : 127.0.0.1 - - [01/Apr/2021 14:07:08] "[37mGET /popular HTTP/1.1[0m" 200 -

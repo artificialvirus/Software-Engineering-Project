@@ -40,6 +40,7 @@ class MoviesForm(FlaskForm):
     name = TextField('Movie Name', validators = [DataRequired()])
     duration = TextField('Movie Duration', validators = [DataRequired()])
     genre = TextField('Movie Genre', validators = [DataRequired()])
+    description = TextField('Description', validators = [DataRequired()])
     certificate = TextField('Certificate', validators = [DataRequired()])
     releaseDate = DateField('Release Date', format='%Y/%m/%d')
     endDate = DateField('End Date', format='%Y/%m/%d')

@@ -9,6 +9,8 @@ from flask_mail import Mail, Message
 from flask_login import login_user, logout_user, login_required, current_user
 from cinemawebapp import db, models
 from datetime import datetime, timedelta
+from sqlalchemy import desc
+
  #for debugging
 import random
 from random import randrange
@@ -32,55 +34,6 @@ class DarkTheme(Theme):
 def get_user_theme(theme_str="default"):
     return DarkTheme()
 
-# Sample movie data
-movies = [
-    {
-        'director': 'Michael Bay',
-        'title' : '20 Million Miles To Earth',
-        'description' : 'Boom',
-        'id' : "f3b05c50",
-        'poster' : "https://freeclassicimages.com/images/20-Million-Miles-To-Earth-07-movie-poster.jpg"
-    },
-    {
-        'director': 'Guy Richie',
-        'title' : '99 Women',
-        'description' : 'A funny film',
-        'id' : "2c917f21",
-        'poster' : "https://freeclassicimages.com/images/99-Women-01-movie-poster.jpg"
-    },
-    {
-        'director': 'Guy Richie',
-        'title' : '20th century',
-        'description' : 'A funny film',
-        'id' : "2c917f21",
-        'poster' : "https://freeclassicimages.com/images/20th-century-1934-movie-poster.jpg"
-    },
-    {
-        'director': 'Guy Richie',
-        'title' : '13 Rue Madeleine',
-        'description' : 'A funny film',
-        'id' : "2c917f21",
-        'poster' : "https://freeclassicimages.com/images/13-rue-madeleine-1946-movie-poster.jpg"
-    }
-]
-new_release = [
-    {
-        'director': 'Michael Bay',
-        'title' : 'new film',
-        'description' : 'Boom',
-                'id' : "925da9f",
-                'poster' : "https://freeclassicimages.com/images/99-Women-01-movie-poster.jpg"
-    },
-    {
-        'director': 'Guy Richie',
-        'title' : 'newer films',
-        'description' : 'A funny film',
-                'id' : "7faefe57",
-                'poster' : "https://freeclassicimages.com/images/99-Women-01-movie-poster.jpg"
-    }
-
-]
-
 # Home page
 @app.route("/")
 @app.route("/home")
@@ -93,14 +46,15 @@ def payment():
     
 @app.route("/popular")
 def popular():
-    # movies = sql query all movies and available sort by n of tickets sold
-    # new_releases = sql squery 8 newest movies and available
+    movies = Movie.query.all()
+    new_release = Movie.query.order_by( desc("releaseDate")).limit(10)
     return render_template('popular.html', theme=get_user_theme(), title='popular' ,new=new_release,movies=movies)
 
 # For you page
 @app.route("/foryou")
 def foryou():
     # based on genre?
+    movies = Movie.query.all()
     return render_template('foryou.html', theme=get_user_theme(), title= 'for you' , movies=movies)
 
 # Search page
@@ -127,6 +81,7 @@ def search():
 
     print(vars(forms))
     
+    movies = Movie.query.all()
     more_movies = movies * 10;
 
     # movies = sql movies matching criteria
@@ -138,15 +93,15 @@ def movie(movie_id):
     #for debugging
     random.seed(10)
 
-    class Movie:
-        pass
+    # class Movie:
+    #     pass
     class MovieDate:
         pass
     class Screening:
         pass
     
-    movie = Movie()
-    movie.title = "Film Title"
+    movie = Movie.query.filter_by(id=movie_id).first()
+    movie_title = movie.name
     movie.movie_dates = []
 
     for i in range(100):

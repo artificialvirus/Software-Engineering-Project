@@ -127,6 +127,7 @@ class Movie(db.Model):
     name = db.Column(db.String(150))
     duration = db.Column(db.String(150))
     genre = db.Column(db.String(150))
+    description = db.Column(db.String(500))
     certificate = db.Column(db.String(150))
     releaseDate = db.Column(db.DateTime)
     #movie end date can be set so movie can be removed from the list

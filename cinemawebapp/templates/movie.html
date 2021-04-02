@@ -69,16 +69,19 @@
 <div class="cont">
 	<br>
 	<div>
-	<h1><center>Film Title</center></h1>
+	<h1><center>{{movie.name}}</center></h1>
 	</div>
 	<br>
 
 	<div class="XtopLeft">	
-		<h2>metadata</h2>
+		<h2>{{movie.genre}}</h2>
+		<h2>{{movie.duration}}</h2>
+		<h2>{{movie.certificate}}</h2>
+		<h2>{{movie.releaseDate}}</h2>
 	</div>
 
 	<div class="XtopRight">	
-		<h2>description</h2>
+		<h2>{{movie.description}}</h2>
 	</div>
 	
 	<div class="Xbottom">
@@ -111,5 +114,6 @@
 	</div>
 
 </div>
+
 
 {% endblock %}

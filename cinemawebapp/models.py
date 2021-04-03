@@ -114,6 +114,7 @@ class Booking(db.Model):
     __tablename__ = 'booking'
     id = db.Column(db.Integer, primary_key=True)
     seat_number = db.Column(db.Integer())
+    ticket_code = db.Column(db.String(255))
     #multiple bookings
     #tickets = db.Column(db.Integer())
     member_id = db.Column(db.Integer, db.ForeignKey('member.id'))

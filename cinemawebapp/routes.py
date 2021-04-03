@@ -1,4 +1,4 @@
-from flask import render_template, flash, request, redirect, url_for, session, json, make_response
+from flask import g, render_template, flash, request, redirect, url_for, session, json, make_response
 from cinemawebapp import app
 from cinemawebapp.models import Member, Admins, User, Movie, Screen, Booking
 from .forms import SignUpForm, LoginForm, ResetPasswordRequestForm, AdminLoginForm, MoviesForm, BookingForm, MemberForm
@@ -22,7 +22,7 @@ class Theme:
         self.text_colours = text_colours
         self.font = font
         self.font_size = "20px"
-        
+
 class DarkTheme(Theme):
     def __init__(self):
         super().__init__(
@@ -30,7 +30,7 @@ class DarkTheme(Theme):
             ("#380012", "#5c001f", "#8c0031"),
             ("#746da6", "#b7b2ff", "#ffffff"),
             "Calibri Body")
-        
+
 def get_user_theme(theme_str="default"):
     return DarkTheme()
 
@@ -40,10 +40,10 @@ def get_user_theme(theme_str="default"):
 def home():
     return redirect(url_for('popular'))
 
-@app.route("/payment")	
+@app.route("/payment")
 def payment():
 	return render_template('payment.html')
-    
+
 @app.route("/popular")
 def popular():
     movies = Movie.query.all()
@@ -63,7 +63,7 @@ def search():
     class Forms:
         pass
     forms = Forms();
-    
+
     if request.method == 'POST':
         forms.search_title = request.form.getlist('search_title')[0]
         forms.start_date = request.form.getlist('start_date')[0]
@@ -80,7 +80,7 @@ def search():
         forms.genres = []
 
     print(vars(forms))
-    
+
     movies = Movie.query.all()
     more_movies = movies * 10;
 
@@ -99,25 +99,27 @@ def movie(movie_id):
         pass
     class Screening:
         pass
-    
-    movie = Movie.query.filter_by(id=movie_id).first()
-    movie_title = movie.name
-    movie.movie_dates = []
 
-    for i in range(100):
-        if bool(random.getrandbits(1)):
-            movie_date = MovieDate()
-            movie_date.date = (datetime.today() + timedelta(days=i)).strftime("%m-%d")
-            movie_date.screenings = []
-            for j in range(7, 22, 4):
-                if bool(random.getrandbits(1)):
-                    screening = Screening();
-                    screening.time = (datetime.now().replace(hour=j, minute=randrange(0, 60, 5))).strftime("%H:%M")
-                    screening.id = "a5849e62"
-                    movie_date.screenings.append(screening)
-            if len(movie_date.screenings) > 0:
-                movie.movie_dates.append(movie_date)
-    
+    movie = Movie.query.filter_by(id=movie_id).first()
+    if not movie:
+        return redirect(url_for('popular.html'))
+
+    screenings = Screen.query.filter_by(movie_id=movie_id)
+    if not screenings:
+        return redirect(url_for('popular.html'))
+
+    movie.movie_dates = []
+    for i in range(screenings.count()):
+        movie_date = MovieDate()
+        movie_date.date = screenings[i].screen_time.date()
+        movie_date.screenings = []
+        for j in range(screenings.count()):
+            if screenings[i].screen_time.date() == screenings[j].screen_time.date():
+                screening = Screening()
+                screening.time = screenings[i].screen_time.time()
+                screening.id = screenings[i].id
+                movie_date.screenings.append(screening)
+        movie.movie_dates.append(movie_date)
 
     return render_template('movie.html', theme=get_user_theme(), movie=movie)
 
@@ -131,7 +133,6 @@ def movie(movie_id):
 @app.route("/admin")
 @login_required
 def admin():
-
     return render_template('admin.html')
 
 
@@ -201,8 +202,8 @@ def adminsignup():
         flash('Congratulations, you are now a registered Admin!')
         return redirect(url_for('admin'))
     return render_template('adminSignUp.html', title='Sign Up', form=form)
-    
-    
+
+
 @app.route('/admin-login', methods=['GET','POST'])
 def adminlogin():
     app.logger.info('Login request route')
@@ -231,8 +232,8 @@ def logout():
     app.logger.debug('Debug level logging')
     logout_user()
     return redirect(url_for('home'))
-    
-    
+
+
 @app.route('/member', methods=['GET', 'POST'])
 @login_required
 def member():
@@ -249,8 +250,8 @@ def member():
 
 
     return render_template('member.html',theme=get_user_theme(),form=form)
-    
-    
+
+
 @app.route('/booking', methods=['GET', 'POST'])
 @login_required
 def booking():
@@ -265,7 +266,7 @@ def booking():
 
     return render_template('booking.html',theme=get_user_theme(),form=form)
 
-    
+
 @app.route('/add-movie', methods=['GET', 'POST'])
 @login_required
 def add_movie():
@@ -283,18 +284,20 @@ def add_movie():
 def seats(screening_id):
     if request.method == 'POST':
         print(request.form.getlist('seat_list'))
-    
+
     grid_width = 30
     grid_height = 10
-    
+
     grid = []
     for x in range(grid_width):
         row = []
         for y in range(grid_height):
             row.append(str(x) + "," + str(y))
         grid.append(row)
-        
-    
+
+    screening = Screen.query.filter_by(id=screening_id).first()
+    g.movie_id = screening.movie_id
+
     #movies = Post.query.all()
     return render_template('seats.html', theme=get_user_theme(), width=grid_width, height=grid_height, grid=grid)
 
@@ -355,4 +358,3 @@ def ticket_download(ticket_code):
     response.headers['Content-Type'] = 'application/pdf'
     response.headers['Content-Disposition'] = 'inline; filename=ticket.pdf'
     return response
-

@@ -22,32 +22,32 @@
 			align-content: center;
 			justify-content: center;
         }
-		
+
 		input[type=checkbox] + label {
             background: {{theme.field_colours[2]}};
             border: 4px solid {{theme.primary_colours[2]}};
-		} 
-		
+		}
+
 		input[type=checkbox]:hover + label {
 			background: {{theme.field_colours[1]}};
 		}
-		
+
 		input[type=checkbox]:checked + label {
 			background: {{theme.field_colours[0]}};
 		}
-		
+
 		input[type=checkbox]:active + label {
 			background: {{theme.field_colours[0]}};
-		}	
-		
+		}
+
     </style>
-	
+
 	<script>
 		var current_seat;
 		var adult_count = 0;
 		var child_count = 0;
 		var elderly_count = 0;
-		
+
 		function select_seat(e) {
 			var selector = document.getElementById('res_type');
 			for (var opt, i = 0; opt = selector.options[i]; i++) {
@@ -55,7 +55,7 @@
 					selector.selectedIndex = i;
 					break;
 				}
-			}	
+			}
 			if(e.checked){
 				current_seat = e;
 				document.getElementById('debug_log').innerHTML = "seat[" + e.id + "]";
@@ -63,12 +63,12 @@
 			}
 			else {
 				current_seat = null;
-				document.getElementById('debug_log').innerHTML = "___";			
+				document.getElementById('debug_log').innerHTML = "___";
 				update_res_type_count(e.value, -1);
 			}
 			update_status();
 		}
-		
+
 		function update_res_type_count(type, num){
 			switch(type) {
 			case "Adult": 	adult_count += num; 	break;
@@ -76,7 +76,7 @@
 			case "Elder":	elderly_count += num;	break;
 			}
 		}
-		
+
 		function update_status(){
 			document.getElementById('status').innerHTML = "be got";
 			var status = document.getElementById('status');
@@ -88,18 +88,18 @@
 				status.innerHTML = "No seats selected";
 			}
 		}
-		
+
 		function update_res_type(selector) {
-			if(current_seat != null){			
+			if(current_seat != null){
 				update_res_type_count(current_seat.value, -1);
 				update_res_type_count(selector.value, 1);
 				update_status();
-				
+
 				current_seat.value = selector.value;
 				document.getElementById('debug_log').innerHTML = selector.value;
 			}
 		}
-		
+
 		function format_form_data() {
 			var seat_list = document.getElementsByName("seat_list");
 			for (var i = 0; i < seat_list.length; i++) {
@@ -108,19 +108,19 @@
 		}
 	</script>
 
-    <form action="" method="post" onsubmit="format_form_data()">
+    <form action="/payment/{{ g.screening_id }}-{{}}" method="post" onsubmit="format_form_data()">
         <p class="base">Select Seats</p><br>
 		<p id="debug_log" hidden>___</p>
 
         <div class="seat_grid">
-			{%for y in range(0, height)%} 
-				{%for x in range(0, width)%} 
+			{%for y in range(0, height)%}
+				{%for x in range(0, width)%}
 					<input type="checkbox" name="seat_list" id="{{grid[x][y]}}" hidden onclick="select_seat(this)" value="Adult"/>
 					<label for="{{grid[x][y]}}"></label>
 				{%endfor%}
-			{%endfor%} 
+			{%endfor%}
         </div>
-		
+
 		<div class="base">
 		<label for="res_type">Reservation Type:&nbsp;</label>
 		<select name="res_type" id="res_type" onchange="update_res_type(this)">
@@ -129,10 +129,10 @@
 		  <option value="Elder">Elder</option>
 		</select>
 		</div>
-		
+
 		<br>
         <p id="status" class="base">No seats selected</p>
-		
+
 		<br>
 		<div class="base">
         <input type="submit" class="base" value="Purchase">

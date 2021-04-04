@@ -1,5 +1,5 @@
 from flask import g, render_template, flash, request, redirect, url_for, session, json, make_response
-from cinemawebapp import app
+from cinemawebapp import app, mail
 from cinemawebapp.models import Member, Admins, User, Movie, Screen, Booking
 from .forms import SignUpForm, LoginForm, ResetPasswordRequestForm, AdminLoginForm, MoviesForm, BookingForm, MemberForm
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -40,9 +40,10 @@ def get_user_theme(theme_str="default"):
 def home():
     return redirect(url_for('popular'))
 
-@app.route("/payment")
-def payment():
-	return render_template('payment.html')
+@app.route("/payment/<screening_id>-<seats>")
+def payment(screening_id, seats):        
+
+	return render_template('payment.html', theme=get_user_theme(), booking_id=1)
 
 @app.route("/popular")
 def popular():
@@ -296,7 +297,10 @@ def seats(screening_id):
         grid.append(row)
 
     screening = Screen.query.filter_by(id=screening_id).first()
+    if not screening:
+        return redirect(url_for('popular'))
     g.movie_id = screening.movie_id
+    g.screening_id = screening.id
 
     #movies = Post.query.all()
     return render_template('seats.html', theme=get_user_theme(), width=grid_width, height=grid_height, grid=grid)
@@ -311,13 +315,13 @@ def ticket(id):
     if not screening:
         return render_template('ticket_not_found.html', theme=get_user_theme(), title='Invalid Ticket')
 
-    movie = Movies.query.filter_by(id=screening.movie_id).first()
+    movie = Movie.query.filter_by(id=screening.movie_id).first()
     if not movie:
         return render_template('ticket_not_found.html', theme=get_user_theme(), title='Invalid Ticket')
 
     ticket_id=booking.id
     movie_title = movie.name
-    screening_date = screening.time
+    screening_date = screening.screen_time
     movie_duration = movie.duration
     screen_number = screening.screen_number
     seat_number = booking.seat_number
@@ -337,13 +341,13 @@ def ticket_download(ticket_code):
     if not screening:
         return render_template('ticket_not_found.html', title='Invalid Ticket')
 
-    movie = Movies.query.filter_by(id=screening.movie_id).first()
+    movie = Movie.query.filter_by(id=screening.movie_id).first()
     if not movie:
         return render_template('ticket_not_found.html', theme=get_user_theme(), title='Invalid Ticket')
 
     ticket_id=booking.id
     movie_title = movie.name
-    screening_date = screening.time
+    screening_date = screening.screen_time
     movie_duration = movie.duration
     screen_number = screening.screen_number
     seat_number = booking.seat_number
@@ -358,3 +362,41 @@ def ticket_download(ticket_code):
     response.headers['Content-Type'] = 'application/pdf'
     response.headers['Content-Disposition'] = 'inline; filename=ticket.pdf'
     return response
+
+app.route("/ticket/email/<id>")
+#@login_required
+def ticket_email(id):
+    booking = Booking.query.filter_by(id=id).first()
+    if not booking:
+        return render_template('ticket_not_found.html', theme=get_user_theme(), title='Invalid Ticket')
+
+    screening = Screen.query.filter_by(id=booking.screen_id).first()
+    if not screening:
+        return render_template('ticket_not_found.html', title='Invalid Ticket')
+
+    movie = Movie.query.filter_by(id=screening.movie_id).first()
+    if not movie:
+        return render_template('ticket_not_found.html', theme=get_user_theme(), title='Invalid Ticket')
+
+    movie_title = movie.name
+    screening_date = screening.screen_time
+    movie_duration = movie.duration
+    screen_number = screening.screen_number
+    seat_number = booking.seat_number
+    ticket_code = booking.ticket_code
+
+    member = Member.query.filter_by(id=booking.member_id).first()
+    if not member:
+        return render_template('ticket_not_found.html', theme=get_user_theme(), title='Invalid Ticket')
+
+    user = User.query.filter_by(id=member.user_id).first()
+    if not user:
+        return render_template('ticket_not_found.html', theme=get_user_theme(), title='Invalid Ticket')
+
+    message = Message(subject='Your Ticket', recipients=[user.email])
+    message.html = render_template('ticket_raw.html', title='Your Ticket',
+        movie_title=movie_title, screening_date=screening_date, movie_duration=movie_duration,
+        screen_number=screen_number, seat_number=seat_number, ticket_code=ticket_code)
+    mail.send(message)
+
+    return redirect(url_for('popular'))

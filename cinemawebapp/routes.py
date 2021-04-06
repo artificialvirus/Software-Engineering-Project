@@ -10,6 +10,7 @@ from flask_login import login_user, logout_user, login_required, current_user
 from cinemawebapp import db, models
 from datetime import datetime, timedelta
 from sqlalchemy import desc
+import pdfkit
 
  #for debugging
 import random
@@ -40,10 +41,24 @@ def get_user_theme(theme_str="default"):
 def home():
     return redirect(url_for('popular'))
 
-@app.route("/payment/<screening_id>-<seats>")
-def payment(screening_id, seats):        
+import sys
 
-	return render_template('payment.html', theme=get_user_theme(), booking_id=1)
+@app.route("/payment/<screening_id>-<seats>")
+def payment(screening_id, seats):
+    seats_data = seats.split("?")
+    seat_number = ""
+    ticket_type = ""
+    ticket_code = "-"
+    for i in seats_data:
+        elements = i.split(";")
+        seat_number = elements[0]
+        ticket_type = elements[1]
+
+    booking = Booking(seat_number=seat_number, ticket_type=ticket_type, ticket_code=ticket_code, member_id=1, screen_id=screening_id)
+    db.session.add(booking)
+    db.session.commit()
+
+    return render_template('payment.html', theme=get_user_theme(), booking_id=booking.id)
 
 @app.route("/popular")
 def popular():
@@ -297,8 +312,6 @@ def seats(screening_id):
         grid.append(row)
 
     screening = Screen.query.filter_by(id=screening_id).first()
-    if not screening:
-        return redirect(url_for('popular'))
     g.movie_id = screening.movie_id
     g.screening_id = screening.id
 

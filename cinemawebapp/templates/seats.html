@@ -43,6 +43,7 @@
     </style>
 
 	<script>
+    var seats = [];
 		var current_seat;
 		var adult_count = 0;
 		var child_count = 0;
@@ -60,6 +61,7 @@
 				current_seat = e;
 				document.getElementById('debug_log').innerHTML = "seat[" + e.id + "]";
 				update_res_type_count(e.value, 1);
+        seats.push(e.id + ";" + e.value);
 			}
 			else {
 				current_seat = null;
@@ -103,12 +105,24 @@
 		function format_form_data() {
 			var seat_list = document.getElementsByName("seat_list");
 			for (var i = 0; i < seat_list.length; i++) {
-				seat_list[i].value = seat_list[i].id + "," + seat_list[i].value;
+				seat_list[i].value = seat_list[i].id + ";" + seat_list[i].value;
 			}
+
+      var seats_str = "";
+      for (var i = 0; i < seats.length; i++) {
+        seats_str += seats[i];
+        if (i < seats.length - 1)
+          seats_str += "?";
+      }
+
+      var url = "/payment/{{ g.screening_id }}-" + seats_str;
+      window.location.href = url;
+
+      return false;
 		}
 	</script>
 
-    <form action="/payment/{{ g.screening_id }}-{{}}" method="post" onsubmit="format_form_data()">
+    <form action="" method="post" onsubmit="return format_form_data()">
         <p class="base">Select Seats</p><br>
 		<p id="debug_log" hidden>___</p>
 

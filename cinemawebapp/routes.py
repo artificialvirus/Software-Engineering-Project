@@ -1,5 +1,5 @@
-from flask import render_template, flash, request, redirect, url_for, session, json, make_response
-from cinemawebapp import app
+from flask import g, render_template, flash, request, redirect, url_for, session, json, make_response
+from cinemawebapp import app, mail
 from cinemawebapp.models import Member, Admins, User, Movie, Screen, Booking
 from .forms import SignUpForm, LoginForm, ResetPasswordRequestForm, AdminLoginForm, MoviesForm, BookingForm, MemberForm
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -10,6 +10,7 @@ from flask_login import login_user, logout_user, login_required, current_user
 from cinemawebapp import db, models
 from datetime import datetime, timedelta
 from sqlalchemy import desc
+import pdfkit
 
  #for debugging
 import random
@@ -22,7 +23,7 @@ class Theme:
         self.text_colours = text_colours
         self.font = font
         self.font_size = "20px"
-        
+
 class DarkTheme(Theme):
     def __init__(self):
         super().__init__(
@@ -30,7 +31,7 @@ class DarkTheme(Theme):
             ("#380012", "#5c001f", "#8c0031"),
             ("#746da6", "#b7b2ff", "#ffffff"),
             "Calibri Body")
-        
+
 def get_user_theme(theme_str="default"):
     return DarkTheme()
 
@@ -40,10 +41,25 @@ def get_user_theme(theme_str="default"):
 def home():
     return redirect(url_for('popular'))
 
-@app.route("/payment")	
-def payment():
-	return render_template('payment.html')
-    
+import sys
+
+@app.route("/payment/<screening_id>-<seats>")
+def payment(screening_id, seats):
+    seats_data = seats.split("?")
+    seat_number = ""
+    ticket_type = ""
+    ticket_code = "-"
+    for i in seats_data:
+        elements = i.split(";")
+        seat_number = elements[0]
+        ticket_type = elements[1]
+
+    booking = Booking(seat_number=seat_number, ticket_type=ticket_type, ticket_code=ticket_code, member_id=1, screen_id=screening_id)
+    db.session.add(booking)
+    db.session.commit()
+
+    return render_template('payment.html', theme=get_user_theme(), booking_id=booking.id)
+
 @app.route("/popular")
 def popular():
     movies = Movie.query.all()
@@ -63,7 +79,7 @@ def search():
     class Forms:
         pass
     forms = Forms();
-    
+
     if request.method == 'POST':
         forms.search_title = request.form.getlist('search_title')[0]
         forms.start_date = request.form.getlist('start_date')[0]
@@ -80,7 +96,7 @@ def search():
         forms.genres = []
 
     print(vars(forms))
-    
+
     movies = Movie.query.all()
     more_movies = movies * 10;
 
@@ -99,25 +115,27 @@ def movie(movie_id):
         pass
     class Screening:
         pass
-    
-    movie = Movie.query.filter_by(id=movie_id).first()
-    movie_title = movie.name
-    movie.movie_dates = []
 
-    for i in range(100):
-        if bool(random.getrandbits(1)):
-            movie_date = MovieDate()
-            movie_date.date = (datetime.today() + timedelta(days=i)).strftime("%m-%d")
-            movie_date.screenings = []
-            for j in range(7, 22, 4):
-                if bool(random.getrandbits(1)):
-                    screening = Screening();
-                    screening.time = (datetime.now().replace(hour=j, minute=randrange(0, 60, 5))).strftime("%H:%M")
-                    screening.id = "a5849e62"
-                    movie_date.screenings.append(screening)
-            if len(movie_date.screenings) > 0:
-                movie.movie_dates.append(movie_date)
-    
+    movie = Movie.query.filter_by(id=movie_id).first()
+    if not movie:
+        return redirect(url_for('popular.html'))
+
+    screenings = Screen.query.filter_by(movie_id=movie_id)
+    if not screenings:
+        return redirect(url_for('popular.html'))
+
+    movie.movie_dates = []
+    for i in range(screenings.count()):
+        movie_date = MovieDate()
+        movie_date.date = screenings[i].screen_time.date()
+        movie_date.screenings = []
+        for j in range(screenings.count()):
+            if screenings[i].screen_time.date() == screenings[j].screen_time.date():
+                screening = Screening()
+                screening.time = screenings[i].screen_time.time()
+                screening.id = screenings[i].id
+                movie_date.screenings.append(screening)
+        movie.movie_dates.append(movie_date)
 
     return render_template('movie.html', theme=get_user_theme(), movie=movie)
 
@@ -131,7 +149,6 @@ def movie(movie_id):
 @app.route("/admin")
 @login_required
 def admin():
-
     return render_template('admin.html')
 
 
@@ -201,8 +218,8 @@ def adminsignup():
         flash('Congratulations, you are now a registered Admin!')
         return redirect(url_for('admin'))
     return render_template('adminSignUp.html', title='Sign Up', form=form)
-    
-    
+
+
 @app.route('/admin-login', methods=['GET','POST'])
 def adminlogin():
     app.logger.info('Login request route')
@@ -231,8 +248,8 @@ def logout():
     app.logger.debug('Debug level logging')
     logout_user()
     return redirect(url_for('home'))
-    
-    
+
+
 @app.route('/member', methods=['GET', 'POST'])
 @login_required
 def member():
@@ -249,8 +266,8 @@ def member():
 
 
     return render_template('member.html',theme=get_user_theme(),form=form)
-    
-    
+
+
 @app.route('/booking', methods=['GET', 'POST'])
 @login_required
 def booking():
@@ -265,7 +282,7 @@ def booking():
 
     return render_template('booking.html',theme=get_user_theme(),form=form)
 
-    
+
 @app.route('/add-movie', methods=['GET', 'POST'])
 @login_required
 def add_movie():
@@ -283,18 +300,21 @@ def add_movie():
 def seats(screening_id):
     if request.method == 'POST':
         print(request.form.getlist('seat_list'))
-    
+
     grid_width = 30
     grid_height = 10
-    
+
     grid = []
     for x in range(grid_width):
         row = []
         for y in range(grid_height):
             row.append(str(x) + "," + str(y))
         grid.append(row)
-        
-    
+
+    screening = Screen.query.filter_by(id=screening_id).first()
+    g.movie_id = screening.movie_id
+    g.screening_id = screening.id
+
     #movies = Post.query.all()
     return render_template('seats.html', theme=get_user_theme(), width=grid_width, height=grid_height, grid=grid)
 
@@ -308,13 +328,13 @@ def ticket(id):
     if not screening:
         return render_template('ticket_not_found.html', theme=get_user_theme(), title='Invalid Ticket')
 
-    movie = Movies.query.filter_by(id=screening.movie_id).first()
+    movie = Movie.query.filter_by(id=screening.movie_id).first()
     if not movie:
         return render_template('ticket_not_found.html', theme=get_user_theme(), title='Invalid Ticket')
 
     ticket_id=booking.id
     movie_title = movie.name
-    screening_date = screening.time
+    screening_date = screening.screen_time
     movie_duration = movie.duration
     screen_number = screening.screen_number
     seat_number = booking.seat_number
@@ -334,13 +354,13 @@ def ticket_download(ticket_code):
     if not screening:
         return render_template('ticket_not_found.html', title='Invalid Ticket')
 
-    movie = Movies.query.filter_by(id=screening.movie_id).first()
+    movie = Movie.query.filter_by(id=screening.movie_id).first()
     if not movie:
         return render_template('ticket_not_found.html', theme=get_user_theme(), title='Invalid Ticket')
 
     ticket_id=booking.id
     movie_title = movie.name
-    screening_date = screening.time
+    screening_date = screening.screen_time
     movie_duration = movie.duration
     screen_number = screening.screen_number
     seat_number = booking.seat_number
@@ -356,3 +376,40 @@ def ticket_download(ticket_code):
     response.headers['Content-Disposition'] = 'inline; filename=ticket.pdf'
     return response
 
+app.route("/ticket/email/<id>")
+#@login_required
+def ticket_email(id):
+    booking = Booking.query.filter_by(id=id).first()
+    if not booking:
+        return render_template('ticket_not_found.html', theme=get_user_theme(), title='Invalid Ticket')
+
+    screening = Screen.query.filter_by(id=booking.screen_id).first()
+    if not screening:
+        return render_template('ticket_not_found.html', title='Invalid Ticket')
+
+    movie = Movie.query.filter_by(id=screening.movie_id).first()
+    if not movie:
+        return render_template('ticket_not_found.html', theme=get_user_theme(), title='Invalid Ticket')
+
+    movie_title = movie.name
+    screening_date = screening.screen_time
+    movie_duration = movie.duration
+    screen_number = screening.screen_number
+    seat_number = booking.seat_number
+    ticket_code = booking.ticket_code
+
+    member = Member.query.filter_by(id=booking.member_id).first()
+    if not member:
+        return render_template('ticket_not_found.html', theme=get_user_theme(), title='Invalid Ticket')
+
+    user = User.query.filter_by(id=member.user_id).first()
+    if not user:
+        return render_template('ticket_not_found.html', theme=get_user_theme(), title='Invalid Ticket')
+
+    message = Message(subject='Your Ticket', recipients=[user.email])
+    message.html = render_template('ticket_raw.html', title='Your Ticket',
+        movie_title=movie_title, screening_date=screening_date, movie_duration=movie_duration,
+        screen_number=screen_number, seat_number=seat_number, ticket_code=ticket_code)
+    mail.send(message)
+
+    return redirect(url_for('popular'))

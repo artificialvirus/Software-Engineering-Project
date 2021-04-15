@@ -69,7 +69,9 @@ def popular():
 # For you page
 @app.route("/foryou")
 def foryou():
-    # based on genre?
+    # member login required
+    # based on genre most watched genre
+
     movies = Movie.query.all()
     return render_template('foryou.html', theme=get_user_theme(), title= 'for you' , movies=movies)
 
@@ -97,11 +99,12 @@ def search():
 
     print(vars(forms))
 
-    movies = Movie.query.all()
-    more_movies = movies * 10;
-
+    # movies = Movie.query.all()
+    # more_movies = movies * 10;
+    movies = Movie.query.filter( (Movie.name.contains(forms.search_title) | Movie.description.contains(forms.search_title)))
+    # movies = Movie.query.filter(Movie.genre.contains(forms.genres))
     # movies = sql movies matching criteria
-    return render_template('search.html', theme=get_user_theme(), title='search', movies=more_movies, forms=forms)
+    return render_template('search.html', theme=get_user_theme(), title='search', movies=movies, forms=forms)
 
 #  Individual movie details page
 @app.route("/movie/<movie_id>")
@@ -314,9 +317,8 @@ def seats(screening_id):
     screening = Screen.query.filter_by(id=screening_id).first()
     g.movie_id = screening.movie_id
     g.screening_id = screening.id
-
-    #movies = Post.query.all()
-    return render_template('seats.html', theme=get_user_theme(), width=grid_width, height=grid_height, grid=grid)
+    movie = Movie.query.all()
+    return render_template('seats.html', theme=get_user_theme(), width=grid_width, height=grid_height, grid=grid, movie=movie)
 
 @app.route("/ticket/<id>")
 def ticket(id):

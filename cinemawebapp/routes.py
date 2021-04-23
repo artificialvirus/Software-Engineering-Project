@@ -54,7 +54,8 @@ def payment(screening_id, seats):
         seat_number = elements[0]
         ticket_type = elements[1]
 
-    booking = Booking(seat_number=seat_number, ticket_type=ticket_type, ticket_code=ticket_code, member_id=1, screen_id=screening_id)
+    member = Member.query.filter_by(user_id=current_user.get_id()).first()
+    booking = Booking(seat_number=seat_number, ticket_type=ticket_type, ticket_code=ticket_code, member_id=member.id, screen_id=screening_id)
     db.session.add(booking)
     db.session.commit()
 
@@ -165,14 +166,12 @@ def signup():
     if form.validate_on_submit():
         user = User(username=form.username.data, email=form.email.data)
         user.set_password(form.password.data)
-
         db.session.add(user)
         db.session.commit()
 
-        #not added the mail feature yet
-        #msg = Message('You have successfully created your account.', sender = 'yourId@gmail.com', recipients = [user.email])
-        #msg.body = "Email from Cinema"
-        #mail.send(msg)
+        member = Member(user_id=user.id)
+        db.session.add(member)
+        db.session.commit()
 
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('login'))
@@ -267,8 +266,20 @@ def member():
         db.session.add(payment)
         db.session.commit()
 
+    member = Member.query.filter_by(user_id=current_user.get_id()).first()
+    bookings = Booking.query.filter_by(member_id=member.id)
+    if not bookings:
+        return render_template('ticket_not_found.html', theme=get_user_theme(), title='Invalid Ticket')
 
-    return render_template('member.html',theme=get_user_theme(),form=form)
+    movies = []
+    for i in bookings:
+        screening = Screen.query.filter_by(id=i.screen_id).first()
+        date = screening.screen_time
+        movie = Movie.query.filter_by(id=screening.movie_id).first()
+        name = movie.name
+        movies.append([i.id, name, date])
+
+    return render_template('member.html',theme=get_user_theme(),form=form,bookings=movies)
 
 
 @app.route('/booking', methods=['GET', 'POST'])
@@ -378,7 +389,7 @@ def ticket_download(ticket_code):
     response.headers['Content-Disposition'] = 'inline; filename=ticket.pdf'
     return response
 
-app.route("/ticket/email/<id>")
+@app.route("/ticket/email/<id>")
 #@login_required
 def ticket_email(id):
     booking = Booking.query.filter_by(id=id).first()
@@ -414,4 +425,4 @@ def ticket_email(id):
         screen_number=screen_number, seat_number=seat_number, ticket_code=ticket_code)
     mail.send(message)
 
-    return redirect(url_for('popular'))
+    return ticket(id)

@@ -95,7 +95,7 @@ class Member(db.Model):
     __tablename__ = 'member'
     id = db.Column(db.Integer, primary_key=True)
     phone = db.Column(db.Integer())
-    date_of_birth = db.Column(db.Integer())
+    date_of_birth = db.Column(db.Date)
     card_number = db.Column(db.String(15))
     card_expiration_date = db.Column(db.DateTime)
     card_cvv = db.Column(db.String(4))
@@ -113,9 +113,9 @@ class Member(db.Model):
 class Booking(db.Model):
     __tablename__ = 'booking'
     id = db.Column(db.Integer, primary_key=True)
-    seat_number = db.Column(db.String(150))
+    seat_number = db.Column(db.Integer())
     ticket_code = db.Column(db.String(255))
-    ticket_type = db.Column(db.String(64))
+    ticket_type = db.Column(db.String(255))
     #multiple bookings
     #tickets = db.Column(db.Integer())
     member_id = db.Column(db.Integer, db.ForeignKey('member.id'))

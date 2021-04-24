@@ -34,7 +34,10 @@ class DarkTheme(Theme):
 
 def get_user_theme(theme_str="default"):
     return DarkTheme()
-
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html', theme=get_user_theme()), 404
+    
 # Home page
 @app.route("/")
 @app.route("/home")
@@ -44,6 +47,7 @@ def home():
 import sys
 
 @app.route("/payment/<screening_id>-<seats>")
+@login_required
 def payment(screening_id, seats):
     seats_data = seats.split("?")
     seat_number = ""
@@ -63,17 +67,20 @@ def payment(screening_id, seats):
 
 @app.route("/popular")
 def popular():
-    movies = Movie.query.all()
-    new_release = Movie.query.order_by( desc("releaseDate")).limit(10)
+    movies = Movie.query.filter( Movie.available==True)
+    new_release = Movie.query.filter( Movie.available==True).order_by( desc("releaseDate")).limit(10)
     return render_template('popular.html', theme=get_user_theme(), title='popular' ,new=new_release,movies=movies)
 
 # For you page
 @app.route("/foryou")
+@login_required
 def foryou():
     # member login required
     # based on genre most watched genre
 
-    movies = Movie.query.all()
+    movies = Movie.query.filter( Movie.available==True)
+    # Top Genre
+    # Filter by top genre of member id most bookings
     return render_template('foryou.html', theme=get_user_theme(), title= 'for you' , movies=movies)
 
 # Search page
@@ -85,24 +92,28 @@ def search():
 
     if request.method == 'POST':
         forms.search_title = request.form.getlist('search_title')[0]
-        forms.start_date = request.form.getlist('start_date')[0]
-        forms.start_time = request.form.getlist('start_time')[0]
-        forms.end_date = request.form.getlist('end_date')[0]
-        forms.end_time = request.form.getlist('end_time')[0]
         forms.genres = request.form.getlist('genres')
+        select = request.form.get('order')
     else:
         forms.search_title = ""
-        forms.start_date = datetime.today().strftime("%Y-%m-%d")
-        forms.start_time = datetime.now().strftime("%H:%M")
-        forms.end_date = (datetime.today() + timedelta(days=14)).strftime("%Y-%m-%d");
-        forms.end_time = forms.start_time
         forms.genres = []
+        select = ""
 
     print(vars(forms))
-
-    # movies = Movie.query.all()
-    # more_movies = movies * 10;
-    movies = Movie.query.filter( (Movie.name.contains(forms.search_title) | Movie.description.contains(forms.search_title)))
+    i = len(forms.genres) - 1
+    if select == "Newest" :   
+        if i == -1 :
+            movies = Movie.query.filter( ((Movie.name.contains(forms.search_title) | Movie.description.contains(forms.search_title) )& Movie.available==True)).order_by(desc(Movie.releaseDate))
+        else:
+            movies = Movie.query.filter( ((Movie.name.contains(forms.search_title) | Movie.description.contains(forms.search_title) )& (Movie.genre.contains(forms.genres[i]))& Movie.available==True)).order_by(desc(Movie.releaseDate))
+    elif select =="Alphabetically":
+        if i == -1 :
+            movies = Movie.query.filter( ((Movie.name.contains(forms.search_title) | Movie.description.contains(forms.search_title) )& Movie.available==True)).order_by(desc(Movie.name))
+        else:
+            movies = Movie.query.filter( ((Movie.name.contains(forms.search_title) | Movie.description.contains(forms.search_title) )& (Movie.genre.contains(forms.genres[i]))& Movie.available==True)).order_by(desc(Movie.name))
+    else: 
+       movies = Movie.query.all()
+    forms.genres
     # movies = Movie.query.filter(Movie.genre.contains(forms.genres))
     # movies = sql movies matching criteria
     return render_template('search.html', theme=get_user_theme(), title='search', movies=movies, forms=forms)

@@ -149,10 +149,6 @@ def signup():
         db.session.add(user)
         db.session.commit()
 
-        #not added the mail feature yet
-        #msg = Message('You have successfully created your account.', sender = 'yourId@gmail.com', recipients = [user.email])
-        #msg.body = "Email from Cinema"
-        #mail.send(msg)
 
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('login'))
@@ -193,10 +189,6 @@ def adminsignup():
 
         db.session.add(admin)
         db.session.commit()
-
-        #msg = Message('You have successfully created your account.', sender = 'yourId@gmail.com', recipients = [user.email])
-        #msg.body = "Email from Cinema"
-        #mail.send(msg)
 
         flash('Congratulations, you are now a registered Admin!')
         return redirect(url_for('admin'))

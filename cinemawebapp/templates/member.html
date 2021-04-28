@@ -22,7 +22,7 @@
 
     <p>
         {{ form.card_type.label }}<br>
-        
+
         {% for error in form.card_type.errors %}
         <span style="color: red;">[{{ error }}]</span>
         {% endfor %}
@@ -55,5 +55,21 @@
     <p><input type="Submit" class="btn btn-outline-info" value="Submit" href="{{url_for('home')}}">  </p>
 
 </form>
+
+<div class="container-fluid">
+  <h1>Your Tickets</h1>
+
+  {% for ticket in bookings %}
+
+  <a href="/ticket/{{ticket[0]}}">
+    <div style="padding: 10px; border: 1px solid white; margin: 5px; width: 25%;">
+      <h2>Movie: {{ ticket[1] }}<h2>
+      <h2>Date: {{ ticket[2] }}<h2>
+    </div>
+  </a>
+
+  {% endfor %}
+
+</div>
 
 {% endblock %}

@@ -22,6 +22,8 @@ movie_booking = db.Table('movie_booking', db.Model.metadata, db.Column('id', db.
 
 screen_booking = db.Table('screen_booking', db.Model.metadata, db.Column('id', db.Integer, db.ForeignKey('screen.id')), db.Column('id', db.Integer, db.ForeignKey('booking.id')))
 
+booking_income = db.Table('booking_income', db.Model.metadata, db.Column('id', db.Integer, db.ForeignKey('booking.id')), db.Column('id', db.Integer, db.ForeignKey('income.id')))
+
 class Admins(UserMixin, db.Model):
     __tablename__ = 'admin'
     id = db.Column(db.Integer, primary_key=True)
@@ -95,7 +97,7 @@ class Member(db.Model):
     __tablename__ = 'member'
     id = db.Column(db.Integer, primary_key=True)
     phone = db.Column(db.Integer())
-    date_of_birth = db.Column(db.Integer())
+    date_of_birth = db.Column(db.Date)
     card_number = db.Column(db.String(15))
     card_expiration_date = db.Column(db.DateTime)
     card_cvv = db.Column(db.String(4))
@@ -114,8 +116,11 @@ class Booking(db.Model):
     __tablename__ = 'booking'
     id = db.Column(db.Integer, primary_key=True)
     seat_number = db.Column(db.Integer())
+    ticket_code = db.Column(db.String(255))
+    ticket_type = db.Column(db.String(255))
     #multiple bookings
-    #tickets = db.Column(db.Integer())
+    num_of_tickets = db.Column(db.Integer())
+    booking_date = db.Column(db.DateTime, default=datetime.utcnow())
     member_id = db.Column(db.Integer, db.ForeignKey('member.id'))
     screen_id = db.Column(db.Integer, db.ForeignKey('screen.id'))
 
@@ -150,3 +155,7 @@ class Screen(db.Model):
 class Income(db.Model):
     __tablename__ = 'income'
     id = db.Column(db.Integer, primary_key = True)
+    sales = db.Column(db.Integer)
+    movie = db.Column(db.String(150))
+    date = db.Column(db.DateTime)
+    booking_id = db.Column(db.Integer, db.ForeignKey('booking.id'))

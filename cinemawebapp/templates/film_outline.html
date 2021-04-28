@@ -12,7 +12,7 @@
 		height: 100%;
 	}
 
-	.right_outline {	
+	.right_outline {
 		float: right;
 		width: 68%;
 		height: 100%;
@@ -22,7 +22,7 @@
 	.centered {
 		padding-top: 40px;
 	}
-	
+
 	.centered img, h2 {
 		width: 500px;
 		height: auto;
@@ -33,13 +33,12 @@
 <div>
 	<div class="outline_split left_outline">
 	  <div class="centered">
-		{% set movie_id = movie.id %}
-		<img src=" {{ url_for('static', filename='movie_images/'~ movie_id ~'.jpg')}}"alt="Generic Film" >		
+		<img src=" {{ url_for('static', filename='movie_images/'~ movie.id ~'.jpg')}}"alt="Generic Film" >
 		</div>
 	</div>
 
 	<div class="outline_split right_outline">
 		{% block film_outline_content %}{% endblock %}
-	</div>	
+	</div>
 </div>
 {% endblock content %}

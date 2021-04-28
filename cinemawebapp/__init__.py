@@ -19,12 +19,11 @@ qrcode = QRcode(app)
 
 app.config.from_pyfile("config.py")
 
-mail = Mail(app)
-
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = ''
-app.config['MAIL_PASSWORD'] = ''
+app.config['MAIL_USERNAME'] = 'group39comp2913@gmail.com'
+app.config['MAIL_PASSWORD'] = 'password^(1234)'
+app.config['MAIL_DEFAULT_SENDER'] = 'group39comp2913@gmail.com'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
@@ -45,11 +44,14 @@ from .models import  Admins, Member, User, Movie, Screen, Booking
 class CinemaModelView(ModelView):
 
     def is_accessible(self):
-         if current_user.is_authenticated:
+        """
+        if current_user.is_authenticated:
+            id = current_user.get_id()
+            if id == '1':
+                return True
+        """
 
-             id = current_user.get_id()
-             if id == '1':
-                 return True
+        return True
 
         #session.get('user') == 'Administrator'
 

@@ -19,7 +19,7 @@
     padding: 16px 100px;
     width: 100%;
   }
-  
+
   .cash-button {
     background-color: gray;
     color: white;
@@ -30,18 +30,21 @@
   .form-popup {
     display: none;
   }
-  
+
   .form-container input[type=text], .form-container input[type=password] {
     width: 100%;
     padding: 15px;
 
-    border: none;
+    border: 1px solid black;
     background: white;
+    color: black;
   }
 
 .form-container input[type=text]:focus, .form-container input[type=password]:focus {
   background-color: white;
   outline: none;
+  border: 1px solid black;
+  color: black;
 }
 
 
@@ -83,7 +86,7 @@
                 <button class="paypal-button" onclick="openPaypal()">Paypal</button><br><br>
 
                 <div class="form-popup" id="paypal">
-                    <form action="/action_page.php" class="form-container">
+                    <form action="/ticket/email/{{ booking_id }}" class="form-container">
 
                         <label for="email"><b>Email</b></label>
                         <input type="text" placeholder="Enter Email" name="email" required>
@@ -101,7 +104,7 @@
                 <button class="credit-button" onclick="openCredit()">Credit / Debit Card</button><br><br>
 
                 <div class="form-popup" id="credit">
-                    <form action="/action_page.php" class="form-container">
+                    <form action="/ticket/email/{{ booking_id }}" class="form-container">
                       <label for="cnum"><b>Card Number</b></label>
                       <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX" name="cnum" required>
 
@@ -117,18 +120,18 @@
                 </div>
 
 
-                <form action="/home"onclick="message()">      
+                <form action="/home"onclick="message()">
                   <input type="submit" value="Cash"class="cash-button"/>
                 </form>
 
-                <form action="javascript:history.back()">      
+                <form action="javascript:history.back()">
                   <input type="submit" value="Go back"/>
                 </form>
 
               </div>
 
               <div>
-                
+
                 <p>tickets</p>
                 <p>VAT</p>
                 <p>Total</p>
@@ -139,7 +142,7 @@
                 <p>17.12</p>
               </div>
 
-              
+
 
             </div>
                 <script>

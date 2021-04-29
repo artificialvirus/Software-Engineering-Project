@@ -48,7 +48,7 @@ def payment(screening_id, seats):
     seats_data = seats.split("?")
     seat_number = ""
     ticket_type = ""
-    ticket_code = "-"
+    ticket_code = elements[0] + screening_id + elements[1] 
     for i in seats_data:
         elements = i.split(";")
         seat_number = elements[0]

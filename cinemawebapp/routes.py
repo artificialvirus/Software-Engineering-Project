@@ -182,21 +182,46 @@ def movie(movie_id):
 @login_required
 def admin():
 
-    bookings = Booking.query.filter_by(id=booking.id)
+
+    bookings = Booking.query.filter_by(id=booking.id).first()
 
 
     data = []
     for x in bookings:
-        movie = Movie.query.filter_by(id=screening.movie_id).first()
+        movie = Movie.query.filter_by(id=screen.movie_id).first()
         name = movie.name
-        data.append([x.num_of_tickets, name])
+        data.append([x.num_of_tickets,name])
 
     label = [row[0] for row in data]
     value = [row[1] for row in data]
-    
+
     return render_template('index.html', label=label, value=value)
+
+@app.route("/example")
+def example():
+
+
+    data = [("12312", 123), ("12312412",234), ("342", 1231)]
+
+
+    label = [row[0] for row in data]
+    value = [row[1] for row in data]
+
+    return render_template('adminHome.html', label=label, value=value)
     
 
+@app.route("/example2")
+def example():
+
+
+    data = [("abc", 12), ("cde",23), ("def", 123)]
+
+
+    label = [row[0] for row in data]
+    value = [row[1] for row in data]
+
+    return render_template('adminHome.html', label=label, value=value)
+    
 
 @app.route('/signup', methods=['GET','POST'])
 def signup():

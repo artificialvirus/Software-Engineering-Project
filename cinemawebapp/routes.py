@@ -76,7 +76,7 @@ def payment(screening_id, seats):
     seats_data = seats.split("?")
     seat_number = ""
     ticket_type = ""
-    ticket_code = "-"
+    ticket_code = elements[0] + screening_id + elements[1] 
     for i in seats_data:
         elements = i.split(";")
         seat_number = elements[0]
@@ -181,27 +181,7 @@ def movie(movie_id):
 @app.route("/admin/")
 @login_required
 def admin():
-
-
-    bookings = Booking.query.filter_by(id=booking.id).first()
-
-
-    data = []
-    for x in bookings:
-        movie = Movie.query.filter_by(id=screen.movie_id).first()
-        name = movie.name
-        data.append([x.num_of_tickets,name])
-
-    label = [row[0] for row in data]
-    value = [row[1] for row in data]
-
-    return render_template('index.html', label=label, value=value)
-
-@app.route("/example")
-def example():
-
-
-    data = [("12312", 123), ("12312412",234), ("342", 1231)]
+    return render_template('admin.html')
 
 
     label = [row[0] for row in data]
@@ -236,7 +216,9 @@ def signup():
         db.session.add(user)
         db.session.commit()
 
-
+        member = Member(user_id=user.id)
+        db.session.add(member)
+        db.session.commit()
 
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('login'))

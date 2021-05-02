@@ -157,7 +157,7 @@ def popular():
                 movies[movie.id] += 1
 
     popular = []
-    for i in range(3):
+    for i in range(len(movies)):
         id = max(movies, key=movies.get)
         popular.append(id)
         del movies[id]

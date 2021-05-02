@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container-fluid">
+  <h1>Your Tickets</h1>
+  {% if not bookings %}
+    <p>You have no previous bookings!</p>
+  {% endif %}
+  {% for ticket in bookings %}
+
+  <a href="/ticket/{{ticket[0]}}">
+    <div style="padding: 10px; border: 1px solid white; margin: 5px; width: 25%;">
+      <h2>Movie: {{ ticket[1] }}<h2>
+      <h2>Date: {{ ticket[2] }}<h2>
+      <h2>Type: {{ ticket[3] }}<h2>
+    </div>
+  </a>
+
+  {% endfor %}
+
+</div>
+
+<h1>Member Details</h1>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.phone.label }}<br>
+        {{ form.phone(size=32) }}<br>
+        {% for error in form.phone.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        {{ form.date_of_birth.label }}<br>
+        {{ form.date_of_birth(size=32) }}<br>
+        {% for error in form.date_of_birth.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p><input type="Submit" class="btn btn-outline-info" value="Submit" href="{{url_for('home')}}">  </p>
+
+</form>
+
+{% endblock %}

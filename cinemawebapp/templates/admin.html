@@ -1,0 +1,17 @@
+
+<!--Admin page-->
+{% extends "admin/master.html" %}
+
+{% block content %}
+
+<h3>Income Overall (Week)</h3>
+<a class="right {{'active' if title == 'example' else 'inactive'}}" href="{{url_for('takingsperweek')}}">Overall Income This Week (Per Movie)</a>
+
+<h3>Income for Individual Movies</h3>
+{% for movie in movies %}
+
+<a href="/takingspermovie/{{movie.id}}">{{movie.name}}</a>
+
+{% endfor %}
+
+{% endblock content %}

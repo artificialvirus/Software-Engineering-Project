@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<style>
+.base {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  font-size: 150%;
+}
+</style>
+
+<div class="row base">
+  <div class="row">
+    <h2>Your Ticket</h2>
+  </div>
+</div>
+
+<div class="row base">
+  <div class="row">
+      <a href="./download/{{ ticket_code }}" class="download-pdf-button">Download PDF</a>
+  </div>
+</div>
+
+<div class="row base">
+  <div class="col-6 ticket-box float-left">
+    <div class="row">
+      <div class="col">
+          <h3>{{ movie_title }}</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+          <p>Date-Time: {{ screening_date }}</p>
+      </div>
+      <div class="col">
+          <p>Duration: {{ movie_duration }} minutes</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+          <p>Screen Number: {{ screen_number }}</p>
+      </div>
+      <div class="col">
+          <p>Seat Number: {{ seat_number }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+          <p>Ticket Type: {{ ticket_type }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+          <p>VIP: {{ is_vip }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+          <p>Ticket Code: {{ ticket_code }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <img src="{{ qrcode(ticket_code) }}" style="width: 200px; height: auto; padding: 20px;">
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

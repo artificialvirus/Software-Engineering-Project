@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+<div>
+	<div style="display: inline-block;">
+	<h2>Trending</h2>
+	{% if not movies %}
+		<p>No movies here!</p>
+	{% endif %}
+	{% for movie in movies %}
+
+			<div class="gallery">
+				<a href="{{ url_for('movie', movie_id=movie.id)}}">
+					<img src=" {{ url_for('static', filename='movie_images/'~ movie.id ~ '.jpg')}}" alt="Cinque Terre" width="600" height="400">
+					<p class="title">{{movie.name}}</p>
+					<p>{{movie.description}}</p>
+				</a>
+			</div>
+
+	{% endfor %}
+	<div>
+</div>
+{% endblock content %}

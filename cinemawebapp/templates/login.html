@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+<style>
+.centered {
+	width: auto;
+	padding-left: 40%;
+}
+</style>
+
+<div class="centered">
+	<h1>Login</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}<br>
+            {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}<br>
+            {% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
+          
+
+        <p><input type="submit" class="btn btn-outline-info" value="Login" href="{{url_for('home')}}">  </p>
+    </form>
+
+    <p> <a input type="submit" class="btn btn-outline-info" href="{{url_for('login')}}" > Forgot Your Password? </a> </p>
+    <p> <a type="submit" class="btn btn-outline-info" href="{{url_for('signup')}}" > Signup </a> </p>
+</div>
+{% endblock %}

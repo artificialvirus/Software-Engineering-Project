@@ -1,0 +1,158 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+
+<style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        * {box-sizing: border-box;}
+  .paypal-button {
+    background-color: #3b7bbf;
+    color: white;
+    padding: 16px 100px;
+    width: 100%;
+  }
+  .credit-button {
+    background-color: #172274;
+    color: white;
+    padding: 16px 100px;
+    width: 100%;
+  }
+
+  .cash-button {
+    background-color: gray;
+    color: white;
+    padding: 16px 100px;
+    width: 100%;
+  }
+
+  .form-popup {
+    display: none;
+  }
+
+  .form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+
+    border: 1px solid black;
+    background: white;
+    color: black;
+  }
+
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: white;
+  outline: none;
+  border: 1px solid black;
+  color: black;
+}
+
+
+.form-container .btn {
+  background-color: green;
+  color: white;
+  padding: 16px 20px;
+  width: 100%;
+  margin-bottom:10px;
+}
+
+
+.form-container .cancel {
+  background-color: red;
+}
+
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+.h-layout{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+</style>
+
+    <article class="media content-section">
+        <div class="media-body">
+            <div class="article-metadata">
+
+              <h1 style="color: black;">Payment</h1>
+              <p style="color: black;">Number of tickets: {{ num_adult + num_child + num_elder }}</p>
+              <p style="color: black;">Run-down:</p>
+              <p style="color: black;">{{num_adult}} Adult Tickets * £10.00</p>
+              <p style="color: black;">{{num_child}} Child Tickets * £5.00</p>
+              <p style="color: black;">{{num_elder}} Elder Tickets * £7.50</p>
+              <p style="color: black;">VIP Additional Charge: £{{num_vip * 2.25}}</p>
+              <p style="color: black;">Total: £{{num_adult * 10.0 + num_child * 5.0 + num_elder * 7.50 + num_vip * 2.25}}</p>
+
+            <div class="h-layout">
+              <div>
+                <button class="paypal-button" onclick="openPaypal()">Paypal</button><br><br>
+                <div class="form-popup" id="paypal">
+                    <form action="/member" class="form-container">
+
+                        <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Enter Email" name="email" required>
+
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="psw" required>
+
+                        <button type="submit" class="btn">Login</button>
+                        <button type="button" class="btn cancel" onclick="closePaypal()">Close</button><br><br>
+                    </form>
+                </div>
+
+                <button class="credit-button" onclick="openCredit()">Credit / Debit Card</button><br><br>
+
+                <div class="form-popup" id="credit">
+                    <form action="/member" class="form-container">
+                      <label for="cnum"><b>Card Number</b></label>
+                      <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX" name="cnum" required>
+
+                      <label for="exdate"><b>Expiry Date</b></label>
+                      <input type="text" placeholder="month / year" name="exdate" required>
+
+                      <label for="cvv"><b>CVV</b></label>
+                      <input type="text" placeholder="XXX" name="cvv" required>
+
+                        <button type="submit" class="btn">Submit</button>
+                        <button type="button" class="btn cancel" onclick="closeCredit()">Close</button><br><br>
+                    </form>
+                </div>
+
+                <form action="/home"onclick="message()">
+                  <input type="submit" value="Cash"class="cash-button"/>
+                </form>
+
+                <form action="javascript:history.back()">
+                  <input type="submit" value="Go back"/>
+                </form>
+              </div>
+            </div>
+                <script>
+                function openPaypal() {
+                  document.getElementById("paypal").style.display = "block";
+                }
+
+                function closePaypal() {
+                  document.getElementById("paypal").style.display = "none";
+                }
+                function openCredit() {
+                  document.getElementById("credit").style.display = "block";
+                }
+
+                function closeCredit() {
+                  document.getElementById("credit").style.display = "none";
+                }
+                function message(){
+                  alert("Show booking number to front desk to pay and recive ticket(s)");
+                }
+                </script>
+
+
+
+            </div>
+        </div>
+    </article>
+{% endblock content %}

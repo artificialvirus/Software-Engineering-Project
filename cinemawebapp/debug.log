@@ -1,0 +1,870 @@
+2021-03-09 13:31:37,982 INFO werkzeug Thread-3 : 127.0.0.1 - - [09/Mar/2021 13:31:37] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-09 13:31:37,991 INFO werkzeug Thread-4 : 127.0.0.1 - - [09/Mar/2021 13:31:37] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-09 13:31:37,992 INFO werkzeug Thread-6 : 127.0.0.1 - - [09/Mar/2021 13:31:37] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-09 13:31:37,993 INFO werkzeug Thread-5 : 127.0.0.1 - - [09/Mar/2021 13:31:37] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-09 13:31:38,035 INFO werkzeug Thread-7 : 127.0.0.1 - - [09/Mar/2021 13:31:38] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-09 13:31:38,098 INFO werkzeug Thread-8 : 127.0.0.1 - - [09/Mar/2021 13:31:38] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-09 13:31:38,113 INFO werkzeug Thread-9 : 127.0.0.1 - - [09/Mar/2021 13:31:38] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-09 13:31:38,142 INFO werkzeug Thread-10 : 127.0.0.1 - - [09/Mar/2021 13:31:38] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+2021-03-09 13:31:38,144 INFO werkzeug Thread-11 : 127.0.0.1 - - [09/Mar/2021 13:31:38] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+2021-03-09 13:31:59,931 INFO werkzeug Thread-12 : 127.0.0.1 - - [09/Mar/2021 13:31:59] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-09 13:31:59,938 INFO werkzeug Thread-13 : 127.0.0.1 - - [09/Mar/2021 13:31:59] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-09 13:31:59,940 INFO werkzeug Thread-15 : 127.0.0.1 - - [09/Mar/2021 13:31:59] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-09 13:31:59,941 INFO werkzeug Thread-14 : 127.0.0.1 - - [09/Mar/2021 13:31:59] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-09 13:31:59,959 INFO werkzeug Thread-16 : 127.0.0.1 - - [09/Mar/2021 13:31:59] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-09 13:31:59,984 INFO werkzeug Thread-17 : 127.0.0.1 - - [09/Mar/2021 13:31:59] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-09 13:35:16,087 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-09 13:35:16,142 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-09 13:35:21,315 INFO werkzeug Thread-3 : 127.0.0.1 - - [09/Mar/2021 13:35:21] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-09 13:35:21,339 INFO werkzeug Thread-4 : 127.0.0.1 - - [09/Mar/2021 13:35:21] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-09 13:35:21,339 INFO werkzeug Thread-5 : 127.0.0.1 - - [09/Mar/2021 13:35:21] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-09 13:35:21,340 INFO werkzeug Thread-6 : 127.0.0.1 - - [09/Mar/2021 13:35:21] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-09 13:35:21,358 INFO werkzeug Thread-7 : 127.0.0.1 - - [09/Mar/2021 13:35:21] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-09 13:35:21,387 INFO werkzeug Thread-8 : 127.0.0.1 - - [09/Mar/2021 13:35:21] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-09 13:36:57,458 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-09 13:36:57,509 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-09 13:38:40,712 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-09 13:38:40,755 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-09 13:38:44,394 INFO werkzeug Thread-3 : 127.0.0.1 - - [09/Mar/2021 13:38:44] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-09 13:38:44,420 INFO werkzeug Thread-4 : 127.0.0.1 - - [09/Mar/2021 13:38:44] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-09 13:38:44,420 INFO werkzeug Thread-5 : 127.0.0.1 - - [09/Mar/2021 13:38:44] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-09 13:38:44,421 INFO werkzeug Thread-6 : 127.0.0.1 - - [09/Mar/2021 13:38:44] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-09 13:38:44,439 INFO werkzeug Thread-7 : 127.0.0.1 - - [09/Mar/2021 13:38:44] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-09 13:38:44,468 INFO werkzeug Thread-8 : 127.0.0.1 - - [09/Mar/2021 13:38:44] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-09 13:43:10,953 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/models.py', reloading
+2021-03-09 13:43:11,003 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-09 13:43:14,339 INFO werkzeug Thread-3 : 127.0.0.1 - - [09/Mar/2021 13:43:14] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-09 13:43:14,360 INFO werkzeug Thread-4 : 127.0.0.1 - - [09/Mar/2021 13:43:14] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-09 13:43:14,362 INFO werkzeug Thread-6 : 127.0.0.1 - - [09/Mar/2021 13:43:14] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-09 13:43:14,362 INFO werkzeug Thread-5 : 127.0.0.1 - - [09/Mar/2021 13:43:14] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-09 13:43:14,379 INFO werkzeug Thread-7 : 127.0.0.1 - - [09/Mar/2021 13:43:14] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-09 13:43:14,418 INFO werkzeug Thread-8 : 127.0.0.1 - - [09/Mar/2021 13:43:14] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-09 13:51:30,404 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/models.py', reloading
+2021-03-09 13:51:30,456 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-09 13:51:33,747 INFO werkzeug Thread-3 : 127.0.0.1 - - [09/Mar/2021 13:51:33] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-09 13:51:33,756 INFO werkzeug Thread-4 : 127.0.0.1 - - [09/Mar/2021 13:51:33] "[37mGET /static/main.css HTTP/1.1[0m" 200 -
+2021-03-09 13:51:33,858 INFO werkzeug Thread-5 : 127.0.0.1 - - [09/Mar/2021 13:51:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-03-09 13:51:38,071 INFO werkzeug Thread-6 : 127.0.0.1 - - [09/Mar/2021 13:51:38] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-09 13:51:38,092 INFO werkzeug Thread-7 : 127.0.0.1 - - [09/Mar/2021 13:51:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-03-09 13:51:38,814 INFO werkzeug Thread-8 : 127.0.0.1 - - [09/Mar/2021 13:51:38] "[37mGET /admin HTTP/1.1[0m" 200 -
+2021-03-09 13:51:38,834 INFO werkzeug Thread-9 : 127.0.0.1 - - [09/Mar/2021 13:51:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-03-09 14:57:27,464 INFO werkzeug Thread-10 : 127.0.0.1 - - [09/Mar/2021 14:57:27] "[33mGET /index HTTP/1.1[0m" 404 -
+2021-03-09 15:02:17,415 INFO werkzeug Thread-11 : 127.0.0.1 - - [09/Mar/2021 15:02:17] "[37mGET /admin HTTP/1.1[0m" 200 -
+2021-03-09 15:02:23,196 INFO werkzeug Thread-12 : 127.0.0.1 - - [09/Mar/2021 15:02:23] "[37mGET /admin HTTP/1.1[0m" 200 -
+2021-03-09 15:02:23,709 INFO werkzeug Thread-13 : 127.0.0.1 - - [09/Mar/2021 15:02:23] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-09 15:02:28,448 INFO werkzeug Thread-14 : 127.0.0.1 - - [09/Mar/2021 15:02:28] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-09 15:02:29,133 INFO werkzeug Thread-15 : 127.0.0.1 - - [09/Mar/2021 15:02:29] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 08:34:51,365 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 08:34:51] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-12 08:34:51,373 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 08:34:51] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 08:34:51,375 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 08:34:51] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 08:34:51,375 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 08:34:51] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 08:34:51,415 INFO werkzeug Thread-7 : 127.0.0.1 - - [12/Mar/2021 08:34:51] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 08:34:51,427 INFO werkzeug Thread-8 : 127.0.0.1 - - [12/Mar/2021 08:34:51] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 08:35:46,040 INFO werkzeug Thread-9 : 127.0.0.1 - - [12/Mar/2021 08:35:46] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-12 08:35:46,048 INFO werkzeug Thread-10 : 127.0.0.1 - - [12/Mar/2021 08:35:46] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 08:35:46,049 INFO werkzeug Thread-11 : 127.0.0.1 - - [12/Mar/2021 08:35:46] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 08:35:46,050 INFO werkzeug Thread-12 : 127.0.0.1 - - [12/Mar/2021 08:35:46] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 08:35:46,066 INFO werkzeug Thread-13 : 127.0.0.1 - - [12/Mar/2021 08:35:46] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 08:35:46,067 INFO werkzeug Thread-14 : 127.0.0.1 - - [12/Mar/2021 08:35:46] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 08:36:18,328 INFO werkzeug Thread-15 : 127.0.0.1 - - [12/Mar/2021 08:36:18] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-12 08:36:18,335 INFO werkzeug Thread-17 : 127.0.0.1 - - [12/Mar/2021 08:36:18] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 08:36:18,335 INFO werkzeug Thread-18 : 127.0.0.1 - - [12/Mar/2021 08:36:18] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 08:36:18,335 INFO werkzeug Thread-16 : 127.0.0.1 - - [12/Mar/2021 08:36:18] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 08:36:18,346 INFO werkzeug Thread-19 : 127.0.0.1 - - [12/Mar/2021 08:36:18] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 08:36:18,347 INFO werkzeug Thread-20 : 127.0.0.1 - - [12/Mar/2021 08:36:18] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 08:36:45,597 INFO werkzeug Thread-21 : 127.0.0.1 - - [12/Mar/2021 08:36:45] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-12 08:36:45,605 INFO werkzeug Thread-22 : 127.0.0.1 - - [12/Mar/2021 08:36:45] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 08:36:45,605 INFO werkzeug Thread-23 : 127.0.0.1 - - [12/Mar/2021 08:36:45] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 08:36:45,606 INFO werkzeug Thread-24 : 127.0.0.1 - - [12/Mar/2021 08:36:45] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 08:36:45,617 INFO werkzeug Thread-25 : 127.0.0.1 - - [12/Mar/2021 08:36:45] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 08:36:45,618 INFO werkzeug Thread-26 : 127.0.0.1 - - [12/Mar/2021 08:36:45] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 08:36:58,149 INFO werkzeug Thread-27 : 127.0.0.1 - - [12/Mar/2021 08:36:58] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-12 08:36:58,161 INFO werkzeug Thread-28 : 127.0.0.1 - - [12/Mar/2021 08:36:58] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 08:36:58,162 INFO werkzeug Thread-30 : 127.0.0.1 - - [12/Mar/2021 08:36:58] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 08:36:58,162 INFO werkzeug Thread-29 : 127.0.0.1 - - [12/Mar/2021 08:36:58] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 08:36:58,174 INFO werkzeug Thread-31 : 127.0.0.1 - - [12/Mar/2021 08:36:58] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 08:36:58,175 INFO werkzeug Thread-32 : 127.0.0.1 - - [12/Mar/2021 08:36:58] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 08:38:02,266 INFO werkzeug Thread-33 : 127.0.0.1 - - [12/Mar/2021 08:38:02] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-12 08:38:02,306 INFO werkzeug Thread-34 : 127.0.0.1 - - [12/Mar/2021 08:38:02] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 08:38:02,306 INFO werkzeug Thread-36 : 127.0.0.1 - - [12/Mar/2021 08:38:02] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 08:38:02,307 INFO werkzeug Thread-35 : 127.0.0.1 - - [12/Mar/2021 08:38:02] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 08:38:02,323 INFO werkzeug Thread-37 : 127.0.0.1 - - [12/Mar/2021 08:38:02] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 08:38:02,339 INFO werkzeug Thread-38 : 127.0.0.1 - - [12/Mar/2021 08:38:02] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 08:38:03,183 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/__init__.py', reloading
+2021-03-12 08:38:03,249 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 08:38:41,543 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-12 08:38:41,596 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 08:38:44,246 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 08:38:44] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-12 08:38:44,252 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 08:38:44] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 08:38:44,253 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 08:38:44] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 08:38:44,254 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 08:38:44] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 08:38:44,269 INFO werkzeug Thread-7 : 127.0.0.1 - - [12/Mar/2021 08:38:44] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 08:38:44,305 INFO werkzeug Thread-8 : 127.0.0.1 - - [12/Mar/2021 08:38:44] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 08:42:41,271 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/models.py', reloading
+2021-03-12 08:42:41,332 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 08:42:47,367 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 08:42:47] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-12 08:42:47,374 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 08:42:47] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 08:42:47,374 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 08:42:47] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 08:42:47,375 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 08:42:47] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 08:42:47,394 INFO werkzeug Thread-7 : 127.0.0.1 - - [12/Mar/2021 08:42:47] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 08:42:47,426 INFO werkzeug Thread-8 : 127.0.0.1 - - [12/Mar/2021 08:42:47] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 08:43:49,125 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/models.py', reloading
+2021-03-12 08:43:49,191 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 08:43:51,280 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 08:43:51] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-12 08:43:51,288 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 08:43:51] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 08:43:51,290 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 08:43:51] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 08:43:51,290 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 08:43:51] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 08:43:51,305 INFO werkzeug Thread-7 : 127.0.0.1 - - [12/Mar/2021 08:43:51] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 08:43:51,340 INFO werkzeug Thread-8 : 127.0.0.1 - - [12/Mar/2021 08:43:51] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 08:45:12,496 INFO werkzeug Thread-9 : 127.0.0.1 - - [12/Mar/2021 08:45:12] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-12 08:45:12,508 INFO werkzeug Thread-10 : 127.0.0.1 - - [12/Mar/2021 08:45:12] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 08:45:12,509 INFO werkzeug Thread-11 : 127.0.0.1 - - [12/Mar/2021 08:45:12] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 08:45:12,510 INFO werkzeug Thread-12 : 127.0.0.1 - - [12/Mar/2021 08:45:12] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 08:45:12,525 INFO werkzeug Thread-13 : 127.0.0.1 - - [12/Mar/2021 08:45:12] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 08:45:12,556 INFO werkzeug Thread-14 : 127.0.0.1 - - [12/Mar/2021 08:45:12] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 08:50:17,801 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/models.py', reloading
+2021-03-12 08:50:17,864 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 08:50:19,930 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 08:50:19] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-12 08:50:19,972 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 08:50:19] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 08:50:19,973 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 08:50:19] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 08:50:19,973 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 08:50:19] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 08:50:19,991 INFO werkzeug Thread-7 : 127.0.0.1 - - [12/Mar/2021 08:50:19] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 08:50:20,019 INFO werkzeug Thread-8 : 127.0.0.1 - - [12/Mar/2021 08:50:20] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 08:51:55,272 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/models.py', reloading
+2021-03-12 08:51:55,325 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 08:52:03,671 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 08:52:03] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-12 08:52:03,695 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 08:52:03] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 08:52:03,696 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 08:52:03] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 08:52:03,696 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 08:52:03] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 08:52:03,716 INFO werkzeug Thread-7 : 127.0.0.1 - - [12/Mar/2021 08:52:03] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 08:52:03,753 INFO werkzeug Thread-8 : 127.0.0.1 - - [12/Mar/2021 08:52:03] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 08:55:45,320 INFO werkzeug Thread-9 : 127.0.0.1 - - [12/Mar/2021 08:55:45] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-12 08:55:45,326 INFO werkzeug Thread-10 : 127.0.0.1 - - [12/Mar/2021 08:55:45] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 08:55:45,328 INFO werkzeug Thread-11 : 127.0.0.1 - - [12/Mar/2021 08:55:45] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 08:55:45,328 INFO werkzeug Thread-12 : 127.0.0.1 - - [12/Mar/2021 08:55:45] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 08:55:45,344 INFO werkzeug Thread-13 : 127.0.0.1 - - [12/Mar/2021 08:55:45] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 08:55:45,380 INFO werkzeug Thread-14 : 127.0.0.1 - - [12/Mar/2021 08:55:45] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 09:00:13,908 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 09:00:13] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-12 09:00:13,944 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 09:00:13] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 09:00:13,944 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 09:00:13] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 09:00:13,945 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 09:00:13] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 09:00:13,958 INFO werkzeug Thread-7 : 127.0.0.1 - - [12/Mar/2021 09:00:13] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 09:00:13,982 INFO werkzeug Thread-8 : 127.0.0.1 - - [12/Mar/2021 09:00:13] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 09:01:50,074 INFO werkzeug Thread-9 : 127.0.0.1 - - [12/Mar/2021 09:01:50] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-12 09:01:50,080 INFO werkzeug Thread-10 : 127.0.0.1 - - [12/Mar/2021 09:01:50] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 09:01:50,082 INFO werkzeug Thread-11 : 127.0.0.1 - - [12/Mar/2021 09:01:50] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 09:01:50,082 INFO werkzeug Thread-12 : 127.0.0.1 - - [12/Mar/2021 09:01:50] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 09:01:50,095 INFO werkzeug Thread-13 : 127.0.0.1 - - [12/Mar/2021 09:01:50] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 09:01:50,119 INFO werkzeug Thread-14 : 127.0.0.1 - - [12/Mar/2021 09:01:50] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 09:02:16,773 INFO werkzeug Thread-15 : 127.0.0.1 - - [12/Mar/2021 09:02:16] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-12 09:02:16,778 INFO werkzeug Thread-16 : 127.0.0.1 - - [12/Mar/2021 09:02:16] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 09:02:16,781 INFO werkzeug Thread-18 : 127.0.0.1 - - [12/Mar/2021 09:02:16] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 09:02:16,781 INFO werkzeug Thread-17 : 127.0.0.1 - - [12/Mar/2021 09:02:16] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 09:02:16,794 INFO werkzeug Thread-19 : 127.0.0.1 - - [12/Mar/2021 09:02:16] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 09:02:16,817 INFO werkzeug Thread-20 : 127.0.0.1 - - [12/Mar/2021 09:02:16] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 09:04:17,844 INFO werkzeug Thread-21 : 127.0.0.1 - - [12/Mar/2021 09:04:17] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-12 09:04:17,851 INFO werkzeug Thread-22 : 127.0.0.1 - - [12/Mar/2021 09:04:17] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 09:04:17,853 INFO werkzeug Thread-23 : 127.0.0.1 - - [12/Mar/2021 09:04:17] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 09:04:17,853 INFO werkzeug Thread-24 : 127.0.0.1 - - [12/Mar/2021 09:04:17] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 09:04:17,867 INFO werkzeug Thread-25 : 127.0.0.1 - - [12/Mar/2021 09:04:17] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 09:04:17,891 INFO werkzeug Thread-26 : 127.0.0.1 - - [12/Mar/2021 09:04:17] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 09:04:32,935 INFO werkzeug Thread-27 : 127.0.0.1 - - [12/Mar/2021 09:04:32] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-12 09:04:32,942 INFO werkzeug Thread-28 : 127.0.0.1 - - [12/Mar/2021 09:04:32] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 09:04:32,942 INFO werkzeug Thread-29 : 127.0.0.1 - - [12/Mar/2021 09:04:32] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 09:04:32,944 INFO werkzeug Thread-30 : 127.0.0.1 - - [12/Mar/2021 09:04:32] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 09:04:32,961 INFO werkzeug Thread-31 : 127.0.0.1 - - [12/Mar/2021 09:04:32] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 09:04:32,988 INFO werkzeug Thread-32 : 127.0.0.1 - - [12/Mar/2021 09:04:32] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 09:04:58,838 INFO werkzeug Thread-33 : 127.0.0.1 - - [12/Mar/2021 09:04:58] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-12 09:04:58,846 INFO werkzeug Thread-34 : 127.0.0.1 - - [12/Mar/2021 09:04:58] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 09:04:58,847 INFO werkzeug Thread-35 : 127.0.0.1 - - [12/Mar/2021 09:04:58] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 09:04:58,847 INFO werkzeug Thread-36 : 127.0.0.1 - - [12/Mar/2021 09:04:58] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 09:04:58,860 INFO werkzeug Thread-37 : 127.0.0.1 - - [12/Mar/2021 09:04:58] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 09:04:58,883 INFO werkzeug Thread-38 : 127.0.0.1 - - [12/Mar/2021 09:04:58] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 09:07:01,275 INFO werkzeug Thread-39 : 127.0.0.1 - - [12/Mar/2021 09:07:01] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-12 09:07:01,281 INFO werkzeug Thread-40 : 127.0.0.1 - - [12/Mar/2021 09:07:01] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 09:07:01,282 INFO werkzeug Thread-41 : 127.0.0.1 - - [12/Mar/2021 09:07:01] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 09:07:01,283 INFO werkzeug Thread-42 : 127.0.0.1 - - [12/Mar/2021 09:07:01] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 09:07:01,299 INFO werkzeug Thread-43 : 127.0.0.1 - - [12/Mar/2021 09:07:01] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 09:07:01,324 INFO werkzeug Thread-44 : 127.0.0.1 - - [12/Mar/2021 09:07:01] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 09:08:09,438 INFO werkzeug Thread-45 : 127.0.0.1 - - [12/Mar/2021 09:08:09] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-03-12 09:08:09,443 INFO werkzeug Thread-46 : 127.0.0.1 - - [12/Mar/2021 09:08:09] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 09:08:09,447 INFO werkzeug Thread-47 : 127.0.0.1 - - [12/Mar/2021 09:08:09] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 09:08:09,447 INFO werkzeug Thread-48 : 127.0.0.1 - - [12/Mar/2021 09:08:09] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 09:08:09,460 INFO werkzeug Thread-49 : 127.0.0.1 - - [12/Mar/2021 09:08:09] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 09:08:09,485 INFO werkzeug Thread-50 : 127.0.0.1 - - [12/Mar/2021 09:08:09] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 09:08:49,454 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-12 09:08:49,521 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 09:08:54,242 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-12 09:08:54,291 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 09:08:56,804 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 09:08:56] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-12 09:08:56,811 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 09:08:56] "[37mGET /static/main.css HTTP/1.1[0m" 200 -
+2021-03-12 09:09:05,658 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 09:09:05] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 09:09:06,270 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 09:09:06] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 09:09:06,765 INFO werkzeug Thread-7 : 127.0.0.1 - - [12/Mar/2021 09:09:06] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 09:09:07,300 INFO cinemawebapp Thread-8 : Login request route
+2021-03-12 09:09:07,300 DEBUG cinemawebapp Thread-8 : Debug level logging
+2021-03-12 09:09:07,326 INFO werkzeug Thread-8 : 127.0.0.1 - - [12/Mar/2021 09:09:07] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+2021-03-12 09:09:07,332 INFO werkzeug Thread-9 : 127.0.0.1 - - [12/Mar/2021 09:09:07] "[37mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 09:09:07,334 INFO werkzeug Thread-10 : 127.0.0.1 - - [12/Mar/2021 09:09:07] "[37mGET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 09:09:07,335 INFO werkzeug Thread-11 : 127.0.0.1 - - [12/Mar/2021 09:09:07] "[37mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 09:09:07,351 INFO werkzeug Thread-12 : 127.0.0.1 - - [12/Mar/2021 09:09:07] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 09:09:07,381 INFO werkzeug Thread-13 : 127.0.0.1 - - [12/Mar/2021 09:09:07] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 09:09:07,387 INFO werkzeug Thread-14 : 127.0.0.1 - - [12/Mar/2021 09:09:07] "[37mGET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 09:09:36,909 INFO cinemawebapp Thread-15 : Login request route
+2021-03-12 09:09:36,910 DEBUG cinemawebapp Thread-15 : Debug level logging
+2021-03-12 09:09:36,928 INFO werkzeug Thread-15 : 127.0.0.1 - - [12/Mar/2021 09:09:36] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+2021-03-12 09:09:36,935 INFO werkzeug Thread-16 : 127.0.0.1 - - [12/Mar/2021 09:09:36] "[37mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 09:09:36,937 INFO werkzeug Thread-17 : 127.0.0.1 - - [12/Mar/2021 09:09:36] "[37mGET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 09:09:36,937 INFO werkzeug Thread-18 : 127.0.0.1 - - [12/Mar/2021 09:09:36] "[37mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 09:09:36,951 INFO werkzeug Thread-19 : 127.0.0.1 - - [12/Mar/2021 09:09:36] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 09:09:36,976 INFO werkzeug Thread-20 : 127.0.0.1 - - [12/Mar/2021 09:09:36] "[37mGET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 09:11:03,230 INFO cinemawebapp Thread-21 : Login request route
+2021-03-12 09:11:03,230 DEBUG cinemawebapp Thread-21 : Debug level logging
+2021-03-12 09:11:03,237 INFO werkzeug Thread-21 : 127.0.0.1 - - [12/Mar/2021 09:11:03] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 09:11:03,276 INFO werkzeug Thread-22 : 127.0.0.1 - - [12/Mar/2021 09:11:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-03-12 09:11:06,798 INFO werkzeug Thread-23 : 127.0.0.1 - - [12/Mar/2021 09:11:06] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 09:11:07,878 INFO cinemawebapp Thread-24 : Login request route
+2021-03-12 09:11:07,878 DEBUG cinemawebapp Thread-24 : Debug level logging
+2021-03-12 09:11:07,882 INFO werkzeug Thread-24 : 127.0.0.1 - - [12/Mar/2021 09:11:07] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 09:11:08,518 INFO werkzeug Thread-25 : 127.0.0.1 - - [12/Mar/2021 09:11:08] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 09:11:09,096 INFO werkzeug Thread-26 : 127.0.0.1 - - [12/Mar/2021 09:11:09] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 09:11:09,478 INFO werkzeug Thread-27 : 127.0.0.1 - - [12/Mar/2021 09:11:09] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 09:53:29,429 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 09:53:29] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-12 09:54:01,842 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 09:54:01] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 09:54:02,687 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 09:54:02] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 09:54:03,278 INFO cinemawebapp Thread-6 : Login request route
+2021-03-12 09:54:03,278 DEBUG cinemawebapp Thread-6 : Debug level logging
+2021-03-12 09:54:03,287 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 09:54:03] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 09:54:29,309 INFO cinemawebapp Thread-7 : Signup request route
+2021-03-12 09:54:29,309 DEBUG cinemawebapp Thread-7 : Debug level logging
+2021-03-12 09:54:29,324 INFO werkzeug Thread-7 : 127.0.0.1 - - [12/Mar/2021 09:54:29] "[37mGET /signup HTTP/1.1[0m" 200 -
+2021-03-12 09:54:29,342 INFO werkzeug Thread-8 : 127.0.0.1 - - [12/Mar/2021 09:54:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-03-12 09:57:26,255 INFO cinemawebapp Thread-9 : Signup request route
+2021-03-12 09:57:26,256 DEBUG cinemawebapp Thread-9 : Debug level logging
+2021-03-12 09:57:26,277 INFO werkzeug Thread-9 : 127.0.0.1 - - [12/Mar/2021 09:57:26] "[35m[1mPOST /signup HTTP/1.1[0m" 500 -
+2021-03-12 09:57:26,322 INFO werkzeug Thread-11 : 127.0.0.1 - - [12/Mar/2021 09:57:26] "[37mGET /signup?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 09:57:26,323 INFO werkzeug Thread-10 : 127.0.0.1 - - [12/Mar/2021 09:57:26] "[37mGET /signup?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 09:57:26,323 INFO werkzeug Thread-12 : 127.0.0.1 - - [12/Mar/2021 09:57:26] "[37mGET /signup?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 09:57:26,368 INFO werkzeug Thread-13 : 127.0.0.1 - - [12/Mar/2021 09:57:26] "[37mGET /signup?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 09:57:26,388 INFO werkzeug Thread-14 : 127.0.0.1 - - [12/Mar/2021 09:57:26] "[37mGET /signup?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 09:57:26,394 INFO werkzeug Thread-15 : 127.0.0.1 - - [12/Mar/2021 09:57:26] "[37mGET /signup?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 09:58:00,842 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-12 09:58:00,908 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 09:58:04,452 INFO cinemawebapp Thread-3 : Signup request route
+2021-03-12 09:58:04,452 DEBUG cinemawebapp Thread-3 : Debug level logging
+2021-03-12 09:58:04,788 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 09:58:04] "[35m[1mPOST /signup HTTP/1.1[0m" 500 -
+2021-03-12 09:58:04,795 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 09:58:04] "[37mGET /signup?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 09:58:04,796 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 09:58:04] "[37mGET /signup?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 09:58:04,797 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 09:58:04] "[37mGET /signup?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 09:58:04,809 INFO werkzeug Thread-7 : 127.0.0.1 - - [12/Mar/2021 09:58:04] "[37mGET /signup?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 09:58:04,823 INFO werkzeug Thread-8 : 127.0.0.1 - - [12/Mar/2021 09:58:04] "[37mGET /signup?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 10:00:15,935 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-12 10:00:15,997 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 10:00:21,040 INFO cinemawebapp Thread-3 : Signup request route
+2021-03-12 10:00:21,041 DEBUG cinemawebapp Thread-3 : Debug level logging
+2021-03-12 10:00:21,050 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 10:00:21] "[32mPOST /signup HTTP/1.1[0m" 302 -
+2021-03-12 10:00:22,210 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 10:00:22] "[35m[1mGET /home HTTP/1.1[0m" 500 -
+2021-03-12 10:00:22,222 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 10:00:22] "[37mGET /home?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 10:00:22,222 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 10:00:22] "[37mGET /home?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 10:00:22,223 INFO werkzeug Thread-7 : 127.0.0.1 - - [12/Mar/2021 10:00:22] "[37mGET /home?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 10:00:22,266 INFO werkzeug Thread-8 : 127.0.0.1 - - [12/Mar/2021 10:00:22] "[37mGET /home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 10:00:22,289 INFO werkzeug Thread-9 : 127.0.0.1 - - [12/Mar/2021 10:00:22] "[37mGET /home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 10:00:22,293 INFO werkzeug Thread-10 : 127.0.0.1 - - [12/Mar/2021 10:00:22] "[37mGET /home?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 10:01:29,856 INFO werkzeug Thread-11 : 127.0.0.1 - - [12/Mar/2021 10:01:29] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 10:01:31,888 INFO cinemawebapp Thread-12 : Logout route
+2021-03-12 10:01:31,888 DEBUG cinemawebapp Thread-12 : Debug level logging
+2021-03-12 10:01:31,889 INFO werkzeug Thread-12 : 127.0.0.1 - - [12/Mar/2021 10:01:31] "[32mGET /logout HTTP/1.1[0m" 302 -
+2021-03-12 10:01:31,895 INFO werkzeug Thread-13 : 127.0.0.1 - - [12/Mar/2021 10:01:31] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 10:01:33,011 INFO cinemawebapp Thread-14 : Login request route
+2021-03-12 10:01:33,011 DEBUG cinemawebapp Thread-14 : Debug level logging
+2021-03-12 10:01:33,018 INFO werkzeug Thread-14 : 127.0.0.1 - - [12/Mar/2021 10:01:33] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 10:01:37,753 INFO cinemawebapp Thread-15 : Login request route
+2021-03-12 10:01:37,753 DEBUG cinemawebapp Thread-15 : Debug level logging
+2021-03-12 10:01:37,756 INFO werkzeug Thread-15 : 127.0.0.1 - - [12/Mar/2021 10:01:37] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 10:01:45,290 INFO cinemawebapp Thread-16 : Login request route
+2021-03-12 10:01:45,291 DEBUG cinemawebapp Thread-16 : Debug level logging
+2021-03-12 10:01:45,293 INFO werkzeug Thread-16 : 127.0.0.1 - - [12/Mar/2021 10:01:45] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 10:01:48,580 INFO cinemawebapp Thread-17 : Signup request route
+2021-03-12 10:01:48,580 DEBUG cinemawebapp Thread-17 : Debug level logging
+2021-03-12 10:01:48,591 INFO werkzeug Thread-17 : 127.0.0.1 - - [12/Mar/2021 10:01:48] "[37mGET /signup HTTP/1.1[0m" 200 -
+2021-03-12 10:02:09,394 INFO cinemawebapp Thread-18 : Signup request route
+2021-03-12 10:02:09,394 DEBUG cinemawebapp Thread-18 : Debug level logging
+2021-03-12 10:02:09,406 INFO werkzeug Thread-18 : 127.0.0.1 - - [12/Mar/2021 10:02:09] "[37mPOST /signup HTTP/1.1[0m" 200 -
+2021-03-12 10:02:12,690 INFO cinemawebapp Thread-19 : Login request route
+2021-03-12 10:02:12,690 DEBUG cinemawebapp Thread-19 : Debug level logging
+2021-03-12 10:02:12,692 INFO werkzeug Thread-19 : 127.0.0.1 - - [12/Mar/2021 10:02:12] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 10:02:18,419 INFO cinemawebapp Thread-20 : Login request route
+2021-03-12 10:02:18,419 DEBUG cinemawebapp Thread-20 : Debug level logging
+2021-03-12 10:02:18,421 INFO werkzeug Thread-20 : 127.0.0.1 - - [12/Mar/2021 10:02:18] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 10:02:21,835 INFO werkzeug Thread-21 : 127.0.0.1 - - [12/Mar/2021 10:02:21] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 10:02:22,679 INFO cinemawebapp Thread-22 : Login request route
+2021-03-12 10:02:22,679 DEBUG cinemawebapp Thread-22 : Debug level logging
+2021-03-12 10:02:22,681 INFO werkzeug Thread-22 : 127.0.0.1 - - [12/Mar/2021 10:02:22] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 10:02:27,786 INFO cinemawebapp Thread-23 : Login request route
+2021-03-12 10:02:27,786 DEBUG cinemawebapp Thread-23 : Debug level logging
+2021-03-12 10:02:27,788 INFO werkzeug Thread-23 : 127.0.0.1 - - [12/Mar/2021 10:02:27] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 10:04:09,733 INFO cinemawebapp Thread-24 : Login request route
+2021-03-12 10:04:09,734 DEBUG cinemawebapp Thread-24 : Debug level logging
+2021-03-12 10:04:09,735 INFO werkzeug Thread-24 : 127.0.0.1 - - [12/Mar/2021 10:04:09] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 10:04:14,100 INFO cinemawebapp Thread-25 : Login request route
+2021-03-12 10:04:14,100 DEBUG cinemawebapp Thread-25 : Debug level logging
+2021-03-12 10:04:14,102 INFO werkzeug Thread-25 : 127.0.0.1 - - [12/Mar/2021 10:04:14] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 10:04:21,950 INFO cinemawebapp Thread-26 : Login request route
+2021-03-12 10:04:21,950 DEBUG cinemawebapp Thread-26 : Debug level logging
+2021-03-12 10:04:21,952 INFO werkzeug Thread-26 : 127.0.0.1 - - [12/Mar/2021 10:04:21] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 10:06:50,923 INFO cinemawebapp Thread-27 : Signup request route
+2021-03-12 10:06:50,923 DEBUG cinemawebapp Thread-27 : Debug level logging
+2021-03-12 10:06:50,925 INFO werkzeug Thread-27 : 127.0.0.1 - - [12/Mar/2021 10:06:50] "[37mGET /signup HTTP/1.1[0m" 200 -
+2021-03-12 10:07:15,074 INFO cinemawebapp Thread-28 : Signup request route
+2021-03-12 10:07:15,074 DEBUG cinemawebapp Thread-28 : Debug level logging
+2021-03-12 10:07:15,163 INFO werkzeug Thread-28 : 127.0.0.1 - - [12/Mar/2021 10:07:15] "[32mPOST /signup HTTP/1.1[0m" 302 -
+2021-03-12 10:07:15,169 INFO cinemawebapp Thread-29 : Login request route
+2021-03-12 10:07:15,170 DEBUG cinemawebapp Thread-29 : Debug level logging
+2021-03-12 10:07:15,171 INFO werkzeug Thread-29 : 127.0.0.1 - - [12/Mar/2021 10:07:15] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 10:07:22,505 INFO cinemawebapp Thread-30 : Login request route
+2021-03-12 10:07:22,506 DEBUG cinemawebapp Thread-30 : Debug level logging
+2021-03-12 10:07:22,508 INFO werkzeug Thread-30 : 127.0.0.1 - - [12/Mar/2021 10:07:22] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 10:08:59,636 INFO cinemawebapp Thread-31 : Login request route
+2021-03-12 10:08:59,637 DEBUG cinemawebapp Thread-31 : Debug level logging
+2021-03-12 10:08:59,639 INFO werkzeug Thread-31 : 127.0.0.1 - - [12/Mar/2021 10:08:59] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 10:09:03,548 INFO werkzeug Thread-32 : 127.0.0.1 - - [12/Mar/2021 10:09:03] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 10:09:04,636 INFO werkzeug Thread-33 : 127.0.0.1 - - [12/Mar/2021 10:09:04] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 10:09:05,367 INFO cinemawebapp Thread-34 : Login request route
+2021-03-12 10:09:05,367 DEBUG cinemawebapp Thread-34 : Debug level logging
+2021-03-12 10:09:05,369 INFO werkzeug Thread-34 : 127.0.0.1 - - [12/Mar/2021 10:09:05] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 10:09:10,335 INFO cinemawebapp Thread-35 : Login request route
+2021-03-12 10:09:10,335 DEBUG cinemawebapp Thread-35 : Debug level logging
+2021-03-12 10:09:10,337 INFO werkzeug Thread-35 : 127.0.0.1 - - [12/Mar/2021 10:09:10] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 10:09:15,268 INFO werkzeug Thread-36 : 127.0.0.1 - - [12/Mar/2021 10:09:15] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 10:09:16,607 INFO werkzeug Thread-37 : 127.0.0.1 - - [12/Mar/2021 10:09:16] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 10:09:17,054 INFO cinemawebapp Thread-38 : Login request route
+2021-03-12 10:09:17,054 DEBUG cinemawebapp Thread-38 : Debug level logging
+2021-03-12 10:09:17,056 INFO werkzeug Thread-38 : 127.0.0.1 - - [12/Mar/2021 10:09:17] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 10:11:03,431 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-12 10:11:03,495 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 10:11:06,136 INFO cinemawebapp Thread-3 : Login request route
+2021-03-12 10:11:06,136 DEBUG cinemawebapp Thread-3 : Debug level logging
+2021-03-12 10:11:06,148 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 10:11:06] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 10:11:08,465 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 10:11:08] "[31m[1mGET /home HTTP/1.1[0m" 401 -
+2021-03-12 10:11:15,884 INFO cinemawebapp Thread-5 : Login request route
+2021-03-12 10:11:15,884 DEBUG cinemawebapp Thread-5 : Debug level logging
+2021-03-12 10:11:15,887 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 10:11:15] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 10:11:19,131 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 10:11:19] "[31m[1mGET /home HTTP/1.1[0m" 401 -
+2021-03-12 10:11:30,638 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-12 10:11:30,697 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 10:21:18,006 INFO cinemawebapp Thread-3 : Login request route
+2021-03-12 10:21:18,006 DEBUG cinemawebapp Thread-3 : Debug level logging
+2021-03-12 10:21:18,021 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 10:21:18] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 10:21:19,232 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 10:21:19] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 10:21:19,711 INFO cinemawebapp Thread-5 : Login request route
+2021-03-12 10:21:19,711 DEBUG cinemawebapp Thread-5 : Debug level logging
+2021-03-12 10:21:19,713 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 10:21:19] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 10:21:24,529 INFO cinemawebapp Thread-6 : Login request route
+2021-03-12 10:21:24,529 DEBUG cinemawebapp Thread-6 : Debug level logging
+2021-03-12 10:21:24,531 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 10:21:24] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 10:21:28,650 INFO cinemawebapp Thread-7 : Signup request route
+2021-03-12 10:21:28,650 DEBUG cinemawebapp Thread-7 : Debug level logging
+2021-03-12 10:21:28,661 INFO werkzeug Thread-7 : 127.0.0.1 - - [12/Mar/2021 10:21:28] "[37mGET /signup HTTP/1.1[0m" 200 -
+2021-03-12 10:21:33,090 INFO cinemawebapp Thread-8 : Login request route
+2021-03-12 10:21:33,090 DEBUG cinemawebapp Thread-8 : Debug level logging
+2021-03-12 10:21:33,091 INFO werkzeug Thread-8 : 127.0.0.1 - - [12/Mar/2021 10:21:33] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 10:21:34,394 INFO cinemawebapp Thread-9 : Login request route
+2021-03-12 10:21:34,394 DEBUG cinemawebapp Thread-9 : Debug level logging
+2021-03-12 10:21:34,396 INFO werkzeug Thread-9 : 127.0.0.1 - - [12/Mar/2021 10:21:34] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 10:21:37,092 INFO werkzeug Thread-10 : 127.0.0.1 - - [12/Mar/2021 10:21:37] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 10:21:37,883 INFO werkzeug Thread-11 : 127.0.0.1 - - [12/Mar/2021 10:21:37] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 10:21:38,532 INFO cinemawebapp Thread-12 : Login request route
+2021-03-12 10:21:38,532 DEBUG cinemawebapp Thread-12 : Debug level logging
+2021-03-12 10:21:38,533 INFO werkzeug Thread-12 : 127.0.0.1 - - [12/Mar/2021 10:21:38] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 10:21:39,110 INFO werkzeug Thread-13 : 127.0.0.1 - - [12/Mar/2021 10:21:39] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 10:21:39,424 INFO werkzeug Thread-14 : 127.0.0.1 - - [12/Mar/2021 10:21:39] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 10:21:40,269 INFO cinemawebapp Thread-15 : Login request route
+2021-03-12 10:21:40,269 DEBUG cinemawebapp Thread-15 : Debug level logging
+2021-03-12 10:21:40,271 INFO werkzeug Thread-15 : 127.0.0.1 - - [12/Mar/2021 10:21:40] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 13:16:30,875 INFO cinemawebapp Thread-16 : Login request route
+2021-03-12 13:16:30,877 DEBUG cinemawebapp Thread-16 : Debug level logging
+2021-03-12 13:16:30,880 INFO flask_wtf.csrf Thread-16 : The CSRF token has expired.
+2021-03-12 13:16:30,882 INFO werkzeug Thread-16 : 127.0.0.1 - - [12/Mar/2021 13:16:30] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 13:21:51,249 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-12 13:21:51,345 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 13:22:05,728 INFO cinemawebapp Thread-3 : Login request route
+2021-03-12 13:22:05,728 DEBUG cinemawebapp Thread-3 : Debug level logging
+2021-03-12 13:22:05,729 INFO flask_wtf.csrf Thread-3 : The CSRF token has expired.
+2021-03-12 13:22:05,741 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 13:22:05] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 13:22:10,686 INFO cinemawebapp Thread-4 : Login request route
+2021-03-12 13:22:10,686 DEBUG cinemawebapp Thread-4 : Debug level logging
+2021-03-12 13:22:10,688 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 13:22:10] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 13:22:12,927 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 13:22:12] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 13:22:13,689 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 13:22:13] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 13:22:14,506 INFO cinemawebapp Thread-7 : Login request route
+2021-03-12 13:22:14,506 DEBUG cinemawebapp Thread-7 : Debug level logging
+2021-03-12 13:22:14,507 INFO werkzeug Thread-7 : 127.0.0.1 - - [12/Mar/2021 13:22:14] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 13:22:44,874 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-12 13:22:44,929 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 13:22:48,746 INFO cinemawebapp Thread-3 : Login request route
+2021-03-12 13:22:48,746 DEBUG cinemawebapp Thread-3 : Debug level logging
+2021-03-12 13:22:48,759 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 13:22:48] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 13:22:50,282 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 13:22:50] "[31m[1mGET /home HTTP/1.1[0m" 401 -
+2021-03-12 13:22:56,126 INFO cinemawebapp Thread-5 : Login request route
+2021-03-12 13:22:56,126 DEBUG cinemawebapp Thread-5 : Debug level logging
+2021-03-12 13:22:56,129 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 13:22:56] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 13:23:30,236 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-12 13:23:30,289 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 13:25:16,008 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 13:25:16] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 13:25:17,402 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 13:25:17] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 13:25:18,267 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 13:25:18] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 13:25:19,043 INFO cinemawebapp Thread-6 : Login request route
+2021-03-12 13:25:19,043 DEBUG cinemawebapp Thread-6 : Debug level logging
+2021-03-12 13:25:19,049 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 13:25:19] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 13:25:25,795 INFO cinemawebapp Thread-7 : Login request route
+2021-03-12 13:25:25,795 DEBUG cinemawebapp Thread-7 : Debug level logging
+2021-03-12 13:25:25,797 INFO werkzeug Thread-7 : 127.0.0.1 - - [12/Mar/2021 13:25:25] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 13:25:33,732 INFO cinemawebapp Thread-8 : Signup request route
+2021-03-12 13:25:33,733 DEBUG cinemawebapp Thread-8 : Debug level logging
+2021-03-12 13:25:33,742 INFO werkzeug Thread-8 : 127.0.0.1 - - [12/Mar/2021 13:25:33] "[37mGET /signup HTTP/1.1[0m" 200 -
+2021-03-12 13:25:36,534 INFO cinemawebapp Thread-9 : Login request route
+2021-03-12 13:25:36,534 DEBUG cinemawebapp Thread-9 : Debug level logging
+2021-03-12 13:25:36,535 INFO werkzeug Thread-9 : 127.0.0.1 - - [12/Mar/2021 13:25:36] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 13:25:37,874 INFO cinemawebapp Thread-10 : Login request route
+2021-03-12 13:25:37,874 DEBUG cinemawebapp Thread-10 : Debug level logging
+2021-03-12 13:25:37,876 INFO werkzeug Thread-10 : 127.0.0.1 - - [12/Mar/2021 13:25:37] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 13:43:04,927 INFO werkzeug Thread-11 : 127.0.0.1 - - [12/Mar/2021 13:43:04] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 13:43:06,298 INFO cinemawebapp Thread-12 : Login request route
+2021-03-12 13:43:06,298 DEBUG cinemawebapp Thread-12 : Debug level logging
+2021-03-12 13:43:06,300 INFO werkzeug Thread-12 : 127.0.0.1 - - [12/Mar/2021 13:43:06] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 13:47:47,865 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-12 13:47:47,917 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 13:52:14,612 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 13:52:14] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-12 13:52:16,406 INFO cinemawebapp Thread-4 : Login request route
+2021-03-12 13:52:16,406 DEBUG cinemawebapp Thread-4 : Debug level logging
+2021-03-12 13:52:16,412 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 13:52:16] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 13:52:22,117 INFO cinemawebapp Thread-5 : Login request route
+2021-03-12 13:52:22,117 DEBUG cinemawebapp Thread-5 : Debug level logging
+2021-03-12 13:52:22,119 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 13:52:22] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 13:52:25,371 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 13:52:25] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 13:52:25,955 INFO werkzeug Thread-7 : 127.0.0.1 - - [12/Mar/2021 13:52:25] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 13:52:26,381 INFO cinemawebapp Thread-8 : Login request route
+2021-03-12 13:52:26,381 DEBUG cinemawebapp Thread-8 : Debug level logging
+2021-03-12 13:52:26,383 INFO werkzeug Thread-8 : 127.0.0.1 - - [12/Mar/2021 13:52:26] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 13:52:27,656 INFO cinemawebapp Thread-9 : Signup request route
+2021-03-12 13:52:27,656 DEBUG cinemawebapp Thread-9 : Debug level logging
+2021-03-12 13:52:27,666 INFO werkzeug Thread-9 : 127.0.0.1 - - [12/Mar/2021 13:52:27] "[37mGET /signup HTTP/1.1[0m" 200 -
+2021-03-12 13:52:52,156 INFO cinemawebapp Thread-10 : Signup request route
+2021-03-12 13:52:52,156 DEBUG cinemawebapp Thread-10 : Debug level logging
+2021-03-12 13:52:52,254 INFO werkzeug Thread-10 : 127.0.0.1 - - [12/Mar/2021 13:52:52] "[32mPOST /signup HTTP/1.1[0m" 302 -
+2021-03-12 13:52:52,260 INFO cinemawebapp Thread-11 : Login request route
+2021-03-12 13:52:52,260 DEBUG cinemawebapp Thread-11 : Debug level logging
+2021-03-12 13:52:52,261 INFO werkzeug Thread-11 : 127.0.0.1 - - [12/Mar/2021 13:52:52] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 13:52:57,858 INFO cinemawebapp Thread-12 : Login request route
+2021-03-12 13:52:57,859 DEBUG cinemawebapp Thread-12 : Debug level logging
+2021-03-12 13:52:57,861 INFO werkzeug Thread-12 : 127.0.0.1 - - [12/Mar/2021 13:52:57] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 13:53:02,191 INFO cinemawebapp Thread-13 : Login request route
+2021-03-12 13:53:02,192 DEBUG cinemawebapp Thread-13 : Debug level logging
+2021-03-12 13:53:02,194 INFO werkzeug Thread-13 : 127.0.0.1 - - [12/Mar/2021 13:53:02] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 13:53:04,940 INFO werkzeug Thread-14 : 127.0.0.1 - - [12/Mar/2021 13:53:04] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 13:53:05,869 INFO cinemawebapp Thread-15 : Login request route
+2021-03-12 13:53:05,869 DEBUG cinemawebapp Thread-15 : Debug level logging
+2021-03-12 13:53:05,871 INFO werkzeug Thread-15 : 127.0.0.1 - - [12/Mar/2021 13:53:05] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 13:53:07,265 INFO cinemawebapp Thread-16 : Login request route
+2021-03-12 13:53:07,265 DEBUG cinemawebapp Thread-16 : Debug level logging
+2021-03-12 13:53:07,266 INFO werkzeug Thread-16 : 127.0.0.1 - - [12/Mar/2021 13:53:07] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 13:53:12,780 INFO cinemawebapp Thread-17 : Login request route
+2021-03-12 13:53:12,780 DEBUG cinemawebapp Thread-17 : Debug level logging
+2021-03-12 13:53:12,782 INFO werkzeug Thread-17 : 127.0.0.1 - - [12/Mar/2021 13:53:12] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 14:01:18,718 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/__init__.py', reloading
+2021-03-12 14:01:18,766 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 14:01:24,372 INFO cinemawebapp Thread-3 : Login request route
+2021-03-12 14:01:24,373 DEBUG cinemawebapp Thread-3 : Debug level logging
+2021-03-12 14:01:24,384 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 14:01:24] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 14:01:27,762 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 14:01:27] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 14:01:28,394 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 14:01:28] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 14:01:28,963 INFO cinemawebapp Thread-6 : Login request route
+2021-03-12 14:01:28,963 DEBUG cinemawebapp Thread-6 : Debug level logging
+2021-03-12 14:01:28,964 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 14:01:28] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 14:01:37,547 INFO cinemawebapp Thread-7 : Login request route
+2021-03-12 14:01:37,547 DEBUG cinemawebapp Thread-7 : Debug level logging
+2021-03-12 14:01:37,549 INFO werkzeug Thread-7 : 127.0.0.1 - - [12/Mar/2021 14:01:37] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 14:04:24,528 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-12 14:04:24,578 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 14:04:29,617 INFO cinemawebapp Thread-3 : Login request route
+2021-03-12 14:04:29,617 DEBUG cinemawebapp Thread-3 : Debug level logging
+2021-03-12 14:04:29,629 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 14:04:29] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 14:04:31,221 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 14:04:31] "[35m[1mGET /home HTTP/1.1[0m" 500 -
+2021-03-12 14:04:31,227 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 14:04:31] "[37mGET /home?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 14:04:31,230 INFO werkzeug Thread-7 : 127.0.0.1 - - [12/Mar/2021 14:04:31] "[37mGET /home?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 14:04:31,230 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 14:04:31] "[37mGET /home?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 14:04:31,253 INFO werkzeug Thread-8 : 127.0.0.1 - - [12/Mar/2021 14:04:31] "[37mGET /home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 14:04:31,278 INFO werkzeug Thread-9 : 127.0.0.1 - - [12/Mar/2021 14:04:31] "[37mGET /home?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 14:04:40,350 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-12 14:04:40,410 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 14:04:43,210 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 14:04:43] "[35m[1mGET /home HTTP/1.1[0m" 500 -
+2021-03-12 14:04:43,215 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 14:04:43] "[37mGET /home?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 14:04:43,217 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 14:04:43] "[37mGET /home?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 14:04:43,217 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 14:04:43] "[37mGET /home?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 14:04:43,227 INFO werkzeug Thread-7 : 127.0.0.1 - - [12/Mar/2021 14:04:43] "[37mGET /home?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 14:04:43,229 INFO werkzeug Thread-8 : 127.0.0.1 - - [12/Mar/2021 14:04:43] "[37mGET /home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 14:04:55,219 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-12 14:04:55,271 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 14:04:58,365 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 14:04:58] "[35m[1mGET /home HTTP/1.1[0m" 500 -
+2021-03-12 14:04:58,371 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 14:04:58] "[37mGET /home?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 14:04:58,372 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 14:04:58] "[37mGET /home?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 14:04:58,373 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 14:04:58] "[37mGET /home?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 14:04:58,394 INFO werkzeug Thread-7 : 127.0.0.1 - - [12/Mar/2021 14:04:58] "[37mGET /home?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 14:04:58,396 INFO werkzeug Thread-8 : 127.0.0.1 - - [12/Mar/2021 14:04:58] "[37mGET /home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 14:05:20,176 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-12 14:05:20,235 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 14:05:23,230 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 14:05:23] "[32mGET /home HTTP/1.1[0m" 302 -
+2021-03-12 14:05:23,240 INFO cinemawebapp Thread-4 : Login request route
+2021-03-12 14:05:23,240 DEBUG cinemawebapp Thread-4 : Debug level logging
+2021-03-12 14:05:23,252 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 14:05:23] "[37mGET /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-12 14:05:23,303 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 14:05:23] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-03-12 14:05:30,027 INFO cinemawebapp Thread-6 : Login request route
+2021-03-12 14:05:30,027 DEBUG cinemawebapp Thread-6 : Debug level logging
+2021-03-12 14:05:30,030 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 14:05:30] "[37mPOST /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-12 14:05:47,223 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-12 14:05:47,278 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 14:05:51,588 INFO cinemawebapp Thread-3 : Login request route
+2021-03-12 14:05:51,588 DEBUG cinemawebapp Thread-3 : Debug level logging
+2021-03-12 14:05:51,600 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 14:05:51] "[37mPOST /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-12 14:05:55,775 INFO cinemawebapp Thread-4 : Login request route
+2021-03-12 14:05:55,775 DEBUG cinemawebapp Thread-4 : Debug level logging
+2021-03-12 14:05:55,777 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 14:05:55] "[37mPOST /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-12 14:05:59,292 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 14:05:59] "[32mGET /home HTTP/1.1[0m" 302 -
+2021-03-12 14:05:59,297 INFO cinemawebapp Thread-6 : Login request route
+2021-03-12 14:05:59,297 DEBUG cinemawebapp Thread-6 : Debug level logging
+2021-03-12 14:05:59,299 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 14:05:59] "[37mGET /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-12 14:06:00,344 INFO cinemawebapp Thread-7 : Login request route
+2021-03-12 14:06:00,344 DEBUG cinemawebapp Thread-7 : Debug level logging
+2021-03-12 14:06:00,346 INFO werkzeug Thread-7 : 127.0.0.1 - - [12/Mar/2021 14:06:00] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 14:06:05,544 INFO cinemawebapp Thread-8 : Login request route
+2021-03-12 14:06:05,544 DEBUG cinemawebapp Thread-8 : Debug level logging
+2021-03-12 14:06:05,546 INFO werkzeug Thread-8 : 127.0.0.1 - - [12/Mar/2021 14:06:05] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 14:09:42,139 INFO cinemawebapp Thread-9 : Login request route
+2021-03-12 14:09:42,139 DEBUG cinemawebapp Thread-9 : Debug level logging
+2021-03-12 14:09:42,144 INFO werkzeug Thread-9 : 127.0.0.1 - - [12/Mar/2021 14:09:42] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 14:09:46,566 INFO cinemawebapp Thread-10 : Login request route
+2021-03-12 14:09:46,566 DEBUG cinemawebapp Thread-10 : Debug level logging
+2021-03-12 14:09:46,568 INFO werkzeug Thread-10 : 127.0.0.1 - - [12/Mar/2021 14:09:46] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 14:09:48,943 INFO werkzeug Thread-11 : 127.0.0.1 - - [12/Mar/2021 14:09:48] "[32mGET /home HTTP/1.1[0m" 302 -
+2021-03-12 14:09:48,949 INFO cinemawebapp Thread-12 : Login request route
+2021-03-12 14:09:48,949 DEBUG cinemawebapp Thread-12 : Debug level logging
+2021-03-12 14:09:48,950 INFO werkzeug Thread-12 : 127.0.0.1 - - [12/Mar/2021 14:09:48] "[37mGET /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-12 14:09:49,596 INFO werkzeug Thread-13 : 127.0.0.1 - - [12/Mar/2021 14:09:49] "[32mGET /home HTTP/1.1[0m" 302 -
+2021-03-12 14:09:49,601 INFO cinemawebapp Thread-14 : Login request route
+2021-03-12 14:09:49,601 DEBUG cinemawebapp Thread-14 : Debug level logging
+2021-03-12 14:09:49,603 INFO werkzeug Thread-14 : 127.0.0.1 - - [12/Mar/2021 14:09:49] "[37mGET /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-12 14:09:50,241 INFO werkzeug Thread-15 : 127.0.0.1 - - [12/Mar/2021 14:09:50] "[32mGET /home HTTP/1.1[0m" 302 -
+2021-03-12 14:09:50,247 INFO cinemawebapp Thread-16 : Login request route
+2021-03-12 14:09:50,247 DEBUG cinemawebapp Thread-16 : Debug level logging
+2021-03-12 14:09:50,249 INFO werkzeug Thread-16 : 127.0.0.1 - - [12/Mar/2021 14:09:50] "[37mGET /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-12 14:09:50,690 INFO werkzeug Thread-17 : 127.0.0.1 - - [12/Mar/2021 14:09:50] "[32mGET /home HTTP/1.1[0m" 302 -
+2021-03-12 14:09:50,694 INFO cinemawebapp Thread-18 : Login request route
+2021-03-12 14:09:50,694 DEBUG cinemawebapp Thread-18 : Debug level logging
+2021-03-12 14:09:50,695 INFO werkzeug Thread-18 : 127.0.0.1 - - [12/Mar/2021 14:09:50] "[37mGET /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-12 14:09:51,292 INFO werkzeug Thread-19 : 127.0.0.1 - - [12/Mar/2021 14:09:51] "[32mGET /home HTTP/1.1[0m" 302 -
+2021-03-12 14:09:51,298 INFO cinemawebapp Thread-20 : Login request route
+2021-03-12 14:09:51,298 DEBUG cinemawebapp Thread-20 : Debug level logging
+2021-03-12 14:09:51,299 INFO werkzeug Thread-20 : 127.0.0.1 - - [12/Mar/2021 14:09:51] "[37mGET /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-12 14:09:52,071 INFO werkzeug Thread-21 : 127.0.0.1 - - [12/Mar/2021 14:09:52] "[32mGET /home HTTP/1.1[0m" 302 -
+2021-03-12 14:09:52,090 INFO cinemawebapp Thread-22 : Login request route
+2021-03-12 14:09:52,090 DEBUG cinemawebapp Thread-22 : Debug level logging
+2021-03-12 14:09:52,092 INFO werkzeug Thread-22 : 127.0.0.1 - - [12/Mar/2021 14:09:52] "[37mGET /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-12 14:09:52,490 INFO cinemawebapp Thread-23 : Login request route
+2021-03-12 14:09:52,490 DEBUG cinemawebapp Thread-23 : Debug level logging
+2021-03-12 14:09:52,492 INFO werkzeug Thread-23 : 127.0.0.1 - - [12/Mar/2021 14:09:52] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 14:11:25,808 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/models.py', reloading
+2021-03-12 14:11:25,858 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 14:11:36,305 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 14:11:36] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+2021-03-12 14:11:36,313 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 14:11:36] "[37mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 14:11:36,316 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 14:11:36] "[37mGET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 14:11:36,316 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 14:11:36] "[37mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 14:11:36,327 INFO werkzeug Thread-7 : 127.0.0.1 - - [12/Mar/2021 14:11:36] "[37mGET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 14:11:36,329 INFO werkzeug Thread-8 : 127.0.0.1 - - [12/Mar/2021 14:11:36] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 14:12:22,835 INFO cinemawebapp Thread-9 : Login request route
+2021-03-12 14:12:22,835 DEBUG cinemawebapp Thread-9 : Debug level logging
+2021-03-12 14:12:22,844 INFO werkzeug Thread-9 : 127.0.0.1 - - [12/Mar/2021 14:12:22] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-03-12 14:12:28,607 INFO cinemawebapp Thread-10 : Login request route
+2021-03-12 14:12:28,607 DEBUG cinemawebapp Thread-10 : Debug level logging
+2021-03-12 14:12:28,609 INFO werkzeug Thread-10 : 127.0.0.1 - - [12/Mar/2021 14:12:28] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 14:15:36,712 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/models.py', reloading
+2021-03-12 14:15:36,763 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 14:15:48,821 INFO cinemawebapp Thread-3 : Login request route
+2021-03-12 14:15:48,821 DEBUG cinemawebapp Thread-3 : Debug level logging
+2021-03-12 14:15:48,833 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 14:15:48] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 14:15:54,451 INFO cinemawebapp Thread-4 : Login request route
+2021-03-12 14:15:54,451 DEBUG cinemawebapp Thread-4 : Debug level logging
+2021-03-12 14:15:54,453 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 14:15:54] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-03-12 14:15:58,472 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 14:15:58] "[32mGET /home HTTP/1.1[0m" 302 -
+2021-03-12 14:15:58,477 INFO cinemawebapp Thread-6 : Login request route
+2021-03-12 14:15:58,477 DEBUG cinemawebapp Thread-6 : Debug level logging
+2021-03-12 14:15:58,479 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 14:15:58] "[37mGET /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-12 14:15:59,099 INFO werkzeug Thread-7 : 127.0.0.1 - - [12/Mar/2021 14:15:59] "[32mGET /home HTTP/1.1[0m" 302 -
+2021-03-12 14:15:59,104 INFO cinemawebapp Thread-8 : Login request route
+2021-03-12 14:15:59,104 DEBUG cinemawebapp Thread-8 : Debug level logging
+2021-03-12 14:15:59,106 INFO werkzeug Thread-8 : 127.0.0.1 - - [12/Mar/2021 14:15:59] "[37mGET /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-12 14:15:59,582 INFO werkzeug Thread-9 : 127.0.0.1 - - [12/Mar/2021 14:15:59] "[32mGET /home HTTP/1.1[0m" 302 -
+2021-03-12 14:15:59,588 INFO cinemawebapp Thread-10 : Login request route
+2021-03-12 14:15:59,588 DEBUG cinemawebapp Thread-10 : Debug level logging
+2021-03-12 14:15:59,589 INFO werkzeug Thread-10 : 127.0.0.1 - - [12/Mar/2021 14:15:59] "[37mGET /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-12 14:20:44,464 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/models.py', reloading
+2021-03-12 14:20:44,521 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 14:20:50,634 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 14:20:50] "[35m[1mGET /login?next=%2Fhome HTTP/1.1[0m" 500 -
+2021-03-12 14:20:50,642 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 14:20:50] "[37mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 14:20:50,646 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 14:20:50] "[37mGET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 14:20:50,646 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 14:20:50] "[37mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 14:20:50,658 INFO werkzeug Thread-7 : 127.0.0.1 - - [12/Mar/2021 14:20:50] "[37mGET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 14:20:50,660 INFO werkzeug Thread-8 : 127.0.0.1 - - [12/Mar/2021 14:20:50] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 14:21:10,862 INFO cinemawebapp Thread-9 : Login request route
+2021-03-12 14:21:10,862 DEBUG cinemawebapp Thread-9 : Debug level logging
+2021-03-12 14:21:10,873 INFO werkzeug Thread-9 : 127.0.0.1 - - [12/Mar/2021 14:21:10] "[37mGET /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-12 14:21:16,719 INFO cinemawebapp Thread-10 : Login request route
+2021-03-12 14:21:16,719 DEBUG cinemawebapp Thread-10 : Debug level logging
+2021-03-12 14:21:16,721 INFO werkzeug Thread-10 : 127.0.0.1 - - [12/Mar/2021 14:21:16] "[37mPOST /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-12 14:30:14,609 INFO cinemawebapp Thread-11 : Login request route
+2021-03-12 14:30:14,610 DEBUG cinemawebapp Thread-11 : Debug level logging
+2021-03-12 14:30:14,615 INFO werkzeug Thread-11 : 127.0.0.1 - - [12/Mar/2021 14:30:14] "[37mPOST /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-12 14:30:19,014 INFO cinemawebapp Thread-12 : Login request route
+2021-03-12 14:30:19,014 DEBUG cinemawebapp Thread-12 : Debug level logging
+2021-03-12 14:30:19,016 INFO werkzeug Thread-12 : 127.0.0.1 - - [12/Mar/2021 14:30:19] "[37mPOST /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-12 14:30:22,013 INFO werkzeug Thread-13 : 127.0.0.1 - - [12/Mar/2021 14:30:22] "[32mGET /home HTTP/1.1[0m" 302 -
+2021-03-12 14:30:22,018 INFO cinemawebapp Thread-14 : Login request route
+2021-03-12 14:30:22,018 DEBUG cinemawebapp Thread-14 : Debug level logging
+2021-03-12 14:30:22,019 INFO werkzeug Thread-14 : 127.0.0.1 - - [12/Mar/2021 14:30:22] "[37mGET /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-12 14:30:22,617 INFO werkzeug Thread-15 : 127.0.0.1 - - [12/Mar/2021 14:30:22] "[32mGET /home HTTP/1.1[0m" 302 -
+2021-03-12 14:30:22,622 INFO cinemawebapp Thread-16 : Login request route
+2021-03-12 14:30:22,622 DEBUG cinemawebapp Thread-16 : Debug level logging
+2021-03-12 14:30:22,624 INFO werkzeug Thread-16 : 127.0.0.1 - - [12/Mar/2021 14:30:22] "[37mGET /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-12 14:30:27,664 INFO cinemawebapp Thread-17 : Login request route
+2021-03-12 14:30:27,665 DEBUG cinemawebapp Thread-17 : Debug level logging
+2021-03-12 14:30:27,667 INFO werkzeug Thread-17 : 127.0.0.1 - - [12/Mar/2021 14:30:27] "[37mPOST /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-12 14:31:45,012 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/forms.py', reloading
+2021-03-12 14:31:45,071 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 14:32:58,941 INFO cinemawebapp Thread-3 : Login request route
+2021-03-12 14:32:58,941 DEBUG cinemawebapp Thread-3 : Debug level logging
+2021-03-12 14:32:59,028 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 14:32:59] "[32mPOST /login?next=%2Fhome HTTP/1.1[0m" 302 -
+2021-03-12 14:33:00,798 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 14:33:00] "[35m[1mGET /home HTTP/1.1[0m" 500 -
+2021-03-12 14:33:00,824 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 14:33:00] "[37mGET /home?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 14:33:00,826 INFO werkzeug Thread-7 : 127.0.0.1 - - [12/Mar/2021 14:33:00] "[37mGET /home?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 14:33:00,826 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 14:33:00] "[37mGET /home?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 14:33:00,837 INFO werkzeug Thread-8 : 127.0.0.1 - - [12/Mar/2021 14:33:00] "[37mGET /home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 14:33:00,850 INFO werkzeug Thread-9 : 127.0.0.1 - - [12/Mar/2021 14:33:00] "[37mGET /home?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 14:33:42,728 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-12 14:33:42,790 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 14:33:45,451 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 14:33:45] "[35m[1mGET /home HTTP/1.1[0m" 500 -
+2021-03-12 14:33:45,503 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 14:33:45] "[37mGET /home?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 14:33:45,505 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 14:33:45] "[37mGET /home?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 14:33:45,505 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 14:33:45] "[37mGET /home?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 14:33:45,517 INFO werkzeug Thread-7 : 127.0.0.1 - - [12/Mar/2021 14:33:45] "[37mGET /home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 14:33:45,530 INFO werkzeug Thread-8 : 127.0.0.1 - - [12/Mar/2021 14:33:45] "[37mGET /home?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 14:33:54,649 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-12 14:33:54,707 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 14:33:57,499 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 14:33:57] "[35m[1mGET /home HTTP/1.1[0m" 500 -
+2021-03-12 14:33:57,548 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 14:33:57] "[37mGET /home?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-12 14:33:57,549 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 14:33:57] "[37mGET /home?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-12 14:33:57,549 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 14:33:57] "[37mGET /home?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-12 14:33:57,562 INFO werkzeug Thread-7 : 127.0.0.1 - - [12/Mar/2021 14:33:57] "[37mGET /home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-12 14:33:57,576 INFO werkzeug Thread-8 : 127.0.0.1 - - [12/Mar/2021 14:33:57] "[37mGET /home?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-12 14:34:18,643 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-12 14:34:18,704 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 14:34:57,888 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-12 14:34:57,939 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-12 14:35:00,229 INFO werkzeug Thread-3 : 127.0.0.1 - - [12/Mar/2021 14:35:00] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 14:35:03,171 INFO werkzeug Thread-4 : 127.0.0.1 - - [12/Mar/2021 14:35:03] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 14:35:04,551 INFO werkzeug Thread-5 : 127.0.0.1 - - [12/Mar/2021 14:35:04] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 14:35:05,925 INFO werkzeug Thread-6 : 127.0.0.1 - - [12/Mar/2021 14:35:05] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 14:35:07,000 INFO werkzeug Thread-7 : 127.0.0.1 - - [12/Mar/2021 14:35:07] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 14:35:07,815 INFO cinemawebapp Thread-8 : Logout route
+2021-03-12 14:35:07,815 DEBUG cinemawebapp Thread-8 : Debug level logging
+2021-03-12 14:35:07,816 INFO werkzeug Thread-8 : 127.0.0.1 - - [12/Mar/2021 14:35:07] "[32mGET /logout HTTP/1.1[0m" 302 -
+2021-03-12 14:35:07,823 INFO werkzeug Thread-9 : 127.0.0.1 - - [12/Mar/2021 14:35:07] "[32mGET /home HTTP/1.1[0m" 302 -
+2021-03-12 14:35:07,845 INFO cinemawebapp Thread-10 : Login request route
+2021-03-12 14:35:07,845 DEBUG cinemawebapp Thread-10 : Debug level logging
+2021-03-12 14:35:07,853 INFO werkzeug Thread-10 : 127.0.0.1 - - [12/Mar/2021 14:35:07] "[37mGET /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-12 14:35:15,749 INFO cinemawebapp Thread-11 : Login request route
+2021-03-12 14:35:15,750 DEBUG cinemawebapp Thread-11 : Debug level logging
+2021-03-12 14:35:15,833 INFO werkzeug Thread-11 : 127.0.0.1 - - [12/Mar/2021 14:35:15] "[32mPOST /login?next=%2Fhome HTTP/1.1[0m" 302 -
+2021-03-12 14:35:15,845 INFO werkzeug Thread-12 : 127.0.0.1 - - [12/Mar/2021 14:35:15] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 14:35:36,145 INFO cinemawebapp Thread-13 : Logout route
+2021-03-12 14:35:36,145 DEBUG cinemawebapp Thread-13 : Debug level logging
+2021-03-12 14:35:36,146 INFO werkzeug Thread-13 : 127.0.0.1 - - [12/Mar/2021 14:35:36] "[32mGET /logout HTTP/1.1[0m" 302 -
+2021-03-12 14:35:36,151 INFO werkzeug Thread-14 : 127.0.0.1 - - [12/Mar/2021 14:35:36] "[32mGET /home HTTP/1.1[0m" 302 -
+2021-03-12 14:35:36,156 INFO cinemawebapp Thread-15 : Login request route
+2021-03-12 14:35:36,156 DEBUG cinemawebapp Thread-15 : Debug level logging
+2021-03-12 14:35:36,157 INFO werkzeug Thread-15 : 127.0.0.1 - - [12/Mar/2021 14:35:36] "[37mGET /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-12 14:41:44,444 INFO cinemawebapp Thread-16 : Login request route
+2021-03-12 14:41:44,445 DEBUG cinemawebapp Thread-16 : Debug level logging
+2021-03-12 14:41:44,524 INFO werkzeug Thread-16 : 127.0.0.1 - - [12/Mar/2021 14:41:44] "[32mPOST /login?next=%2Fhome HTTP/1.1[0m" 302 -
+2021-03-12 14:41:44,530 INFO werkzeug Thread-17 : 127.0.0.1 - - [12/Mar/2021 14:41:44] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 14:41:47,399 INFO cinemawebapp Thread-18 : Logout route
+2021-03-12 14:41:47,399 DEBUG cinemawebapp Thread-18 : Debug level logging
+2021-03-12 14:41:47,401 INFO werkzeug Thread-18 : 127.0.0.1 - - [12/Mar/2021 14:41:47] "[32mGET /logout HTTP/1.1[0m" 302 -
+2021-03-12 14:41:47,408 INFO werkzeug Thread-19 : 127.0.0.1 - - [12/Mar/2021 14:41:47] "[32mGET /home HTTP/1.1[0m" 302 -
+2021-03-12 14:41:47,413 INFO cinemawebapp Thread-20 : Login request route
+2021-03-12 14:41:47,413 DEBUG cinemawebapp Thread-20 : Debug level logging
+2021-03-12 14:41:47,415 INFO werkzeug Thread-20 : 127.0.0.1 - - [12/Mar/2021 14:41:47] "[37mGET /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-12 14:41:52,175 INFO cinemawebapp Thread-21 : Login request route
+2021-03-12 14:41:52,175 DEBUG cinemawebapp Thread-21 : Debug level logging
+2021-03-12 14:41:52,255 INFO werkzeug Thread-21 : 127.0.0.1 - - [12/Mar/2021 14:41:52] "[32mPOST /login?next=%2Fhome HTTP/1.1[0m" 302 -
+2021-03-12 14:41:52,262 INFO werkzeug Thread-22 : 127.0.0.1 - - [12/Mar/2021 14:41:52] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 14:42:13,426 INFO cinemawebapp Thread-23 : Logout route
+2021-03-12 14:42:13,426 DEBUG cinemawebapp Thread-23 : Debug level logging
+2021-03-12 14:42:13,427 INFO werkzeug Thread-23 : 127.0.0.1 - - [12/Mar/2021 14:42:13] "[32mGET /logout HTTP/1.1[0m" 302 -
+2021-03-12 14:42:13,433 INFO werkzeug Thread-24 : 127.0.0.1 - - [12/Mar/2021 14:42:13] "[32mGET /home HTTP/1.1[0m" 302 -
+2021-03-12 14:42:13,437 INFO cinemawebapp Thread-25 : Login request route
+2021-03-12 14:42:13,437 DEBUG cinemawebapp Thread-25 : Debug level logging
+2021-03-12 14:42:13,443 INFO werkzeug Thread-25 : 127.0.0.1 - - [12/Mar/2021 14:42:13] "[37mGET /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-12 14:42:18,320 INFO cinemawebapp Thread-26 : Login request route
+2021-03-12 14:42:18,320 DEBUG cinemawebapp Thread-26 : Debug level logging
+2021-03-12 14:42:18,400 INFO werkzeug Thread-26 : 127.0.0.1 - - [12/Mar/2021 14:42:18] "[32mPOST /login?next=%2Fhome HTTP/1.1[0m" 302 -
+2021-03-12 14:42:18,407 INFO werkzeug Thread-27 : 127.0.0.1 - - [12/Mar/2021 14:42:18] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 14:49:44,733 INFO werkzeug Thread-28 : 127.0.0.1 - - [12/Mar/2021 14:49:44] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 14:49:46,857 INFO werkzeug Thread-29 : 127.0.0.1 - - [12/Mar/2021 14:49:46] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-12 14:49:47,689 INFO cinemawebapp Thread-30 : Logout route
+2021-03-12 14:49:47,689 DEBUG cinemawebapp Thread-30 : Debug level logging
+2021-03-12 14:49:47,691 INFO werkzeug Thread-30 : 127.0.0.1 - - [12/Mar/2021 14:49:47] "[32mGET /logout HTTP/1.1[0m" 302 -
+2021-03-12 14:49:47,697 INFO werkzeug Thread-31 : 127.0.0.1 - - [12/Mar/2021 14:49:47] "[32mGET /home HTTP/1.1[0m" 302 -
+2021-03-12 14:49:47,703 INFO cinemawebapp Thread-32 : Login request route
+2021-03-12 14:49:47,703 DEBUG cinemawebapp Thread-32 : Debug level logging
+2021-03-12 14:49:47,704 INFO werkzeug Thread-32 : 127.0.0.1 - - [12/Mar/2021 14:49:47] "[37mGET /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-12 14:49:49,118 INFO werkzeug Thread-33 : 127.0.0.1 - - [12/Mar/2021 14:49:49] "[32mGET /home HTTP/1.1[0m" 302 -
+2021-03-12 14:49:49,123 INFO cinemawebapp Thread-34 : Login request route
+2021-03-12 14:49:49,123 DEBUG cinemawebapp Thread-34 : Debug level logging
+2021-03-12 14:49:49,124 INFO werkzeug Thread-34 : 127.0.0.1 - - [12/Mar/2021 14:49:49] "[37mGET /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-19 09:14:05,005 INFO werkzeug Thread-3 : 127.0.0.1 - - [19/Mar/2021 09:14:05] "[32mGET / HTTP/1.1[0m" 302 -
+2021-03-19 09:14:05,024 INFO cinemawebapp Thread-4 : Login request route
+2021-03-19 09:14:05,024 DEBUG cinemawebapp Thread-4 : Debug level logging
+2021-03-19 09:14:05,036 INFO werkzeug Thread-4 : 127.0.0.1 - - [19/Mar/2021 09:14:05] "[37mGET /login?next=%2F HTTP/1.1[0m" 200 -
+2021-03-19 09:14:05,045 INFO werkzeug Thread-5 : 127.0.0.1 - - [19/Mar/2021 09:14:05] "[37mGET /static/main.css HTTP/1.1[0m" 200 -
+2021-03-19 09:14:05,197 INFO werkzeug Thread-6 : 127.0.0.1 - - [19/Mar/2021 09:14:05] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+2021-03-19 09:14:05,199 INFO werkzeug Thread-7 : 127.0.0.1 - - [19/Mar/2021 09:14:05] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+2021-03-19 09:14:05,213 INFO werkzeug Thread-8 : 127.0.0.1 - - [19/Mar/2021 09:14:05] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-03-19 09:14:12,271 INFO cinemawebapp Thread-9 : Login request route
+2021-03-19 09:14:12,271 DEBUG cinemawebapp Thread-9 : Debug level logging
+2021-03-19 09:14:12,360 INFO werkzeug Thread-9 : 127.0.0.1 - - [19/Mar/2021 09:14:12] "[32mPOST /login?next=%2F HTTP/1.1[0m" 302 -
+2021-03-19 09:14:12,367 INFO werkzeug Thread-10 : 127.0.0.1 - - [19/Mar/2021 09:14:12] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-19 09:14:12,383 INFO werkzeug Thread-11 : 127.0.0.1 - - [19/Mar/2021 09:14:12] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-03-19 09:14:17,958 INFO werkzeug Thread-12 : 127.0.0.1 - - [19/Mar/2021 09:14:17] "[37mGET / HTTP/1.1[0m" 200 -
+2021-03-19 09:14:18,145 INFO werkzeug Thread-13 : 127.0.0.1 - - [19/Mar/2021 09:14:18] "[37mGET /admin HTTP/1.1[0m" 200 -
+2021-03-19 09:14:18,155 INFO werkzeug Thread-14 : 127.0.0.1 - - [19/Mar/2021 09:14:18] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-03-19 09:14:18,658 INFO werkzeug Thread-15 : 127.0.0.1 - - [19/Mar/2021 09:14:18] "[33mGET /add HTTP/1.1[0m" 404 -
+2021-03-19 09:14:18,666 INFO werkzeug Thread-16 : 127.0.0.1 - - [19/Mar/2021 09:14:18] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-03-19 09:14:26,173 INFO werkzeug Thread-17 : 127.0.0.1 - - [19/Mar/2021 09:14:26] "[33mGET /add-movie HTTP/1.1[0m" 404 -
+2021-03-19 09:14:26,185 INFO werkzeug Thread-18 : 127.0.0.1 - - [19/Mar/2021 09:14:26] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-03-19 09:14:35,404 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-19 09:14:35,458 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-19 09:14:37,738 INFO werkzeug Thread-3 : 127.0.0.1 - - [19/Mar/2021 09:14:37] "[35m[1mGET /add-movie HTTP/1.1[0m" 500 -
+2021-03-19 09:14:37,744 INFO werkzeug Thread-4 : 127.0.0.1 - - [19/Mar/2021 09:14:37] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-19 09:14:37,746 INFO werkzeug Thread-6 : 127.0.0.1 - - [19/Mar/2021 09:14:37] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-19 09:14:37,746 INFO werkzeug Thread-5 : 127.0.0.1 - - [19/Mar/2021 09:14:37] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-19 09:14:37,782 INFO werkzeug Thread-7 : 127.0.0.1 - - [19/Mar/2021 09:14:37] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-19 09:14:37,787 INFO werkzeug Thread-8 : 127.0.0.1 - - [19/Mar/2021 09:14:37] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-19 09:14:37,799 INFO werkzeug Thread-9 : 127.0.0.1 - - [19/Mar/2021 09:14:37] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-19 09:16:03,487 INFO werkzeug Thread-10 : 127.0.0.1 - - [19/Mar/2021 09:16:03] "[35m[1mGET /add-movie HTTP/1.1[0m" 500 -
+2021-03-19 09:16:03,496 INFO werkzeug Thread-11 : 127.0.0.1 - - [19/Mar/2021 09:16:03] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-19 09:16:03,496 INFO werkzeug Thread-13 : 127.0.0.1 - - [19/Mar/2021 09:16:03] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-19 09:16:03,497 INFO werkzeug Thread-12 : 127.0.0.1 - - [19/Mar/2021 09:16:03] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-19 09:16:03,507 INFO werkzeug Thread-14 : 127.0.0.1 - - [19/Mar/2021 09:16:03] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-19 09:16:03,508 INFO werkzeug Thread-15 : 127.0.0.1 - - [19/Mar/2021 09:16:03] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-19 09:16:29,129 INFO werkzeug Thread-16 : 127.0.0.1 - - [19/Mar/2021 09:16:29] "[35m[1mGET /add-movie HTTP/1.1[0m" 500 -
+2021-03-19 09:16:29,136 INFO werkzeug Thread-17 : 127.0.0.1 - - [19/Mar/2021 09:16:29] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-19 09:16:29,138 INFO werkzeug Thread-19 : 127.0.0.1 - - [19/Mar/2021 09:16:29] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-19 09:16:29,139 INFO werkzeug Thread-18 : 127.0.0.1 - - [19/Mar/2021 09:16:29] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-19 09:16:29,150 INFO werkzeug Thread-20 : 127.0.0.1 - - [19/Mar/2021 09:16:29] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-19 09:16:29,172 INFO werkzeug Thread-21 : 127.0.0.1 - - [19/Mar/2021 09:16:29] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-19 09:17:25,532 INFO werkzeug Thread-22 : 127.0.0.1 - - [19/Mar/2021 09:17:25] "[35m[1mGET /add-movie HTTP/1.1[0m" 500 -
+2021-03-19 09:17:25,540 INFO werkzeug Thread-23 : 127.0.0.1 - - [19/Mar/2021 09:17:25] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-19 09:17:25,541 INFO werkzeug Thread-25 : 127.0.0.1 - - [19/Mar/2021 09:17:25] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-19 09:17:25,542 INFO werkzeug Thread-24 : 127.0.0.1 - - [19/Mar/2021 09:17:25] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-19 09:17:25,554 INFO werkzeug Thread-26 : 127.0.0.1 - - [19/Mar/2021 09:17:25] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-19 09:17:25,575 INFO werkzeug Thread-27 : 127.0.0.1 - - [19/Mar/2021 09:17:25] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-19 09:17:26,353 INFO werkzeug Thread-28 : 127.0.0.1 - - [19/Mar/2021 09:17:26] "[35m[1mGET /add-movie HTTP/1.1[0m" 500 -
+2021-03-19 09:17:26,360 INFO werkzeug Thread-29 : 127.0.0.1 - - [19/Mar/2021 09:17:26] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-19 09:17:26,360 INFO werkzeug Thread-30 : 127.0.0.1 - - [19/Mar/2021 09:17:26] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-19 09:17:26,361 INFO werkzeug Thread-31 : 127.0.0.1 - - [19/Mar/2021 09:17:26] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-19 09:17:26,379 INFO werkzeug Thread-32 : 127.0.0.1 - - [19/Mar/2021 09:17:26] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-19 09:17:26,401 INFO werkzeug Thread-33 : 127.0.0.1 - - [19/Mar/2021 09:17:26] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-19 09:17:38,164 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-19 09:17:38,222 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-19 09:17:39,437 INFO werkzeug Thread-3 : 127.0.0.1 - - [19/Mar/2021 09:17:39] "[35m[1mGET /add-movie HTTP/1.1[0m" 500 -
+2021-03-19 09:17:39,457 INFO werkzeug Thread-4 : 127.0.0.1 - - [19/Mar/2021 09:17:39] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-19 09:17:39,459 INFO werkzeug Thread-5 : 127.0.0.1 - - [19/Mar/2021 09:17:39] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-19 09:17:39,459 INFO werkzeug Thread-6 : 127.0.0.1 - - [19/Mar/2021 09:17:39] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-19 09:17:39,471 INFO werkzeug Thread-7 : 127.0.0.1 - - [19/Mar/2021 09:17:39] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-19 09:17:39,494 INFO werkzeug Thread-8 : 127.0.0.1 - - [19/Mar/2021 09:17:39] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-19 09:18:25,074 INFO werkzeug Thread-9 : 127.0.0.1 - - [19/Mar/2021 09:18:25] "[35m[1mGET /add-movie HTTP/1.1[0m" 500 -
+2021-03-19 09:18:25,083 INFO werkzeug Thread-10 : 127.0.0.1 - - [19/Mar/2021 09:18:25] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-19 09:18:25,083 INFO werkzeug Thread-11 : 127.0.0.1 - - [19/Mar/2021 09:18:25] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-19 09:18:25,084 INFO werkzeug Thread-12 : 127.0.0.1 - - [19/Mar/2021 09:18:25] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-19 09:18:25,096 INFO werkzeug Thread-13 : 127.0.0.1 - - [19/Mar/2021 09:18:25] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-19 09:18:25,119 INFO werkzeug Thread-14 : 127.0.0.1 - - [19/Mar/2021 09:18:25] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-19 09:19:24,634 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/forms.py', reloading
+2021-03-19 09:19:24,693 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-19 09:19:26,008 INFO werkzeug Thread-3 : 127.0.0.1 - - [19/Mar/2021 09:19:26] "[37mGET /add-movie HTTP/1.1[0m" 200 -
+2021-03-19 09:20:23,578 INFO werkzeug Thread-4 : 127.0.0.1 - - [19/Mar/2021 09:20:23] "[37mGET /add-movie HTTP/1.1[0m" 200 -
+2021-03-19 09:20:51,043 INFO werkzeug Thread-5 : 127.0.0.1 - - [19/Mar/2021 09:20:51] "[37mGET /add-movie HTTP/1.1[0m" 200 -
+2021-03-19 09:21:34,698 INFO werkzeug Thread-6 : 127.0.0.1 - - [19/Mar/2021 09:21:34] "[32mGET / HTTP/1.1[0m" 302 -
+2021-03-19 09:21:34,708 INFO cinemawebapp Thread-7 : Login request route
+2021-03-19 09:21:34,708 DEBUG cinemawebapp Thread-7 : Debug level logging
+2021-03-19 09:21:34,713 INFO werkzeug Thread-7 : 127.0.0.1 - - [19/Mar/2021 09:21:34] "[37mGET /login?next=%2F HTTP/1.1[0m" 200 -
+2021-03-19 09:21:34,721 INFO werkzeug Thread-8 : 127.0.0.1 - - [19/Mar/2021 09:21:34] "[37mGET /static/main.css HTTP/1.1[0m" 200 -
+2021-03-19 09:23:12,290 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/forms.py', reloading
+2021-03-19 09:23:12,373 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-19 09:23:17,021 INFO werkzeug Thread-3 : 127.0.0.1 - - [19/Mar/2021 09:23:17] "[37mGET /add-movie HTTP/1.1[0m" 200 -
+2021-03-19 09:24:18,856 INFO werkzeug Thread-4 : 127.0.0.1 - - [19/Mar/2021 09:24:18] "[37mPOST /add-movie HTTP/1.1[0m" 200 -
+2021-03-19 09:24:31,845 INFO werkzeug Thread-5 : 127.0.0.1 - - [19/Mar/2021 09:24:31] "[37mPOST /add-movie HTTP/1.1[0m" 200 -
+2021-03-19 09:25:06,332 INFO werkzeug Thread-6 : 127.0.0.1 - - [19/Mar/2021 09:25:06] "[37mPOST /add-movie HTTP/1.1[0m" 200 -
+2021-03-19 09:25:17,960 INFO werkzeug Thread-7 : 127.0.0.1 - - [19/Mar/2021 09:25:17] "[35m[1mPOST /add-movie HTTP/1.1[0m" 500 -
+2021-03-19 09:25:17,966 INFO werkzeug Thread-8 : 127.0.0.1 - - [19/Mar/2021 09:25:17] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-19 09:25:17,968 INFO werkzeug Thread-9 : 127.0.0.1 - - [19/Mar/2021 09:25:17] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-19 09:25:17,968 INFO werkzeug Thread-10 : 127.0.0.1 - - [19/Mar/2021 09:25:17] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-19 09:25:17,985 INFO werkzeug Thread-11 : 127.0.0.1 - - [19/Mar/2021 09:25:17] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-19 09:25:18,023 INFO werkzeug Thread-12 : 127.0.0.1 - - [19/Mar/2021 09:25:18] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-19 09:27:41,244 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/forms.py', reloading
+2021-03-19 09:27:41,304 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-19 09:28:30,753 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-19 09:28:30,797 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-19 09:28:34,620 INFO werkzeug Thread-3 : 127.0.0.1 - - [19/Mar/2021 09:28:34] "[35m[1mPOST /add-movie HTTP/1.1[0m" 500 -
+2021-03-19 09:28:34,643 INFO werkzeug Thread-5 : 127.0.0.1 - - [19/Mar/2021 09:28:34] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-19 09:28:34,644 INFO werkzeug Thread-4 : 127.0.0.1 - - [19/Mar/2021 09:28:34] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-19 09:28:34,644 INFO werkzeug Thread-6 : 127.0.0.1 - - [19/Mar/2021 09:28:34] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-19 09:28:34,665 INFO werkzeug Thread-7 : 127.0.0.1 - - [19/Mar/2021 09:28:34] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-19 09:28:34,691 INFO werkzeug Thread-8 : 127.0.0.1 - - [19/Mar/2021 09:28:34] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-19 09:29:03,968 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-19 09:29:04,038 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-19 09:29:06,877 INFO werkzeug Thread-3 : 127.0.0.1 - - [19/Mar/2021 09:29:06] "[35m[1mPOST /add-movie HTTP/1.1[0m" 500 -
+2021-03-19 09:29:06,905 INFO werkzeug Thread-4 : 127.0.0.1 - - [19/Mar/2021 09:29:06] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-19 09:29:06,906 INFO werkzeug Thread-5 : 127.0.0.1 - - [19/Mar/2021 09:29:06] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-19 09:29:06,907 INFO werkzeug Thread-6 : 127.0.0.1 - - [19/Mar/2021 09:29:06] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-19 09:29:06,923 INFO werkzeug Thread-7 : 127.0.0.1 - - [19/Mar/2021 09:29:06] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-19 09:29:06,948 INFO werkzeug Thread-8 : 127.0.0.1 - - [19/Mar/2021 09:29:06] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-19 09:30:38,813 INFO werkzeug Thread-9 : 127.0.0.1 - - [19/Mar/2021 09:30:38] "[37mPOST /add-movie HTTP/1.1[0m" 200 -
+2021-03-19 09:30:57,923 INFO werkzeug Thread-10 : 127.0.0.1 - - [19/Mar/2021 09:30:57] "[35m[1mPOST /add-movie HTTP/1.1[0m" 500 -
+2021-03-19 09:30:57,930 INFO werkzeug Thread-11 : 127.0.0.1 - - [19/Mar/2021 09:30:57] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+2021-03-19 09:30:57,930 INFO werkzeug Thread-12 : 127.0.0.1 - - [19/Mar/2021 09:30:57] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+2021-03-19 09:30:57,931 INFO werkzeug Thread-13 : 127.0.0.1 - - [19/Mar/2021 09:30:57] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+2021-03-19 09:30:57,950 INFO werkzeug Thread-14 : 127.0.0.1 - - [19/Mar/2021 09:30:57] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+2021-03-19 09:30:57,984 INFO werkzeug Thread-15 : 127.0.0.1 - - [19/Mar/2021 09:30:57] "[37mGET /add-movie?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+2021-03-19 09:31:36,381 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/models.py', reloading
+2021-03-19 09:31:36,446 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-19 09:31:59,399 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-19 09:31:59,452 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-19 09:32:02,942 INFO werkzeug Thread-3 : 127.0.0.1 - - [19/Mar/2021 09:32:02] "[37mPOST /add-movie HTTP/1.1[0m" 200 -
+2021-03-19 09:32:05,371 INFO werkzeug Thread-4 : 127.0.0.1 - - [19/Mar/2021 09:32:05] "[37mPOST /add-movie HTTP/1.1[0m" 200 -
+2021-03-19 09:33:05,203 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/models.py', reloading
+2021-03-19 09:33:05,259 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-19 09:33:07,902 INFO werkzeug MainThread :  * Detected change in '/Users/alper/flask/cinemawebapp/routes.py', reloading
+2021-03-19 09:33:07,962 INFO werkzeug MainThread :  * Restarting with stat
+2021-03-19 09:33:53,220 INFO werkzeug Thread-3 : 127.0.0.1 - - [19/Mar/2021 09:33:53] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-19 09:33:53,266 INFO werkzeug Thread-4 : 127.0.0.1 - - [19/Mar/2021 09:33:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-03-19 09:33:55,283 INFO werkzeug Thread-5 : 127.0.0.1 - - [19/Mar/2021 09:33:55] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-19 09:33:56,474 INFO werkzeug Thread-6 : 127.0.0.1 - - [19/Mar/2021 09:33:56] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-19 09:33:58,000 INFO werkzeug Thread-7 : 127.0.0.1 - - [19/Mar/2021 09:33:58] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-19 09:33:59,025 INFO werkzeug Thread-8 : 127.0.0.1 - - [19/Mar/2021 09:33:59] "[37mGET /home HTTP/1.1[0m" 200 -
+2021-03-19 09:34:00,243 INFO cinemawebapp Thread-9 : Logout route
+2021-03-19 09:34:00,243 DEBUG cinemawebapp Thread-9 : Debug level logging
+2021-03-19 09:34:00,245 INFO werkzeug Thread-9 : 127.0.0.1 - - [19/Mar/2021 09:34:00] "[32mGET /logout HTTP/1.1[0m" 302 -
+2021-03-19 09:34:00,251 INFO werkzeug Thread-10 : 127.0.0.1 - - [19/Mar/2021 09:34:00] "[32mGET /home HTTP/1.1[0m" 302 -
+2021-03-19 09:34:00,256 INFO cinemawebapp Thread-11 : Login request route
+2021-03-19 09:34:00,256 DEBUG cinemawebapp Thread-11 : Debug level logging
+2021-03-19 09:34:00,264 INFO werkzeug Thread-11 : 127.0.0.1 - - [19/Mar/2021 09:34:00] "[37mGET /login?next=%2Fhome HTTP/1.1[0m" 200 -
+2021-03-22 20:13:52,093 ERROR root MainThread : Error: Directory migrations already exists and is not empty

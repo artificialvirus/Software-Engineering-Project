@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<style>
+	.outline_split {
+	}
+
+	.left_outline {
+		float: left;
+		width: 30%;
+		height: 100%;
+	}
+
+	.right_outline {
+		float: right;
+		width: 68%;
+		height: 100%;
+		padding-left: 2%;
+	}
+
+	.centered {
+		padding-top: 40px;
+	}
+
+	.centered img, h2 {
+		width: 500px;
+		height: auto;
+		object-fit: contain;
+	}
+</style>
+
+<div>
+	<div class="outline_split left_outline">
+	  <div class="centered">
+		<img src=" {{ url_for('static', filename='movie_images/'~ movie.id ~'.jpg')}}"alt="Generic Film" >
+		</div>
+	</div>
+
+	<div class="outline_split right_outline">
+		{% block film_outline_content %}{% endblock %}
+	</div>
+</div>
+{% endblock content %}

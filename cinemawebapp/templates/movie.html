@@ -1,0 +1,162 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<style>
+	.outline_split {
+	}
+
+	.left_outline {
+		float: left;
+		width: 30%;
+		height: 100%;
+	}
+
+	.right_outline {
+		float: right;
+		width: 68%;
+		height: 100%;
+		padding-left: 2%;
+	}
+
+	.centered {
+		padding-top: 40px;
+	}
+
+	.centered img, h2 {
+		width: 500px;
+		height: auto;
+		object-fit: contain;
+	}
+</style>
+
+<div>
+	<div class="outline_split left_outline">
+	  <div class="centered">
+		<img src=" {{ url_for('static', filename='movie_images/'~ movie.id ~'.jpg')}}"alt="Generic Film" >
+		</div>
+	</div>
+
+	<div class="outline_split right_outline">
+
+		{% block film_outline_content %}
+
+		<style>
+			.Xbottom{
+				width: 100%;
+				float: left;
+			}
+			.XtopLeft{
+				width:30%;
+				height:40%;
+				float: left;
+			}
+
+			.XtopRight{
+				width:50%;
+				height:40%;
+				float: left;
+			}
+
+			.times {
+				overflow-x:auto;
+				font-size:20px
+			}
+
+			table th {
+				min-width: 150px
+			}
+
+			.times tr, td, th {
+				padding: 2px;
+				border-left : 5px solid {{theme.primary_colours[0]}};
+				border-right : 5px solid {{theme.primary_colours[0]}};
+				background-color: {{theme.primary_colours[1]}};
+				color: white;
+				vertical-align: top;
+			}
+
+			.cont {
+				position: absolute;
+				height: 100%;
+				width: 66%;
+			}
+
+			.time {
+				color: white;
+				background-color: {{theme.field_colours[1]}};
+				border: 5px solid {{theme.primary_colours[1]}};
+				padding: 7px;
+				text-decoration: none;
+			}
+
+			.time:hover {
+				background-color: {{theme.field_colours[0]}};
+				text-decoration: none;
+			}
+
+			.time:active {
+				background-color: rgba(0, 0, 0, 0);
+				text-decoration: none;
+			}
+
+		</style>
+
+		<form id="time_form" action="" method="post" hidden>
+		<input id="selected_time" name="selected_time" type="submit" value=""/>
+		</form>
+
+		<div class="cont">
+			<br>
+			<div>
+			<h1><center>{{movie.name}}</center></h1>
+			</div>
+			<br>
+
+			<div class="XtopLeft">
+				<h2>Genre: {{movie.genre}}</h2>
+				<h2>Duration: {{movie.duration}} minutes</h2>
+				<h2>Certificate: {{movie.certificate}}</h2>
+				<h2>Release Date: {{movie.releaseDate}}</h2>
+			</div>
+
+			<div class="XtopRight">
+				<h2>Description: {{movie.description}}</h2>
+			</div>
+
+			<div class="Xbottom">
+				<center style="font-size:40px">Select a Screening</center><br>
+				<div class="times">
+					<table>
+						<thead>
+							<tr>
+							{%for movie_date in movie.movie_dates%}
+								<th>{{movie_date.date}}</th>
+							{%endfor%}
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+							{%for movie_date in movie.movie_dates%}
+								<td><br> {%for screening in movie_date.screenings%}
+								<div>
+								<a class="time" href="{{url_for('seats', screening_id=screening.id)}}">
+								{{screening.time}}
+								</a>
+								</div>
+								<br>
+								{%endfor%} </td>
+							{%endfor%}
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+		</div>
+
+
+		{% endblock %}
+	</div>
+</div>
+{% endblock content %}

@@ -1,0 +1,148 @@
+{% extends "layout.html" %}
+{% block content %}
+<style>
+	.search_split {
+		height: 100%;
+		position: fixed;
+		overflow-x: hidden;
+		padding-top: 50px;
+		padding-bottom: 50px;
+		font-size: 150%;
+	}
+	.left_split {
+		left: 0;
+		width: 30%;
+		padding-right: 5%;
+		padding-left: 5%;
+		overflow: hidden;
+	}
+	.right_split {
+		right: 0;
+		width: 65%;
+		padding-left: 5%;
+	}
+	
+	.genre_tag {
+		display: inline;
+		padding-right: 5%;
+		padding-top: 5%;
+	}
+	
+	.genre_tag > button {
+		margin-top: 5%;
+	}
+	
+	.submit_container {
+		display: inline;
+		padding-right: 5%;
+		padding-top: 5%;
+	}
+	
+	.submit_container > button {
+		margin-top: 5%;
+	}
+
+	.centered img, h2 {
+		width: 150%;
+		height: 150%;
+	}
+	
+</style>
+
+<script>
+	input.addEventListener("keyup", function(event) {
+		var genre_str = document.getElementById("genre_text").value;
+		// 13 is the escape key
+		if (event.keyCode === 13 && genre_str.length > 0) {
+			event.preventDefault();
+			document.getElementById("tag_submit").click();
+		}
+	});
+	
+	function remove_genre(genre_bttn) {
+		document.getElementById(genre_bttn.value).remove();
+		genre_bttn.parentElement.remove();
+	}
+	
+	function add_genre() {
+		var genre_str = document.getElementById("genre_text").value;
+		// remove numbers and white-space
+		var id = genre_str.replace(/^[\s\d]+/, "") + '0';
+		
+		if(id.length > 1 && document.getElementById(id) == null) {		
+			var genre_tag = document.createElement("div");
+			genre_tag.setAttribute("class", "genre_tag");	
+
+			var genre = document.createElement("input");
+			genre.setAttribute("name", "genres");
+			genre.setAttribute("id", id);
+			genre.setAttribute("type", "hidden");
+			genre.setAttribute("value", genre_str);
+
+			var genre_bttn = document.createElement("button");
+			genre_bttn.innerHTML = genre_str + " (x)";
+			genre_bttn.setAttribute("value", id);	
+			genre_bttn.setAttribute("onClick", "remove_genre(this)");
+
+			genre_tag.appendChild(genre_bttn);
+			document.getElementById("tag_list").appendChild(genre_tag);
+			document.getElementById("genre_list").appendChild(genre);
+		}
+	}	
+</script>
+
+<div>
+	<div class="search_split left_split">	
+	<center><h1>Search</h1></center>
+	
+	<div class="search_fields">
+		<form id="search_form" action="" method="post">
+			<h2>Title</h2>
+			<input type="text" placeholder="search by title" id="search_title" value="{{forms.search_title}}" name="search_title" style="width: 65%;">
+			<br>
+			<h2>Start Date/Time</h2>
+			<input type="date" id="start_date" name="start_date" value="{{forms.start_date}}" style="width:65%; float:left;">
+			<input type="time" id="start_time" name="start_time" min="06:00" max="24:00" value="{{forms.start_time}}" style="width: 30%; float:left;">
+			<br>
+			<h2>End Date/Time</h2>
+			<input type="date" id="end_date" name="end_date" value="{{forms.end_date}}" style="width:65%; float:left">
+			<input type="time" id="end_time" name="end_time" min="06:00" max="24:00" value="{{forms.end_time}}" style="width: 30%; float:left;">
+			<br>				
+			<div id="genre_list" style="display: none;">
+				{%for genre in forms.genres%} 
+					<input id="{{genre + '0'}}" name="genres" type="hidden" value="{{genre}}"></input>
+				{%endfor%} 
+			</div>
+		</form>
+		
+		<h2>Genres</h2>
+		<input id="genre_text" placeholder="include genre tags" style="width: 65%; float:left;"></input> 
+		<button id="tag_submit" onclick="add_genre()" style="width: 30%; float:left;">Add Genre</button>
+		<div id="tag_list">
+			{%for genre in forms.genres%} 
+				<div class="genre_tag"><button value="{{genre + '0'}}" onClick="remove_genre(this)">{{genre + " (x)"}}</input></div>
+			{%endfor%} 
+		</div>
+		
+		<center><div class="submit_container"><button type="submit" form="search_form">Submit</button></div></center>
+		
+	</div>
+	</div>
+
+	<div class="search_split right_split">	
+		<div class="row">
+		{% for movie in movies %}
+			
+			<div class="gallery">
+				<a href="{{ url_for('movie', movie_id=movie.id)}}">
+					<img src=" {{ url_for('static', filename='movie_images/'~ movie.id ~ '.jpg')}}" alt="Cinque Terre" width="600" height="400">
+					<p>{{movie.title}}</p>
+					<p>{{movie.description}}</p>
+				</a>
+			</div>
+
+		{% endfor %}
+		</div>	
+	</div>	
+</div>
+{% endblock content %}

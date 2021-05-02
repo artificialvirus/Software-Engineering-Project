@@ -26,19 +26,19 @@
         font-family: Arial, Helvetica, sans-serif;
         background-color: {{theme.primary_colours[0]}};
     }
-    
+
     h1, h2, h3, h4, p, input, center, select, label {
         color: {{theme.text_colours[2]}};
     }
     input, center, p, button, select {
         font-size: 20px;
     }
-    
+
     button, input, select {
         background-color: {{theme.primary_colours[2]}};
         border-color: {{theme.primary_colours[0]}};
     }
-    
+
     button {
         color: {{theme.text_colours[2]}};
         background-color: {{theme.field_colours[2]}};
@@ -50,7 +50,7 @@
       padding-left: 20px;
       padding-right: 20px;
     }
-    
+
     .topnav p {
       float: left;
       text-align: center;
@@ -65,23 +65,23 @@
       text-decoration: none;
       font-size: 20px;
     }
-    
+
     .topnav > a.left { float: left; }
     .topnav > a.right { float: right; }
 
     .topnav > a.active {
         background-color: {{theme.field_colours[2]}};
     }
-    
+
     .topnav > a.logo {
         font-weight: bold;
     }
-    
+
     .topnav > a:hover {
         color: {{theme.text_colours[0]}};
         background-color: {{theme.field_colours[0]}};
     }
-    
+
     .gallery {
         border: 7px solid {{theme.primary_colours[0]}};
         float: left;
@@ -90,7 +90,7 @@
         color: {{theme.text_colours[2]}};
         padding: 0;
     }
-    
+
     .gallery > a {
         text-decoration: none;
         color: {{theme.text_colours[2]}};
@@ -127,16 +127,18 @@
         <a class="left {{'active' if title == 'for you' else 'inactive'}}" href="{{url_for('foryou')}}">For You</a>
         <a class="left {{'active' if title == 'popular' else 'inactive'}}" href="{{url_for('popular')}}">Popular</a>
         <a class="left {{'active' if title == 'search' else 'inactive'}}" href="{{url_for('search')}}">Search</a>
-        <a class="right {{'active' if title == 'about us' else 'inactive'}}" href="404">About Us</a>
+
+        {% if current_user.is_admin %}
+          <a class="right" href="/admin">Admin Panel</a>
+        {% endif %}
+
         {% if current_user.is_anonymous %}
-        <a class="right {{'active' if title == 'login' else 'inactive'}}" href="{{url_for('login')}}">Login</a>
-        
+          <a class="right {{'active' if title == 'login' else 'inactive'}}" href="{{url_for('login')}}">Login</a>
         {% else %}
-        
+
         <a class="right {{'active' if title == 'member' else 'inactive'}}" href="{{url_for('member')}}">Member</a>
-        <a class="right {{'active' if title == 'Booking' else 'inactive'}}" href="{{url_for('booking')}}">Buy Ticket</a>
         <a class="right {{'active' if title == 'Logout' else 'inactive'}}" href="{{url_for('logout')}}">Logout</a>
-    {% endif %}
+        {% endif %}
     </div>
 
     <main role="main" class="container">

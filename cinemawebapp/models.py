@@ -1,4 +1,4 @@
-from flask import current_app, url_for
+from flask import current_app, url_for, flash
 from datetime import datetime
 from time import time
 import jwt
@@ -22,39 +22,16 @@ movie_booking = db.Table('movie_booking', db.Model.metadata, db.Column('id', db.
 
 screen_booking = db.Table('screen_booking', db.Model.metadata, db.Column('id', db.Integer, db.ForeignKey('screen.id')), db.Column('id', db.Integer, db.ForeignKey('booking.id')))
 
+booking_income = db.Table('booking_income', db.Model.metadata, db.Column('id', db.Integer, db.ForeignKey('booking.id')), db.Column('id', db.Integer, db.ForeignKey('income.id')))
+
 class Admins(UserMixin, db.Model):
     __tablename__ = 'admin'
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(150))
-    email = db.Column(db.String(150))
-    password = db.Column(db.String(150))
-
-    def set_password(self, password):
-        self.password = generate_password_hash(password)
-
-    def check_password(self, password):
-        return check_password_hash(self.password, password)
-    #To reset password
-    def get_reset_password_token(self, expires=600):
-        return jwt.encode(
-            {'reset_password': self.id, 'exp': time() + expires},
-            current_app.config['SECRET_KEY'],
-            algorithm='HS256')
-
-    @staticmethod
-    def verify_reset_password_token(token):
-        try:
-            id = jwt.decode(token, current_app.config['SECRET_KEY'],
-                            algorithms=['HS256'])['reset_password']
-        except:
-            return
-        return Admins.query.get(id)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 @login.user_loader
 def load_user(id):
     return Admins.query.get(int(id))
-
-
 
 class User(UserMixin, db.Model):
     __tablename__ = 'user'
@@ -63,6 +40,15 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String(150))
     password = db.Column(db.String(150))
     user_details = db.relationship('Member', backref='user', lazy='dynamic')
+    admin = db.relationship('Admins', backref='user', lazy='dynamic')
+
+    @property
+    def is_admin(self):
+        admin = Admins.query.filter_by(user_id=self.id)
+        if admin.count() == 0:
+            return False
+
+        return True
 
     #Generate password hashes
     def set_password(self, password):
@@ -90,38 +76,24 @@ class User(UserMixin, db.Model):
 def load_user(id):
     return User.query.get(int(id))
 
-
 class Member(db.Model):
     __tablename__ = 'member'
     id = db.Column(db.Integer, primary_key=True)
     phone = db.Column(db.Integer())
-    date_of_birth = db.Column(db.Integer())
-    card_number = db.Column(db.String(15))
-    card_expiration_date = db.Column(db.DateTime)
-    card_cvv = db.Column(db.String(4))
+    date_of_birth = db.Column(db.Date)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     mem_bk = db.relationship('Booking', backref='member', lazy='dynamic')
-
-        #Used this to hide card cvv which can make it more secure
-    def set_password(self, card_cvv):
-        self.card_cvv = generate_password_hash(card_cvv)
-
-    def check_password(self, card_cvv):
-        return check_password_hash(self.card_cvv, card_cvv)
-
 
 class Booking(db.Model):
     __tablename__ = 'booking'
     id = db.Column(db.Integer, primary_key=True)
-    seat_number = db.Column(db.String(150))
+    seat_number = db.Column(db.Integer())
     ticket_code = db.Column(db.String(255))
-    ticket_type = db.Column(db.String(64))
-    #multiple bookings
-    #tickets = db.Column(db.Integer())
+    ticket_type = db.Column(db.String(255))
+    booking_made = db.Column(db.DateTime)
+    is_vip = db.Column(db.Integer)
     member_id = db.Column(db.Integer, db.ForeignKey('member.id'))
     screen_id = db.Column(db.Integer, db.ForeignKey('screen.id'))
-
-
 
 class Movie(db.Model):
     __tablename__ = 'movie'
@@ -152,3 +124,7 @@ class Screen(db.Model):
 class Income(db.Model):
     __tablename__ = 'income'
     id = db.Column(db.Integer, primary_key = True)
+    sales = db.Column(db.Integer)
+    movie = db.Column(db.String(150))
+    date = db.Column(db.DateTime)
+    booking_id = db.Column(db.Integer, db.ForeignKey('booking.id'))

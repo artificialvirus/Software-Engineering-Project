@@ -2,16 +2,29 @@
 
 {% block content %}
 
-<div class="row">
-  <div class="col-4">
+<style>
+.base {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  font-size: 150%;
+}
+</style>
+
+<div class="row base">
+  <div class="row">
     <h2>Your Ticket</h2>
   </div>
-  <div class="col-2">
+</div>
+
+<div class="row base">
+  <div class="row">
       <a href="./download/{{ ticket_code }}" class="download-pdf-button">Download PDF</a>
   </div>
 </div>
 
-<div class="row">
+<div class="row base">
   <div class="col-6 ticket-box float-left">
     <div class="row">
       <div class="col">
@@ -32,6 +45,16 @@
       </div>
       <div class="col">
           <p>Seat Number: {{ seat_number }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+          <p>Ticket Type: {{ ticket_type }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+          <p>VIP: {{ is_vip }}</p>
       </div>
     </div>
     <div class="row">

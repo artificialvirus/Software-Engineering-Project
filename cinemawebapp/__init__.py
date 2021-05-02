@@ -42,18 +42,8 @@ login.init_app(app)
 from .models import  Admins, Member, User, Movie, Screen, Booking
 
 class CinemaModelView(ModelView):
-
     def is_accessible(self):
-        """
-        if current_user.is_authenticated:
-            id = current_user.get_id()
-            if id == '1':
-                return True
-        """
-
         return True
-
-        #session.get('user') == 'Administrator'
 
     def inaccessible_callback(self, name, **kwargs):
         if not self.is_accessible():
@@ -63,11 +53,11 @@ class CinemaModelView(ModelView):
 # Makes admin pages (database entries etc.)
 admin = Admin(app)
 admin.add_view(CinemaModelView(User, db.session))
+admin.add_view(CinemaModelView(Admins, db.session))
 admin.add_view(CinemaModelView(Member, db.session))
 admin.add_view(CinemaModelView(Movie, db.session))
 admin.add_view(CinemaModelView(Screen, db.session))
 admin.add_view(CinemaModelView(Booking, db.session))
-
 
 @app.before_first_request
 def create_tables():

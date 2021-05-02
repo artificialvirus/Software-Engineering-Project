@@ -127,15 +127,18 @@
         <a class="left {{'active' if title == 'for you' else 'inactive'}}" href="{{url_for('foryou')}}">For You</a>
         <a class="left {{'active' if title == 'popular' else 'inactive'}}" href="{{url_for('popular')}}">Popular</a>
         <a class="left {{'active' if title == 'search' else 'inactive'}}" href="{{url_for('search')}}">Search</a>
-        <a class="right {{'active' if title == 'about us' else 'inactive'}}" href="404">About Us</a>
-        {% if current_user.is_anonymous %}
-        <a class="right {{'active' if title == 'login' else 'inactive'}}" href="{{url_for('login')}}">Login</a>
 
+        {% if current_user.is_admin %}
+          <a class="right" href="/admin">Admin Panel</a>
+        {% endif %}
+
+        {% if current_user.is_anonymous %}
+          <a class="right {{'active' if title == 'login' else 'inactive'}}" href="{{url_for('login')}}">Login</a>
         {% else %}
 
         <a class="right {{'active' if title == 'member' else 'inactive'}}" href="{{url_for('member')}}">Member</a>
         <a class="right {{'active' if title == 'Logout' else 'inactive'}}" href="{{url_for('logout')}}">Logout</a>
-    {% endif %}
+        {% endif %}
     </div>
 
     <main role="main" class="container">

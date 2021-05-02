@@ -77,16 +77,20 @@
         <div class="media-body">
             <div class="article-metadata">
 
-
+              <h1 style="color: black;">Payment</h1>
+              <p style="color: black;">Number of tickets: {{ num_adult + num_child + num_elder }}</p>
+              <p style="color: black;">Run-down:</p>
+              <p style="color: black;">{{num_adult}} Adult Tickets * £10.00</p>
+              <p style="color: black;">{{num_child}} Child Tickets * £5.00</p>
+              <p style="color: black;">{{num_elder}} Elder Tickets * £7.50</p>
+              <p style="color: black;">VIP Additional Charge: £{{num_vip * 2.25}}</p>
+              <p style="color: black;">Total: £{{num_adult * 10.0 + num_child * 5.0 + num_elder * 7.50 + num_vip * 2.25}}</p>
 
             <div class="h-layout">
-
               <div>
-
                 <button class="paypal-button" onclick="openPaypal()">Paypal</button><br><br>
-
                 <div class="form-popup" id="paypal">
-                    <form action="/ticket/email/{{ booking_id }}" class="form-container">
+                    <form action="/member" class="form-container">
 
                         <label for="email"><b>Email</b></label>
                         <input type="text" placeholder="Enter Email" name="email" required>
@@ -99,12 +103,10 @@
                     </form>
                 </div>
 
-
-
                 <button class="credit-button" onclick="openCredit()">Credit / Debit Card</button><br><br>
 
                 <div class="form-popup" id="credit">
-                    <form action="/ticket/email/{{ booking_id }}" class="form-container">
+                    <form action="/member" class="form-container">
                       <label for="cnum"><b>Card Number</b></label>
                       <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX" name="cnum" required>
 
@@ -119,7 +121,6 @@
                     </form>
                 </div>
 
-
                 <form action="/home"onclick="message()">
                   <input type="submit" value="Cash"class="cash-button"/>
                 </form>
@@ -127,23 +128,7 @@
                 <form action="javascript:history.back()">
                   <input type="submit" value="Go back"/>
                 </form>
-
               </div>
-
-              <div>
-
-                <p>tickets</p>
-                <p>VAT</p>
-                <p>Total</p>
-              </div>
-              <div>
-                <p>16.00</p>
-                <p>1.12</p>
-                <p>17.12</p>
-              </div>
-
-
-
             </div>
                 <script>
                 function openPaypal() {

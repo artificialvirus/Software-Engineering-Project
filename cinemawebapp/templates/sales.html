@@ -1,4 +1,3 @@
-
 <!--Admin page-->
 
 {% extends "layout.html" %}
@@ -14,7 +13,7 @@
 
 <div class="base">
   <h3>Income Overall (Week)</h3>
-  <a href="{{url_for('takingsperweek')}}">Overall Income This Week (Per Movie)</a>
+  <a href="{{url_for('takingsperweek')}}">Overall Income This Week</a>
 
   <h3>Income for Individual Movies</h3>
   {% for movie in movies %}

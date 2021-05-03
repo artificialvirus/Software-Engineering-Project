@@ -127,9 +127,6 @@ class TestCase(unittest.TestCase):
 			self.assertIn(b'New releases', response.data)
 
 
-
-
-
 	# LOGIN REQUIRED TESTS
 	@unittest.skip("skipped admin login")
 	def test_admin_requires_login(self):
@@ -181,15 +178,6 @@ class TestCase(unittest.TestCase):
 		response = tester.post("/popular", data=dict(search='Funny'), follow_redirects=True)
 		self.assertIn(b'Movie', response.data)
 
-	# BUY TICKET FUNCTIONALITY
-
-	# UPDATE MEMBER FUNCTIONALITY
-
-	# ADD MOVIE
-
-	# ADD SCREENING
-
-	# TEST PASSWORD HASH
 
 	# TEST MOVIE DATA VISIBLE ON HOME PAGE
 	def test_movie_show_up_on_main_page(self):

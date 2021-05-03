@@ -59,6 +59,10 @@ class DarkTheme(Theme):
 def get_user_theme(theme_str="default"):
     return DarkTheme()
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html', theme=get_user_theme()), 404
+
 # Home page
 @app.route("/")
 @app.route("/home")

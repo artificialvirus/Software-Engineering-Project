@@ -23,23 +23,13 @@
 
 
 <body>
-<style>
-.base {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  text-align: center;
-  font-size: 150%;
-}
-</style>
-
-<div class="row base">
+<div class="row">
   <div class="row">
     <h2>Your Ticket</h2>
   </div>
 </div>
 
-<div class="row base">
+<div class="row">
   <div class="col-6 ticket-box float-left">
     <div class="row">
       <div class="col">
@@ -75,6 +65,11 @@
     <div class="row">
       <div class="col">
           <p>Ticket Code: {{ ticket_code }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <img src="{{ qrcode(ticket_code) }}" style="width: 200px; height: auto; padding: 20px;">
       </div>
     </div>
   </div>

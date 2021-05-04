@@ -240,4 +240,4 @@ class TestCase(unittest.TestCase):
 		self.assertIn(b'seats', response.data)
 
 if __name__ == '__main__':
-	unittest.main(
+	unittest.main()

@@ -137,7 +137,7 @@
 			<div class="gallery">
 				<a href="{{ url_for('movie', movie_id=movie.id)}}">
 					<img src=" {{ url_for('static', filename='movie_images/'~ movie.id ~ '.jpg')}}" alt="Cinque Terre" width="600" height="400">
-					<p>{{movie.title}}</p>
+					<p>{{movie.name}}</p>
 					<p>{{movie.description}}</p>
 				</a>
 			</div>

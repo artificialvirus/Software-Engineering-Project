@@ -127,6 +127,9 @@
 			<div class="Xbottom">
 				<center style="font-size:40px">Select a Screening</center><br>
 				<div class="times">
+				{% if not movie.movie_dates %}
+					<p>No screenings available.</p>
+				{% endif %}
 					<table>
 						<thead>
 							<tr>

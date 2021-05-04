@@ -198,7 +198,7 @@ def search():
 
     # print(vars(forms))
     i = len(forms.genres) - 1
-    if select == "Newest" :   
+    if select == "Newest" :
         if i == -1 :
             movies = Movie.query.filter( ((Movie.name.contains(forms.search_title) | Movie.description.contains(forms.search_title) )& Movie.available==True)).order_by(desc(Movie.releaseDate))
         else:
@@ -208,7 +208,7 @@ def search():
             movies = Movie.query.filter( ((Movie.name.contains(forms.search_title) | Movie.description.contains(forms.search_title) )& Movie.available==True)).order_by(desc(Movie.name))
         else:
             movies = Movie.query.filter( ((Movie.name.contains(forms.search_title) | Movie.description.contains(forms.search_title) )& (Movie.genre.contains(forms.genres[i]))& Movie.available==True)).order_by(desc(Movie.name))
-    else: 
+    else:
        movies = Movie.query.all()
     forms.genres
     # movies = Movie.query.filter(Movie.genre.contains(forms.genres))
@@ -269,14 +269,14 @@ def takingsperweek():
     filter_after = datetime.today() - timedelta(days=7)
     bookings = Booking.query.filter(Booking.booking_made >= filter_after)
 
-    if bookings:
-        last_date = bookings[0].booking_made.date()
+    if not bookings:
+        return redirect(url_for('admin'))
 
-    changed = False
+    last_date = bookings[0].booking_made.date()
+
     for booking in bookings:
         current_date = booking.booking_made.date()
-        if not current_date == last_date:
-            changed = True
+        if current_date > last_date:
             data.append((last_date.strftime('%d/%m/%Y'), income))
             overall += income
             income = 0
@@ -292,14 +292,14 @@ def takingsperweek():
         if booking.is_vip:
             income += 2.25
 
-    if not changed:
-        data.append((last_date.strftime('%d/%m/%Y'), income))
+    data.append((last_date.strftime('%d/%m/%Y'), income))
+    overall += income
 
     label = [row[0] for row in data]
     value = [row[1] for row in data]
 
     return render_template('takingsperweek.html',theme=get_user_theme(),
-        label=label, value=value, income=income)
+        label=label, value=value, income=overall)
 
 @app.route("/takingspermovie/<movie_id>")
 @login_required
@@ -316,28 +316,29 @@ def takingspermovie(movie_id):
     filter_after = datetime.today() - timedelta(days=7)
     bookings = Booking.query.filter(Booking.booking_made >= filter_after)
 
-    if bookings:
-        last_date = bookings[0].booking_made.date()
+    if not bookings:
+        return redirect(url_for('admin'))
 
-    changed = False
+    last_date = bookings[0].booking_made.date()
+
     for booking in bookings:
         screening = Screen.query.filter_by(id=booking.screen_id).first()
         if not screening:
             continue
 
-        movie = Movie.query.filter_by(id=screening.movie_id).first()
-        if not movie:
+        movie_booking = Movie.query.filter_by(id=screening.movie_id).first()
+        if not movie_booking:
             continue
 
-        if int(movie_id) != int(movie.id):
+        if int(movie_id) != int(movie_booking.id):
             continue
 
         current_date = booking.booking_made.date()
         if not current_date == last_date:
-            changed = True
-            data.append((last_date.strftime('%d/%m/%Y'), income))
-            overall += income
-            income = 0
+            if not income == 0:
+                data.append((last_date.strftime('%d/%m/%Y'), income))
+                overall += income
+                income = 0
             last_date = current_date
 
         if booking.ticket_type == "Adult":
@@ -350,14 +351,14 @@ def takingspermovie(movie_id):
         if booking.is_vip:
             income += 2.25
 
-    if not changed:
-        data.append((last_date.strftime('%d/%m/%Y'), income))
+    data.append((last_date.strftime('%d/%m/%Y'), income))
+    overall += income
 
     label = [row[0] for row in data]
     value = [row[1] for row in data]
 
     return render_template('takingspermovie.html',theme=get_user_theme(),
-        label=label, value=value, income=income, name=movie.name)
+        label=label, value=value, income=overall, name=movie.name)
 
 @app.route('/signup', methods=['GET','POST'])
 def signup():
